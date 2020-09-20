@@ -1,0 +1,33 @@
+parameters:
+  nav_items:
+    non_logged:
+      Home:
+        id: 1
+        name: "Home"
+        link: "/"
+      Browse:
+        id: 2
+        name: "Browse"
+        link: "/browse"
+      Create:
+        id: 3
+        name: "Create"
+        link: "/create"
+    logged:
+      Home:
+        id: 1
+        name: "Home"
+        link: "/"
+      MyCollections:
+        id: 2
+        name: "My Collections"
+        link: "/my_collections"
+      Browse:
+        id: 3
+        name: "Browse"
+        link: "/browse"
+      Create:
+        id: 4
+        name: "Create"
+        link: "/create"
+

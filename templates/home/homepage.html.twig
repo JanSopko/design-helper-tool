@@ -3,12 +3,13 @@
     DesignHelper | Home
 {% endblock %}
 {% block stylesheets %}
-    {{ encore_entry_link_tags('app') }}
+    {{ encore_entry_link_tags('navbar') }}
 {% endblock %}
 {% block body %}
     <div id="app">
     </div>
 {% endblock %}
 {% block javascripts %}
+    {% include 'partials/navbar_script.html.twig' %}
     {{ encore_entry_script_tags('homepage') }}
 {% endblock %}

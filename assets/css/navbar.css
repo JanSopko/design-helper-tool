@@ -1,0 +1,13 @@
+#navbar{
+    height: 50px;
+    background-color: lightseagreen;
+}
+
+#navbar>ul {
+    display: flex;
+    justify-content: flex-start;
+}
+
+#navbar>ul>li {
+    list-style-type: none;
+}
