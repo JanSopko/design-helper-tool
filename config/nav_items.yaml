@@ -5,19 +5,23 @@ parameters:
         id: 1
         name: "Home"
         link: "/"
+      Login_Register:
+        id: 3
+        name: "Sign in/up"
+        link: "/sign"
       Browse:
         id: 2
         name: "Browse"
         link: "/browse"
-      Create:
-        id: 3
-        name: "Create"
-        link: "/create"
     logged:
       Home:
         id: 1
         name: "Home"
         link: "/"
+      Create:
+        id: 4
+        name: "Create"
+        link: "/create"
       MyCollections:
         id: 2
         name: "My Collections"
@@ -26,8 +30,5 @@ parameters:
         id: 3
         name: "Browse"
         link: "/browse"
-      Create:
-        id: 4
-        name: "Create"
-        link: "/create"
+
 
