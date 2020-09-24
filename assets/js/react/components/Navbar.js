@@ -7,7 +7,10 @@ export default function Navbar(props) {
             <ul>
                 {props.navItems.map(item => {
                     return (
-                        <li key={item.id}>
+                        <li key={item.id} onClick={() => window.location.href = item.link}>
+                            {item.link === '/' &&
+                            <img src="favicon.png" alt="logo"/>
+                            }
                             <a href={item.link}>{item.name}</a>
                         </li>
                     );

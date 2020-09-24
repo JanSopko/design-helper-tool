@@ -4,5 +4,5 @@ import App from "../containers/homepageContainer";
 
 ReactDOM.render(
     <App />,
-    document.getElementById('app')
+    document.getElementById('root')
 );

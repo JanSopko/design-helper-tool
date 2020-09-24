@@ -3,22 +3,20 @@
   <component name="ChangeListManager">
     <list default="true" id="23010fe4-d294-4d04-b7b2-5e67385fe2b8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/homepage-wrapper.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/homepage-wrapper.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/css/navbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/navbar.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/react/components/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/react/components/Navbar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/react/containers/homepageContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/react/containers/homepageContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/nav_items.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/nav_items.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/react/components/homepage/HomepageWrapper.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/react/components/homepage/HomepageWrapper.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/react/pages/homepage.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/react/pages/homepage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/home/homepage.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/homepage.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
@@ -109,7 +107,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -124,6 +122,11 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public" />
+      <recent name="$PROJECT_DIR$/templates" />
+      <recent name="$PROJECT_DIR$/assets/img" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/assets/js/react/components" />
       <recent name="$PROJECT_DIR$/assets/js/react/pages" />
@@ -138,6 +141,7 @@
       <option name="presentableId" value="Default" />
       <updated>1600534324220</updated>
       <workItem from="1600534325464" duration="19914000" />
+      <workItem from="1600626012162" duration="11670000" />
     </task>
     <servers />
   </component>
