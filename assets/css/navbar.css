@@ -7,7 +7,7 @@
     height: 4rem;
     background-color: white;
     color: #5a5a5a;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     box-shadow: 0 1px 10px 0 rgba(0,0,0,0.60);
     z-index: 1;
 }
@@ -39,12 +39,12 @@
 }
 
 #navbar>ul>li>a:hover {
-    animation-name: recolor-on-hover;
+    animation-name: recolor-navbar-on-hover;
     animation-duration: .3s;
     color:black;
 }
 
-@keyframes recolor-on-hover {
+@keyframes recolor-navbar-on-hover {
     from {color:inherit}
     to {color:black}
 }

@@ -1,8 +1,8 @@
 import React from 'react';
-import HomepageWrapper from "../components/homepage/HomepageWrapper";
 import Navigation from "../components/Navigation";
+import SignPageWrapper from "../components/sign/SignPageWrapper";
 
-export default class HomepageContainer extends React.Component {
+export default class SignPageContainer extends React.Component {
     constructor() {
         super();
     }
@@ -12,8 +12,8 @@ export default class HomepageContainer extends React.Component {
             <div>
                 <Navigation>
                 </Navigation>
-                <HomepageWrapper>
-                </HomepageWrapper>
+                <SignPageWrapper>
+                </SignPageWrapper>
             </div>
         );
     }

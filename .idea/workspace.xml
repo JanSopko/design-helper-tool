@@ -3,13 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="23010fe4-d294-4d04-b7b2-5e67385fe2b8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/homepage-wrapper.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/homepage-wrapper.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/navbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/navbar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/react/components/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/react/components/Navbar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/react/components/homepage/HomepageWrapper.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/react/components/homepage/HomepageWrapper.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/react/pages/homepage.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/react/pages/homepage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home/homepage.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/homepage.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/signpage-wrapper.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/signpage-wrapper.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/react/components/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/react/components/Footer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/react/components/Navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/react/components/Navigation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/react/components/PasswordInput.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/react/components/PasswordInput.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/footer_items.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/UIApiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/UIApiController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/LogChecker.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/LogChecker.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,16 +121,19 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
+    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public" />
+      <recent name="$PROJECT_DIR$/public/img" />
       <recent name="$PROJECT_DIR$/templates" />
       <recent name="$PROJECT_DIR$/assets/img" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/img" />
       <recent name="$PROJECT_DIR$/assets/js/react/components" />
       <recent name="$PROJECT_DIR$/assets/js/react/pages" />
     </key>
@@ -141,7 +147,7 @@
       <option name="presentableId" value="Default" />
       <updated>1600534324220</updated>
       <workItem from="1600534325464" duration="19914000" />
-      <workItem from="1600626012162" duration="11670000" />
+      <workItem from="1600626012162" duration="52035000" />
     </task>
     <servers />
   </component>
@@ -149,13 +155,25 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="378" y="154" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1600543637124">
+    <state x="337" y="209" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1601020495915">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="378" y="154" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.800@0.0.1280.800" timestamp="1600543637124" />
-    <state x="141" y="39" key="SettingsEditor" timestamp="1600587434733">
+    <state x="337" y="209" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.800@0.0.1280.800" timestamp="1601020495915" />
+    <state x="437" y="119" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1601058037004">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="141" y="39" key="SettingsEditor/0.0.1280.800@0.0.1280.800" timestamp="1600587434733" />
+    <state x="437" y="119" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1280.800@0.0.1280.800" timestamp="1601058037004" />
+    <state x="378" y="154" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1601052081166">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="378" y="154" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.800@0.0.1280.800" timestamp="1601052081166" />
+    <state x="281" y="133" key="NewPhpClassDialog" timestamp="1601058021675">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="281" y="133" key="NewPhpClassDialog/0.0.1280.800@0.0.1280.800" timestamp="1601058021675" />
+    <state x="141" y="39" key="SettingsEditor" timestamp="1601021209752">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="141" y="39" key="SettingsEditor/0.0.1280.800@0.0.1280.800" timestamp="1601021209752" />
   </component>
 </project>

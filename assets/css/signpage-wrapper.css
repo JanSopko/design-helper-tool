@@ -1,0 +1,78 @@
+#form-wrapper {
+    background-color: white;
+    padding: 0 0 1rem 0;
+    border: 1px solid #d0d0d0;
+    border-radius: .5rem;
+    font-size: 1.2rem;
+    margin: 1rem auto;
+    max-width: 30rem;
+}
+
+.options-bar {
+    display: flex;
+    justify-content: space-evenly;
+    height: 2.8rem;
+}
+
+.form-container {
+    padding: 4.3rem 1.5rem 1.5rem 1.5rem;
+}
+
+.form-option {
+    color: white;
+    background-color: #5a5a5a;
+    height: 100%;
+    width: 50%;
+    text-align: center;
+    padding-top: .8rem;
+}
+
+.form-option:hover {
+    cursor: pointer;
+}
+
+.option-left {
+    border-top-left-radius: .5rem;
+}
+
+.option-right {
+    border-top-right-radius: .5rem;
+}
+
+.selected-option {
+    color: inherit !important;
+    background-color: inherit !important;
+}
+
+.form-grouping {
+    display:flex;
+    flex-flow: column wrap;
+}
+
+.form-grouping>label,.form-grouping>input,.form-grouping>div>input {
+    max-width: 15rem;
+    margin: .3rem;
+}
+
+.password-input {
+    width: calc(100% - 3rem);
+}
+
+.form-grouping>input[type=text],.form-grouping>input[type=email] {
+    font-family: soleil,sans-serif!important;
+}
+
+.form-grouping>label {
+    font-size: .9rem;
+}
+
+.form-div {
+    display: flex;
+    flex-flow: column wrap;
+    align-content: center;
+}
+
+#sign-form {
+    width: 15rem;
+}
+
