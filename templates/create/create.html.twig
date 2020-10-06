@@ -1,20 +1,14 @@
 {% extends 'base.html.twig' %}
 {% block title %}
-    Sign
+    Create
 {% endblock %}
 {% block stylesheets %}
     {{ encore_entry_link_tags('navbar') }}
-    {{ encore_entry_link_tags('signpage_wrapper') }}
 {% endblock %}
 {% block body %}
     <div id="root">
     </div>
 {% endblock %}
 {% block javascripts %}
-    <script>
-        var layoutData = {
-            loginPath: '{{ path('login') }}'
-        };
-    </script>
-    {{ encore_entry_script_tags('sign') }}
+    {{ encore_entry_script_tags('create') }}
 {% endblock %}

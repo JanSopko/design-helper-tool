@@ -4,7 +4,7 @@ import PasswordInput from "../PasswordInput";
 export default function LoginForm() {
     return (
         <div className="form-div">
-            <form action="/" id="sign-form">
+            <form action={layoutData.loginPath} id="sign-form">
                 <div className="form-grouping">
                     <label htmlFor="username-input">Username</label>
                     <input type="text" name="username" id="username-input"/>

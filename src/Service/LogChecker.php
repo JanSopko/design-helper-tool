@@ -11,6 +11,7 @@ class LogChecker
      */
     public static function isLogged(): bool
     {
-        return random_int(0,1) === 0;
+//        return random_int(0,1) === 0;
+        return false;
     }
 }

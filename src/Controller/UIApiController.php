@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 
 namespace App\Controller;
@@ -21,6 +21,7 @@ class UIApiController extends AbstractController
     {
         $this->parameterBag = $parameterBag;
     }
+
     /**
      * @Route("/ui-data/navbar", name="uiNavbar", methods={"GET"})
      * @return JsonResponse
