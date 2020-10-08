@@ -2,17 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="23010fe4-d294-4d04-b7b2-5e67385fe2b8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/design-helper-tool.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/design-helper-tool.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/signpage-wrapper.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/signpage-wrapper.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/react/components/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/react/components/Footer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/react/components/Navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/react/components/Navigation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/react/components/PasswordInput.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/react/components/PasswordInput.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/footer_items.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/UIApiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/UIApiController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/LogChecker.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/LogChecker.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Procfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/react/components/create/CreatePageWrapper.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/react/components/create/CreatePageWrapper.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/UserRepository.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,6 +97,13 @@
       <path value="$PROJECT_DIR$/vendor/webimpress/safe-writer" />
       <path value="$PROJECT_DIR$/vendor/ocramius/proxy-manager" />
       <path value="$PROJECT_DIR$/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/vendor/symfony/inflector" />
+      <path value="$PROJECT_DIR$/vendor/symfony/security-guard" />
+      <path value="$PROJECT_DIR$/vendor/symfony/security-http" />
+      <path value="$PROJECT_DIR$/vendor/symfony/security-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/security-csrf" />
+      <path value="$PROJECT_DIR$/vendor/symfony/security-core" />
+      <path value="$PROJECT_DIR$/vendor/symfony/property-access" />
     </include_path>
   </component>
   <component name="ProjectId" id="1hjpOS5CHUKZG39vSWw5MIAX5ij" />
@@ -110,7 +114,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -148,6 +152,8 @@
       <updated>1600534324220</updated>
       <workItem from="1600534325464" duration="19914000" />
       <workItem from="1600626012162" duration="52035000" />
+      <workItem from="1602014296711" duration="1169000" />
+      <workItem from="1602140413040" duration="142000" />
     </task>
     <servers />
   </component>

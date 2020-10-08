@@ -1,5 +1,6 @@
 import React from 'react';
 import Footer from "../Footer";
+import Canvas from "./Canvas";
 
 export default class CreatePageWrapper extends React.Component {
     constructor() {
@@ -7,27 +8,13 @@ export default class CreatePageWrapper extends React.Component {
 
     }
 
-    componentDidMount () {
-        this.canvas = window.document.getElementById('canvas');
-        const ctx = this.canvas.getContext('2d');
-
-        ctx.fillStyle = 'green';
-        ctx.fillRect(10, 10, 150, 100);
-    }
-
-    onHandleClick  () {
-        const ctx = this.canvas.getContext('2d');
-
-        ctx.fillStyle = 'red';
-        ctx.fillRect(10, 15, 150, 100);
-    }
 
     render() {
         return(
             <div id="content">
                 <section style={{height: 200}} onClick={this.onHandleClick} >
-                    <canvas id="canvas" style={{height: '100%'}}>
-                    </canvas>
+                    <Canvas w="50" h="70">
+                    </Canvas>
                 </section>
                 <Footer>
                 </Footer>
