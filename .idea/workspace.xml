@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="23010fe4-d294-4d04-b7b2-5e67385fe2b8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/design-helper-tool.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/design-helper-tool.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Procfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/react/components/create/CreatePageWrapper.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/react/components/create/CreatePageWrapper.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/UserRepository.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -153,7 +146,8 @@
       <workItem from="1600534325464" duration="19914000" />
       <workItem from="1600626012162" duration="52035000" />
       <workItem from="1602014296711" duration="1169000" />
-      <workItem from="1602140413040" duration="142000" />
+      <workItem from="1602140413040" duration="260000" />
+      <workItem from="1602185527020" duration="438000" />
     </task>
     <servers />
   </component>
