@@ -1,24 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="23010fe4-d294-4d04-b7b2-5e67385fe2b8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/design-helper-tool.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/design-helper-tool.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/signpage-wrapper.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/signpage-wrapper.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/react/components/PasswordInput.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/react/components/PasswordInput.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/react/components/sign/LoginForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/react/components/sign/LoginForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/react/components/sign/RegisterForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/react/components/sign/RegisterForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/LogChecker.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/LogChecker.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/sign.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/sign.html.twig" afterDir="false" />
-    </list>
+    <list default="true" id="23010fe4-d294-4d04-b7b2-5e67385fe2b8" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -125,7 +108,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/config/packages" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -168,7 +151,7 @@
       <workItem from="1602140413040" duration="260000" />
       <workItem from="1602185527020" duration="1441000" />
       <workItem from="1602329750838" duration="12418000" />
-      <workItem from="1602512087547" duration="3533000" />
+      <workItem from="1602512087547" duration="4284000" />
     </task>
     <servers />
   </component>

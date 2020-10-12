@@ -1,0 +1,74 @@
+{
+  "entrypoints": {
+    "app": {
+      "js": [
+        "/build/runtime.js",
+        "/build/app.js"
+      ],
+      "css": [
+        "/build/app.css"
+      ]
+    },
+    "homepage": {
+      "js": [
+        "/build/runtime.js",
+        "/build/vendors~create~homepage~sign.js",
+        "/build/homepage.js"
+      ]
+    },
+    "sign": {
+      "js": [
+        "/build/runtime.js",
+        "/build/vendors~create~homepage~sign.js",
+        "/build/sign.js"
+      ]
+    },
+    "create": {
+      "js": [
+        "/build/runtime.js",
+        "/build/vendors~create~homepage~sign.js",
+        "/build/create.js"
+      ]
+    },
+    "appCss": {
+      "js": [
+        "/build/runtime.js"
+      ],
+      "css": [
+        "/build/appCss.css"
+      ]
+    },
+    "navbar": {
+      "js": [
+        "/build/runtime.js"
+      ],
+      "css": [
+        "/build/navbar.css"
+      ]
+    },
+    "homepage_wrapper": {
+      "js": [
+        "/build/runtime.js"
+      ],
+      "css": [
+        "/build/homepage_wrapper.css"
+      ]
+    },
+    "signpage_wrapper": {
+      "js": [
+        "/build/runtime.js"
+      ],
+      "css": [
+        "/build/signpage_wrapper.css"
+      ]
+    },
+    "footer": {
+      "js": [
+        "/build/runtime.js"
+      ],
+      "css": [
+        "/build/footer.css"
+      ]
+    }
+  }
+}
