@@ -11,7 +11,7 @@ class LogChecker
      */
     public static function isLogged(): bool
     {
-//        return random_int(0,1) === 0;
-        return false;
+        //@todo real logged status check
+        return !empty($_SESSION['logged_user']);
     }
 }

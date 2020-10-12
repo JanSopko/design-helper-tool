@@ -4,7 +4,10 @@
 namespace App\Controller;
 
 
+use App\Exception\ValidationException;
+use App\Repository\UserRepository;
 use App\Service\LogChecker;
+use App\Service\Validator\RegistrationValidator;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -37,5 +40,25 @@ class UserController extends AbstractController
         $lastUsername = $utils->getLastUsername();
 
         return new JsonResponse(['path' => 'login']);
+    }
+
+    /**
+     * @Route("/register", name="register", methods={"POST"})
+     * @param Request $request
+     * @param UserRepository $userRepository
+     * @return JsonResponse
+     */
+    public function register(Request $request, UserRepository $userRepository): JsonResponse
+    {
+        $registrationValidator = new RegistrationValidator($userRepository);
+        try {
+            $registrationValidator->validate($request);
+        } catch (ValidationException $exception) {
+            return new JsonResponse($registrationValidator->getErrorMessages());
+        }
+
+        //@todo code to register
+
+        return new JsonResponse(['ok' => 1]);
     }
 }

@@ -13,7 +13,8 @@
 {% block javascripts %}
     <script>
         var layoutData = {
-            loginPath: '{{ path('login') }}'
+            loginPath: '{{ path('login') }}',
+            registerPath: '{{ path('register') }}'
         };
     </script>
     {{ encore_entry_script_tags('sign') }}

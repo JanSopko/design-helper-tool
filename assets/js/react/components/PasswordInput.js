@@ -29,7 +29,7 @@ export default class PasswordInput extends React.Component {
     render() {
         return (
             <div className="form-grouping">
-                <label htmlFor={this.props.id}>{this.props.labelText}</label>
+                <label htmlFor={this.props.id} id={this.props.labelId}>{this.props.labelText}</label>
                 <div>
                     <input type={this.state.type} name={this.props.name} id={this.props.id} className="password-input"/>
                     <img

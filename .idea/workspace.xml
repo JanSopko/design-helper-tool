@@ -1,7 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="23010fe4-d294-4d04-b7b2-5e67385fe2b8" name="Default Changelist" comment="" />
+    <list default="true" id="23010fe4-d294-4d04-b7b2-5e67385fe2b8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/design-helper-tool.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/design-helper-tool.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/signpage-wrapper.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/signpage-wrapper.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/react/components/PasswordInput.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/react/components/PasswordInput.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/react/components/sign/LoginForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/react/components/sign/LoginForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/react/components/sign/RegisterForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/react/components/sign/RegisterForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/LogChecker.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/LogChecker.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/user/sign.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/sign.html.twig" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -96,6 +113,7 @@
       <path value="$PROJECT_DIR$/vendor/symfony/security-csrf" />
       <path value="$PROJECT_DIR$/vendor/symfony/security-core" />
       <path value="$PROJECT_DIR$/vendor/symfony/property-access" />
+      <path value="$PROJECT_DIR$/vendor/symfony/phpunit-bridge" />
     </include_path>
   </component>
   <component name="ProjectId" id="1hjpOS5CHUKZG39vSWw5MIAX5ij" />
@@ -118,6 +136,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -147,7 +166,9 @@
       <workItem from="1600626012162" duration="52035000" />
       <workItem from="1602014296711" duration="1169000" />
       <workItem from="1602140413040" duration="260000" />
-      <workItem from="1602185527020" duration="824000" />
+      <workItem from="1602185527020" duration="1441000" />
+      <workItem from="1602329750838" duration="12418000" />
+      <workItem from="1602512087547" duration="3533000" />
     </task>
     <servers />
   </component>
@@ -159,6 +180,10 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="337" y="209" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.800@0.0.1280.800" timestamp="1601020495915" />
+    <state x="439" y="89" key="#com.intellij.ide.util.MemberChooser" timestamp="1602333472444">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="439" y="89" key="#com.intellij.ide.util.MemberChooser/0.0.1280.800@0.0.1280.800" timestamp="1602333472444" />
     <state x="437" y="119" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1601058037004">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
@@ -167,14 +192,18 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="378" y="154" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.800@0.0.1280.800" timestamp="1601052081166" />
-    <state x="281" y="133" key="NewPhpClassDialog" timestamp="1601058021675">
+    <state x="281" y="133" key="NewPhpClassDialog" timestamp="1602531425323">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="281" y="133" key="NewPhpClassDialog/0.0.1280.800@0.0.1280.800" timestamp="1601058021675" />
-    <state x="141" y="39" key="SettingsEditor" timestamp="1601021209752">
+    <state x="281" y="133" key="NewPhpClassDialog/0.0.1280.800@0.0.1280.800" timestamp="1602531425323" />
+    <state x="442" y="330" key="NewPhpFileDialog" timestamp="1602331155407">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="141" y="39" key="SettingsEditor/0.0.1280.800@0.0.1280.800" timestamp="1601021209752" />
+    <state x="442" y="330" key="NewPhpFileDialog/0.0.1280.800@0.0.1280.800" timestamp="1602331155407" />
+    <state x="141" y="39" key="SettingsEditor" timestamp="1602529312556">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="141" y="39" key="SettingsEditor/0.0.1280.800@0.0.1280.800" timestamp="1602529312556" />
     <state x="332" y="155" width="621" height="490" key="find.popup" timestamp="1602186786742">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
