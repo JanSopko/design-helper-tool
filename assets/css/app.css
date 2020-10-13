@@ -10,7 +10,7 @@ body {
 
 #content {
     position: relative;
-    min-height: 30rem;
+    min-height: 100%;
     background-color: #f9f9f9;
     color:#5a5a5a;
     padding: 7rem 7rem 12rem 7rem;
@@ -75,4 +75,10 @@ body {
 @keyframes button-recolor-on-hover {
     from {background-color:#cddc39}
     to {background-color:#4caf50}
+}
+
+@media only screen and (max-width:768px) {
+    #content {
+        padding: 7rem 2rem 12rem 2rem;
+    }
 }
