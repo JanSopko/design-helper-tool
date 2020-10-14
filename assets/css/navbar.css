@@ -12,7 +12,6 @@
     z-index: 1;
 }
 
-
 #navbar>ul {
     display: flex;
     height: 100%;
@@ -44,7 +43,78 @@
     color:black;
 }
 
+#navbar>.hamburger {
+    display: none;
+}
+
 @keyframes recolor-navbar-on-hover {
     from {color:inherit}
     to {color:black}
+}
+
+@media only screen and (max-width:540px) {
+    #navbar>ul {
+        display: none;
+    }
+
+    #navbar>.hamburger {
+        margin: .7rem;
+        display: flex;
+        flex-flow: column wrap;
+        border: 1px solid #5a5a5a;
+        border-radius: .3rem;
+        justify-content: space-around;
+        align-items: center;
+        width: 3rem;
+        box-shadow: inset 0 0 7px 0 rgba(0, 0, 0, 0.13);
+    }
+
+    #navbar>.hamburger:hover {
+        cursor: pointer;
+    }
+
+    #navbar .hamburger-bar {
+        background-color: #5a5a5a;
+        height: 4px;
+        width: 75%;
+        border-radius: 2px;
+    }
+
+    .active {
+        display: flex !important;
+        flex-flow: nowrap column;
+        position: absolute;
+        top:10vh;
+        animation-name: active-fade-in;
+        animation-duration: .25s;
+    }
+
+    .active li {
+        width: 9rem;
+    }
+
+    .active li img {
+        display: none;
+    }
+
+    .active li a {
+        background-color: white;
+        padding: .5rem;
+        width: 8rem;
+        border: 1px solid #5a5a5a;
+        border-bottom: 0;
+    }
+
+    .active li:last-child {
+        border-bottom: 1px solid #5a5a5a;
+    }
+
+    .active li a:hover {
+        background-color: #d0d0d0;
+    }
+}
+
+@keyframes active-fade-in {
+    from{opacity:0}
+    to{opacity:1}
 }

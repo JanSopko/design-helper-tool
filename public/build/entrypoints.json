@@ -13,6 +13,7 @@
       "js": [
         "/build/runtime.js",
         "/build/vendors~create~homepage~sign.js",
+        "/build/create~homepage~sign.js",
         "/build/homepage.js"
       ]
     },
@@ -20,6 +21,7 @@
       "js": [
         "/build/runtime.js",
         "/build/vendors~create~homepage~sign.js",
+        "/build/create~homepage~sign.js",
         "/build/sign.js"
       ]
     },
@@ -27,6 +29,7 @@
       "js": [
         "/build/runtime.js",
         "/build/vendors~create~homepage~sign.js",
+        "/build/create~homepage~sign.js",
         "/build/create.js"
       ]
     },

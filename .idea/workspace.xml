@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="23010fe4-d294-4d04-b7b2-5e67385fe2b8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/appCss.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/appCss.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,7 +155,7 @@
       <workItem from="1602185527020" duration="1441000" />
       <workItem from="1602329750838" duration="12418000" />
       <workItem from="1602512087547" duration="5124000" />
-      <workItem from="1602615245436" duration="655000" />
+      <workItem from="1602615245436" duration="6002000" />
     </task>
     <servers />
   </component>
@@ -172,10 +167,10 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="337" y="209" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.800@0.0.1280.800" timestamp="1601020495915" />
-    <state x="439" y="89" key="#com.intellij.ide.util.MemberChooser" timestamp="1602333472444">
+    <state x="439" y="89" key="#com.intellij.ide.util.MemberChooser" timestamp="1602655820824">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="439" y="89" key="#com.intellij.ide.util.MemberChooser/0.0.1280.800@0.0.1280.800" timestamp="1602333472444" />
+    <state x="439" y="89" key="#com.intellij.ide.util.MemberChooser/0.0.1280.800@0.0.1280.800" timestamp="1602655820824" />
     <state x="437" y="119" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1601058037004">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
@@ -184,10 +179,10 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="378" y="154" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.800@0.0.1280.800" timestamp="1601052081166" />
-    <state x="281" y="133" key="NewPhpClassDialog" timestamp="1602531425323">
+    <state x="281" y="133" key="NewPhpClassDialog" timestamp="1602655799323">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="281" y="133" key="NewPhpClassDialog/0.0.1280.800@0.0.1280.800" timestamp="1602531425323" />
+    <state x="281" y="133" key="NewPhpClassDialog/0.0.1280.800@0.0.1280.800" timestamp="1602655799323" />
     <state x="442" y="330" key="NewPhpFileDialog" timestamp="1602331155407">
       <screen x="0" y="0" width="1280" height="800" />
     </state>

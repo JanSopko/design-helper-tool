@@ -12,7 +12,7 @@ export default class CreatePageContainer extends React.Component {
             <div>
                 <Navigation>
                 </Navigation>
-                <CreatePageWrapper>
+                <CreatePageWrapper height={window.innerHeight}>
                 </CreatePageWrapper>
             </div>
         );

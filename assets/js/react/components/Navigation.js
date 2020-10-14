@@ -20,10 +20,19 @@ export default class Navigation extends React.Component{
         });
     }
 
+    toggleMenu() {
+        document.getElementById("menu-list").classList.toggle('active');
+    }
+
     render() {
         return(
             <div id="navbar">
-                <ul>
+                <div className="hamburger" onClick={this.toggleMenu}>
+                    <span className="hamburger-bar"></span>
+                    <span className="hamburger-bar"></span>
+                    <span className="hamburger-bar"></span>
+                </div>
+                <ul id="menu-list">
                 {this.state.navItems.map(item => {
                   return(
                       <li key={item.id} onClick={() => window.location.href = item.link}>

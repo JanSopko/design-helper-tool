@@ -8,7 +8,7 @@ use App\Exception\ValidationException;
 use App\Repository\UserRepository;
 use Symfony\Component\HttpFoundation\Request;
 
-class RegistrationValidator extends Validator implements ValidatorInterFace
+class RegistrationValidator extends Validator
 {
     const USERNAME_KEY = 'username';
     const EMAIL_KEY = 'email';
