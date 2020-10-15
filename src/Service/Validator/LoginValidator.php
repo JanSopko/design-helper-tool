@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\Request;
 class LoginValidator extends Validator
 {
 
-    public function validate(Request $request): void
+    public function validate(array $content): void
     {
         // TODO: Implement validate() method.
     }

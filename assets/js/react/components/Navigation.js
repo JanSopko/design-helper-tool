@@ -18,6 +18,16 @@ export default class Navigation extends React.Component{
                 navItems: res.data
             });
         });
+
+        window.document.getElementsByTagName('body')[0].addEventListener('click', e => {
+            if (e.target.id !== "menu-list"
+                && !e.target.classList.contains("hamburger")
+                && !e.target.classList.contains("hamburger-bar"))
+            {
+                e.preventDefault();
+                document.getElementById("menu-list").classList.remove("active");
+            }
+        });
     }
 
     toggleMenu() {
@@ -27,7 +37,7 @@ export default class Navigation extends React.Component{
     render() {
         return(
             <div id="navbar">
-                <div className="hamburger" onClick={this.toggleMenu}>
+                <div className="hamburger" id="menu-hamburger" onClick={this.toggleMenu}>
                     <span className="hamburger-bar"></span>
                     <span className="hamburger-bar"></span>
                     <span className="hamburger-bar"></span>

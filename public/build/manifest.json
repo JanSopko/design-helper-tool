@@ -11,5 +11,7 @@
   "build/runtime.js": "/build/runtime.js",
   "build/sign.js": "/build/sign.js",
   "build/signpage_wrapper.css": "/build/signpage_wrapper.css",
-  "build/vendors~create~homepage~sign.js": "/build/vendors~create~homepage~sign.js"
+  "build/vendors~create.js": "/build/vendors~create.js",
+  "build/vendors~create~homepage~sign.js": "/build/vendors~create~homepage~sign.js",
+  "build/vendors~sign.js": "/build/vendors~sign.js"
 }

@@ -6,6 +6,7 @@ namespace App\Service\Validator;
 
 use App\Exception\ValidationException;
 use App\Repository\UserRepository;
+use App\Service\RequestDataGetter;
 use Symfony\Component\HttpFoundation\Request;
 
 class RegistrationValidator extends Validator
@@ -30,12 +31,11 @@ class RegistrationValidator extends Validator
     }
 
     /**
-     * @param Request $request
+     * @param array $content
      * @throws ValidationException
      */
-    public function validate(Request $request): void
+    public function validate(array $content): void
     {
-        $content = $this->getRequestContent($request);
         $username = $content['username'] ?? '';
         $email = $content['email'] ?? '';
         $password = $content['password'] ?? '';

@@ -21,8 +21,13 @@ const sendRegisterRequest = e => {
             "password": password,
             "password-confirm": passwordConfirm
         }).then(res => {
-            console.log(res.data);
             showWarnings(res.data);
+            if (res.data.success !== undefined && res.data.success) {
+                //@todo redirect na login endpoint s rovnakymi datami
+                //@todo redirect na pozadovanu page, pravdepodobne homepage
+                alert('Registration complete! You can now login.');
+                window.location.replace('/');
+            }
         });
 }
 

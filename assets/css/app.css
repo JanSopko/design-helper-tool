@@ -28,6 +28,18 @@ body {
     margin: 1rem;
 }
 
+#content>#canvas-section {
+    display: flex;
+}
+
+#content>#canvas-section>pre {
+    padding: .5rem;
+    border: 1px solid #5a5a5a;
+    background-color: #dddfff;
+    overflow: scroll;
+    margin-left: 3rem;
+}
+
 #content>section>h1 {
     color: black;
     font-size: 1.2rem;
@@ -72,6 +84,10 @@ body {
     margin-right: .2rem;
 }
 
+canvas {
+    border: 1px solid black;
+}
+
 @keyframes button-recolor-on-hover {
     from {background-color:#cddc39}
     to {background-color:#4caf50}
@@ -79,6 +95,16 @@ body {
 
 @media only screen and (max-width:768px) {
     #content {
+        min-height: 33rem;
         padding: 7rem 2rem 12rem 2rem;
+    }
+
+    #content>#canvas-section {
+        display: block;
+    }
+
+    #content>#canvas-section>pre {
+        margin-top: 1rem;
+        margin-right: 0;
     }
 }

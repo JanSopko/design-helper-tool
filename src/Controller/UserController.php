@@ -4,15 +4,18 @@
 namespace App\Controller;
 
 
+use App\Entity\User;
 use App\Exception\ValidationException;
 use App\Repository\UserRepository;
 use App\Service\LogChecker;
+use App\Service\RequestDataGetter;
 use App\Service\Validator\RegistrationValidator;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class UserController extends AbstractController
@@ -24,7 +27,7 @@ class UserController extends AbstractController
     public function showSignForm(): Response
     {
         if (LogChecker::isLogged()) {
-           return $this->redirectToRoute("index");
+            return $this->redirectToRoute("index");
         }
         return $this->render("/user/sign.html.twig");
     }
@@ -46,19 +49,50 @@ class UserController extends AbstractController
      * @Route("/register", name="register", methods={"POST"})
      * @param Request $request
      * @param UserRepository $userRepository
+     * @param UserPasswordEncoderInterface $encoder
      * @return JsonResponse
      */
-    public function register(Request $request, UserRepository $userRepository): JsonResponse
-    {
+    public function register(
+        Request $request,
+        UserRepository $userRepository,
+        UserPasswordEncoderInterface $encoder
+    ): JsonResponse {
+        $content = RequestDataGetter::getRequestData($request);
         $registrationValidator = new RegistrationValidator($userRepository);
         try {
-            $registrationValidator->validate($request);
+            $registrationValidator->validate($content);
         } catch (ValidationException $exception) {
             return new JsonResponse($registrationValidator->getErrorMessages());
         }
 
         //@todo code to register
+        $this->processRegistration(
+            $content['username'],
+            $content['password'],
+            $content['email'],
+            $encoder
+        );
 
-        return new JsonResponse(['ok' => 1]);
+        return new JsonResponse(['success' => true]);
+    }
+
+    /**
+     * @param string $username
+     * @param string $password
+     * @param string $email
+     * @param UserPasswordEncoderInterface $encoder
+     */
+    private function processRegistration(
+        string $username,
+        string $password,
+        string $email,
+        UserPasswordEncoderInterface $encoder
+    ): void {
+        $newUser = new User();
+        $newUser->setUsername($username)
+                ->setPassword($encoder->encodePassword($newUser, $password));
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($newUser);
+        $em->flush();
     }
 }
