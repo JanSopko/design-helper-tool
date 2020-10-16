@@ -52,23 +52,22 @@ class UserController extends AbstractController
      * @return JsonResponse
      */
     public function register(
-        Request $request,
-        UserRepository $userRepository
+        Request $request
     ): JsonResponse {
-        $content = RequestDataGetter::getRequestData($request);
-        $registrationValidator = new RegistrationValidator($userRepository);
-        try {
-            $registrationValidator->validate($content);
-        } catch (ValidationException $exception) {
-            return new JsonResponse($registrationValidator->getErrorMessages());
-        }
-
-        //@todo code to register
-        $this->processRegistration(
-            $content['username'],
-            $content['password'],
-            $content['email']
-        );
+//        $content = RequestDataGetter::getRequestData($request);
+//        $registrationValidator = new RegistrationValidator($userRepository);
+//        try {
+//            $registrationValidator->validate($content);
+//        } catch (ValidationException $exception) {
+//            return new JsonResponse($registrationValidator->getErrorMessages());
+//        }
+//
+//        //@todo code to register
+//        $this->processRegistration(
+//            $content['username'],
+//            $content['password'],
+//            $content['email']
+//        );
 
         return new JsonResponse(['success' => true]);
     }
