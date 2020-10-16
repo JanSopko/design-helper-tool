@@ -33,7 +33,7 @@ class UserController extends AbstractController
     }
 
     /**
-     * @Route("/login", name="login", methods={"POST"})
+     * @Route("/logins", name="login", methods={"POST"})
      * @param Request $request
      * @param AuthenticationUtils $utils
      */
@@ -49,13 +49,11 @@ class UserController extends AbstractController
      * @Route("/register", name="register", methods={"POST"})
      * @param Request $request
      * @param UserRepository $userRepository
-     * @param UserPasswordEncoderInterface $encoder
      * @return JsonResponse
      */
     public function register(
         Request $request,
-        UserRepository $userRepository,
-        UserPasswordEncoderInterface $encoder
+        UserRepository $userRepository
     ): JsonResponse {
         $content = RequestDataGetter::getRequestData($request);
         $registrationValidator = new RegistrationValidator($userRepository);
@@ -69,8 +67,7 @@ class UserController extends AbstractController
         $this->processRegistration(
             $content['username'],
             $content['password'],
-            $content['email'],
-            $encoder
+            $content['email']
         );
 
         return new JsonResponse(['success' => true]);
@@ -80,17 +77,15 @@ class UserController extends AbstractController
      * @param string $username
      * @param string $password
      * @param string $email
-     * @param UserPasswordEncoderInterface $encoder
      */
     private function processRegistration(
         string $username,
         string $password,
-        string $email,
-        UserPasswordEncoderInterface $encoder
+        string $email
     ): void {
         $newUser = new User();
         $newUser->setUsername($username)
-                ->setPassword($encoder->encodePassword($newUser, $password));
+                ->setPassword( $password);
         $em = $this->getDoctrine()->getManager();
         $em->persist($newUser);
         $em->flush();
