@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import LogoutLink from "./LogoutLink";
 
 export default class Navigation extends React.Component{
 
@@ -44,14 +45,24 @@ export default class Navigation extends React.Component{
                 </div>
                 <ul id="menu-list">
                 {this.state.navItems.map(item => {
-                  return(
-                      <li key={item.id} onClick={() => window.location.href = item.link}>
-                          {item.link === '/' &&
-                          <img src="favicon.png" alt="logo" id="navbar-logo"/>
-                          }
-                          <a href={item.link}>{item.name}</a>
-                      </li>
-                  );
+
+                  if (item.id !== undefined) {
+                      return (
+                          <li key={item.id} onClick={() => window.location.href = item.link}>
+                              {item.link === '/' &&
+                              <img src="favicon.png" alt="logo" id="navbar-logo"/>
+                              }
+                              <a href={item.link}>{item.name}</a>
+                          </li>
+                      );
+                  } else if (item.logout !== undefined) {
+                      return (
+                          <li key={item.logout}>
+                            <LogoutLink path={item.path} text={item.logout}>
+                            </LogoutLink>
+                          </li>
+                      );
+                  }
                 })}
                 </ul>
             </div>

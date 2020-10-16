@@ -8,41 +8,51 @@ use App\Entity\User;
 use App\Exception\ValidationException;
 use App\Repository\UserRepository;
 use App\Service\LogChecker;
+use App\Service\PasswordManager;
 use App\Service\RequestDataGetter;
+use App\Service\Validator\LoginValidator;
 use App\Service\Validator\RegistrationValidator;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
-use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class UserController extends AbstractController
 {
     /**
      * @Route("/sign", name="signForm", methods={"GET"})
+     * @param Request $request
      * @return Response
      */
-    public function showSignForm(): Response
+    public function showSignForm(Request $request): Response
     {
-        if (LogChecker::isLogged()) {
+        if (LogChecker::isLogged($request)) {
             return $this->redirectToRoute("index");
         }
         return $this->render("/user/sign.html.twig");
     }
 
     /**
-     * @Route("/logins", name="login", methods={"POST"})
+     * @Route("/login", name="login", methods={"POST"})
      * @param Request $request
-     * @param AuthenticationUtils $utils
+     * @param UserRepository $userRepository
+     * @return JsonResponse
      */
-    public function login(Request $request, AuthenticationUtils $utils): JsonResponse
+    public function login(Request $request, UserRepository $userRepository): JsonResponse
     {
-        $error = $utils->getLastAuthenticationError();
-        $lastUsername = $utils->getLastUsername();
+        $content = RequestDataGetter::getRequestData($request);
+        $loginValidator = new LoginValidator($userRepository);
+        try {
+            $loginValidator->validate($content);
+        } catch (ValidationException $exception) {
+            return new JsonResponse($loginValidator->getErrorMessages());
+        }
+        $user = $loginValidator->getSuccessFullyLoggedUser();
+        $request->getSession()->set(LogChecker::LOGGED_USER_SESSION_KEY, $user);
 
-        return new JsonResponse(['path' => 'login']);
+        return new JsonResponse(['success' => true]);
     }
 
     /**
@@ -51,10 +61,8 @@ class UserController extends AbstractController
      * @param UserRepository $userRepository
      * @return JsonResponse
      */
-    public function register(
-        Request $request,
-        UserRepository $userRepository
-    ): JsonResponse {
+    public function register(Request $request, UserRepository $userRepository): JsonResponse
+    {
         $content = RequestDataGetter::getRequestData($request);
         $registrationValidator = new RegistrationValidator($userRepository);
         try {
@@ -63,14 +71,20 @@ class UserController extends AbstractController
             return new JsonResponse($registrationValidator->getErrorMessages());
         }
 
-        //@todo code to register
-        $this->processRegistration(
-            $content['username'],
-            $content['password'],
-            $content['email']
-        );
+        $this->processRegistration($content['username'], $content['password'], $content['email']);
 
         return new JsonResponse(['success' => true]);
+    }
+
+    /**
+     * @Route("/logout", name="logout", methods={"POST"})
+     * @param Request $request
+     * @return RedirectResponse
+     */
+    public function logout(Request $request): JsonResponse
+    {
+        $request->getSession()->remove(LogChecker::LOGGED_USER_SESSION_KEY);
+        return new JsonResponse(["success" => true]);
     }
 
     /**
@@ -85,7 +99,8 @@ class UserController extends AbstractController
     ): void {
         $newUser = new User();
         $newUser->setUsername($username)
-                ->setPassword( $password);
+                ->setEmail($email)
+                ->setPassword(PasswordManager::encodePassword($password));
         $em = $this->getDoctrine()->getManager();
         $em->persist($newUser);
         $em->flush();

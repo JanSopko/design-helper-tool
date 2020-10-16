@@ -6,8 +6,6 @@ namespace App\Service\Validator;
 
 use App\Exception\ValidationException;
 use App\Repository\UserRepository;
-use App\Service\RequestDataGetter;
-use Symfony\Component\HttpFoundation\Request;
 
 class RegistrationValidator extends Validator
 {
@@ -17,13 +15,11 @@ class RegistrationValidator extends Validator
     const PASSWORD_CONFIRM_KEY = 'passwordConfirm';
 
     const USERNAME_MIN_LENGTH = 4;
-    const USERNAME_MAX_LENGTH = 25;
+    const USERNAME_MAX_LENGTH = 30;
     const PASSWORD_MIN_LENGTH = 6;
     const PASSWORD_MAX_LENGTH = 256; //length in db
     const PASSWORD_REGEX = '/^(?:[0-9]+[a-z]|[a-z]+[0-9])[a-z0-9]*$/';
     const EMAIL_REGEX = '/^[\w\-\.]+@([\w\-]+\.)+[\w\-]{2,4}$/';
-
-    private UserRepository $userRepository;
 
     public function __construct(UserRepository $userRepository)
     {
@@ -41,7 +37,7 @@ class RegistrationValidator extends Validator
         $password = $content['password'] ?? '';
         $passwordConfirm = $content['password-confirm'] ?? '';
 
-        $this->validateUsername($username, $this->userRepository);
+        $this->validateUsername($username);
         $this->validateEmail($email);
         $this->validatePassword($password);
         $this->validatePasswordConfirm($password, $passwordConfirm);
@@ -54,7 +50,7 @@ class RegistrationValidator extends Validator
     /**
      * @param string $username
      */
-    private function validateUsername(string $username, UserRepository $userRepository): void
+    private function validateUsername(string $username): void
     {
         if (empty($username)) {
             $this->errorMessages[self::USERNAME_KEY] = 'Please enter username.';
@@ -62,7 +58,7 @@ class RegistrationValidator extends Validator
             $this->errorMessages[self::USERNAME_KEY] = 'Username must contain at least ' . self::USERNAME_MIN_LENGTH . ' characters.';
         } elseif (strlen($username) > self::USERNAME_MAX_LENGTH) {
             $this->errorMessages[self::USERNAME_KEY] = 'Username must not contain more than ' . self::USERNAME_MAX_LENGTH . ' characters.';
-        } elseif (!empty($userRepository->findBy(['username' => $username]))) {
+        } elseif (!empty($this->userRepository->findBy(['username' => $username]))) {
             $this->errorMessages[self::USERNAME_KEY] = 'Username is taken.';
         }
     }
@@ -74,6 +70,8 @@ class RegistrationValidator extends Validator
     {
         if (!preg_match(self::EMAIL_REGEX, $email)) {
             $this->errorMessages[self::EMAIL_KEY] = 'Please enter a valid email.';
+        } elseif (!empty($this->userRepository->findBy(['email' => $email]))) {
+            $this->errorMessages[self::EMAIL_KEY] = 'Email address is taken.';
         }
     }
 

@@ -26,5 +26,6 @@ parameters:
       - id: 4
         name: "Browse"
         link: "/browse"
-
+      - logout: "Logout"
+        path: "/logout"
 

@@ -23,19 +23,21 @@ const sendRegisterRequest = e => {
         }).then(res => {
             showWarnings(res.data);
             if (res.data.success !== undefined && res.data.success) {
-                //@todo redirect na login endpoint s rovnakymi datami
-                //@todo redirect na pozadovanu page, pravdepodobne homepage
-                alert('Registration complete! You can now login.');
+                alert('Registration complete!');
+                axios.post('/login', {
+                    "username": username,
+                    "password": password
+                });
                 window.location.replace('/');
             }
         });
 }
 
 const showWarnings = data => {
-    let usernameLabel = window.document.getElementById('username-label');
-    let passwordLabel = window.document.getElementById('password-label');
-    let passwordConfirmLabel = window.document.getElementById('password-confirm-label');
-    let emailLabel = window.document.getElementById('email-label');
+    const usernameLabel = window.document.getElementById('username-label');
+    const passwordLabel = window.document.getElementById('password-label');
+    const passwordConfirmLabel = window.document.getElementById('password-confirm-label');
+    const emailLabel = window.document.getElementById('email-label');
 
     if (data.username !== undefined) {
         usernameLabel.classList.add('warning');

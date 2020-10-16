@@ -2,7 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="23010fe4-d294-4d04-b7b2-5e67385fe2b8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/navbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/navbar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/react/components/Navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/react/components/Navigation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/react/components/sign/LoginForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/react/components/sign/LoginForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/react/components/sign/RegisterForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/react/components/sign/RegisterForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/nav_items.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/nav_items.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/create~homepage~sign.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/create~homepage~sign.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/navbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/navbar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/sign.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/sign.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/UIApiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/UIApiController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/LogChecker.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/LogChecker.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/Validator/LoginValidator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/Validator/LoginValidator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/Validator/RegistrationValidator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/Validator/RegistrationValidator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/Validator/Validator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/Validator/Validator.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,8 +34,8 @@
       <list>
         <option value="twig" />
         <option value="CSS File" />
-        <option value="JavaScript File" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -107,6 +123,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -156,6 +173,8 @@
       <workItem from="1602329750838" duration="12418000" />
       <workItem from="1602512087547" duration="5124000" />
       <workItem from="1602615245436" duration="6002000" />
+      <workItem from="1602834507280" duration="525000" />
+      <workItem from="1602840496650" duration="11799000" />
     </task>
     <servers />
   </component>
@@ -163,34 +182,42 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="240" y="65" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602843165919">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="240" y="65" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.800@0.0.1280.800" timestamp="1602843165919" />
     <state x="337" y="209" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1601020495915">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="337" y="209" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.800@0.0.1280.800" timestamp="1601020495915" />
-    <state x="439" y="89" key="#com.intellij.ide.util.MemberChooser" timestamp="1602655820824">
+    <state x="439" y="89" key="#com.intellij.ide.util.MemberChooser" timestamp="1602848745871">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="439" y="89" key="#com.intellij.ide.util.MemberChooser/0.0.1280.800@0.0.1280.800" timestamp="1602655820824" />
-    <state x="437" y="119" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1601058037004">
+    <state x="439" y="89" key="#com.intellij.ide.util.MemberChooser/0.0.1280.800@0.0.1280.800" timestamp="1602848745871" />
+    <state x="437" y="119" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1602844917329">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="437" y="119" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1280.800@0.0.1280.800" timestamp="1601058037004" />
+    <state x="437" y="119" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1280.800@0.0.1280.800" timestamp="1602844917329" />
     <state x="378" y="154" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1601052081166">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="378" y="154" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.800@0.0.1280.800" timestamp="1601052081166" />
-    <state x="281" y="133" key="NewPhpClassDialog" timestamp="1602655799323">
+    <state x="378" y="162" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1602845988861">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="281" y="133" key="NewPhpClassDialog/0.0.1280.800@0.0.1280.800" timestamp="1602655799323" />
+    <state x="378" y="162" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1280.800@0.0.1280.800" timestamp="1602845988861" />
+    <state x="281" y="133" key="NewPhpClassDialog" timestamp="1602842841651">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="281" y="133" key="NewPhpClassDialog/0.0.1280.800@0.0.1280.800" timestamp="1602842841651" />
     <state x="442" y="330" key="NewPhpFileDialog" timestamp="1602331155407">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="442" y="330" key="NewPhpFileDialog/0.0.1280.800@0.0.1280.800" timestamp="1602331155407" />
-    <state x="141" y="39" key="SettingsEditor" timestamp="1602529312556">
+    <state x="141" y="39" key="SettingsEditor" timestamp="1602845186808">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="141" y="39" key="SettingsEditor/0.0.1280.800@0.0.1280.800" timestamp="1602529312556" />
+    <state x="141" y="39" key="SettingsEditor/0.0.1280.800@0.0.1280.800" timestamp="1602845186808" />
     <state x="332" y="155" width="621" height="490" key="find.popup" timestamp="1602186786742">
       <screen x="0" y="0" width="1280" height="800" />
     </state>

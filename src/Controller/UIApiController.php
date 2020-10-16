@@ -6,6 +6,7 @@ namespace App\Controller;
 
 use App\Service\LogChecker;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
@@ -26,9 +27,9 @@ class UIApiController extends AbstractController
      * @Route("/ui-data/navbar", name="uiNavbar", methods={"GET"})
      * @return JsonResponse
      */
-    public function getNavbar(): JsonResponse
+    public function getNavbar(Request $request): JsonResponse
     {
-        $navbarParams = (LogChecker::isLogged()) ?
+        $navbarParams = (LogChecker::isLogged($request)) ?
             $this->parameterBag->get('nav_items')['logged'] : $this->parameterBag->get('nav_items')['non_logged'];
         return new JsonResponse($navbarParams);
     }
