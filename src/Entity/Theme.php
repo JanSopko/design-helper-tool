@@ -6,11 +6,12 @@ use App\Repository\ThemeRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use JsonSerializable;
 
 /**
  * @ORM\Entity(repositoryClass=ThemeRepository::class)
  */
-class Theme
+class Theme implements JsonSerializable
 {
     public const PRIVATE = 1;
     public const COMMUNITY_VISIBLE = 2;
@@ -38,16 +39,26 @@ class Theme
      */
     private $privacyLevel;
 
-    public function __construct()
-    {
-        $this->pages = new ArrayCollection();
-    }
+    /**
+     * @ORM\Column(type="string", nullable=true)
+     */
+    private $imgPath;
+
+    /**
+     * @ORM\Column(type="string", nullable=false)
+     */
+    private $name;
 
     /**
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="themes")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $user;
+    private User $user;
+
+    public function __construct()
+    {
+        $this->pages = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -115,19 +126,68 @@ class Theme
     }
 
     /**
-     * @return mixed
+     * @return User
      */
-    public function getUser()
+    public function getUser(): User
     {
         return $this->user;
     }
 
     /**
-     * @param mixed $user
+     * @param User $user
      */
-    public function setUser($user): self
+    public function setUser(User $user): self
     {
         $this->user = $user;
         return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getImgPath(): string
+    {
+        return $this->imgPath;
+    }
+
+    /**
+     * @param mixed $imgPath
+     */
+    public function setImgPath($imgPath): self
+    {
+        $this->imgPath = $imgPath;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param mixed $name
+     */
+    public function setName($name): self
+    {
+        $this->name = $name;
+        return $this;
+    }
+
+    /**
+     * @return array
+     */
+    public function jsonSerialize(): array
+    {
+        return [
+            'id' => $this->id,
+            'user_name' => $this->user->getUsername(),
+            'user_id' => $this->user->getId(),
+            'img_path' => $this->imgPath,
+            'name' => $this->name,
+            'pages_count' => count($this->pages)
+        ];
     }
 }

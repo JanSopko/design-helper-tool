@@ -18,12 +18,4 @@ class HomeController extends AbstractController
     {
         return $this->render('home/homepage.html.twig');
     }
-
-    /**
-     * @Route("/browse", name="browseTest", methods={"GET"})
-     */
-    public function browseTest(): JsonResponse
-    {
-        return new JsonResponse(['browse' => 'test']);
-    }
 }
