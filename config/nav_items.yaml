@@ -21,8 +21,8 @@ parameters:
         name: "Create"
         link: "/create"
       - id: 3
-        name: "My Collections"
-        link: "/my_collections"
+        name: "My Themes"
+        link: "/my_themes"
       - id: 4
         name: "Browse"
         link: "/browse"

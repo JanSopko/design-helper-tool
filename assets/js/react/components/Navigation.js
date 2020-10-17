@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import LogoutLink from "./LogoutLink";
+import { CustomAlert } from "./CustomAlert";
 
 export default class Navigation extends React.Component{
 
