@@ -41,6 +41,11 @@ class User implements UserInterface
     private $email;
 
     /**
+     * @ORM\OneToMany(targetEntity=Theme::class, mappedBy="user", orphanRemoval=true)
+     */
+    private $themes;
+
+    /**
      * @return string
      */
     public function getEmail(): string
@@ -129,5 +134,22 @@ class User implements UserInterface
     {
         // If you store any temporary, sensitive data on the user, clear it here
         // $this->plainPassword = null;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getThemes()
+    {
+        return $this->themes;
+    }
+
+    /**
+     * @param mixed $themes
+     */
+    public function setThemes($themes): self
+    {
+        $this->themes = $themes;
+        return $this;
     }
 }
