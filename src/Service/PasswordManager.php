@@ -6,7 +6,7 @@ namespace App\Service;
 
 class PasswordManager
 {
-    const PASSWORD_ENCODE_ALGO = PASSWORD_DEFAULT;
+    private const PASSWORD_ENCODE_ALGO = PASSWORD_DEFAULT;
     /**
      * @param string $password
      * @return string
