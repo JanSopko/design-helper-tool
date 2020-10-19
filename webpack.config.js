@@ -27,11 +27,13 @@ Encore
     .addEntry('homepage', './assets/js/react/pages/homepage.js')
     .addEntry('sign', './assets/js/react/pages/sign.js')
     .addEntry('create', './assets/js/react/pages/create.js')
+    .addEntry('browse', './assets/js/react/pages/browse.js')
     // -----style entries-----
     .addStyleEntry('appCss', './assets/css/app.css')
     .addStyleEntry('navbar', './assets/css/navbar.css')
     .addStyleEntry('homepage_wrapper', './assets/css/homepage-wrapper.css')
     .addStyleEntry('signpage_wrapper', './assets/css/signpage-wrapper.css')
+    .addStyleEntry('themes_wrapper', './assets/css/themes-wrapper.css')
     .addStyleEntry('footer', './assets/css/footer.css')
     //.addEntry('page1', './assets/js/page1.js')
     //.addEntry('page2', './assets/js/page2.js')

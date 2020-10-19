@@ -3,8 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="23010fe4-d294-4d04-b7b2-5e67385fe2b8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Theme.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Theme.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/navbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/navbar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/signpage-wrapper.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/signpage-wrapper.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/themes-wrapper.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/themes-wrapper.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/signpage_wrapper.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/signpage_wrapper.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,8 +21,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="twig" />
-        <option value="CSS File" />
         <option value="HTML File" />
+        <option value="CSS File" />
         <option value="JavaScript File" />
       </list>
     </option>

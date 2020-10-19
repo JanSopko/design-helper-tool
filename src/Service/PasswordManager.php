@@ -16,6 +16,11 @@ class PasswordManager
         return password_hash($password, self::PASSWORD_ENCODE_ALGO);
     }
 
+    /**
+     * @param string $password
+     * @param string $hashedPassword
+     * @return bool
+     */
     public static function isPasswordCorrect(string $password, string $hashedPassword): bool
     {
         return password_verify($password, $hashedPassword);

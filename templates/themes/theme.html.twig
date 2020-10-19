@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+    Browse Themes
+{% endblock %}
+{% block stylesheets %}
+{% endblock %}
+{% block body %}
+    <div id="root">
+    </div>
+{% endblock %}
+{% block javascripts %}
+    <script>
+        const layoutData = {
+            themeName: '{{ theme.name }}'
+        }
+    </script>
+{% endblock %}

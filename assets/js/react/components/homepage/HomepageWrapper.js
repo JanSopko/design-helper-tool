@@ -1,5 +1,6 @@
 import React from 'react';
 import Footer from "../Footer";
+import { CustomAlert } from "../CustomAlert";
 
 
 export default function HomepageWrapper() {

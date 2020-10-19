@@ -24,18 +24,26 @@ class ThemeController extends AbstractController
      */
     public function browseThemes(Request $request, ThemeRepository $themeRepository): Response
     {
-        return $this->getThemesData($request, $themeRepository);
+        return $this->render('browse/index.html.twig');
     }
 
     /**
      * @Route("/theme/{themeId}", name="theme", methods={"GET"})
      * @param Request $request
      * @param string $themeId
+     * @param ThemeRepository $themeRepository
      * @return Response
      */
-    public function showTheme(Request $request, string $themeId): Response
+    public function showTheme(Request $request, string $themeId, ThemeRepository $themeRepository): Response
     {
-
+        $theme = $themeRepository->find($themeId);
+        $user = $request->getSession()->get(LogChecker::LOGGED_USER_SESSION_KEY);
+        if($theme === null  || !$this->canUserSeeTheme($user, $theme)) {
+            throw $this->createNotFoundException();
+        }
+        return $this->render('themes/theme.html.twig', [
+            'theme' => $theme->jsonSerialize()
+        ]);
     }
 
     /**
@@ -68,5 +76,26 @@ class ThemeController extends AbstractController
     {
         $loggedUser = $request->getSession()->get(LogChecker::LOGGED_USER_SESSION_KEY);
         return $themeRepository->findBy(['privacyLevel' => Theme::PRIVATE, 'user' => $loggedUser]);
+    }
+
+    /**
+     * @param ?User $user
+     * @param Theme $theme
+     * @return bool
+     */
+    private function canUserSeeTheme(?User $user, Theme $theme): bool
+    {
+        if ($theme->getPrivacyLevel() === Theme::GLOBALLY_VISIBLE) {
+            return true;
+        }
+        if ($user instanceof User && $theme->getPrivacyLevel() === Theme::COMMUNITY_VISIBLE) {
+            return true;
+        }
+        if ($user instanceof User
+            && $theme->getPrivacyLevel() === Theme::PRIVATE
+            && $theme->getUser()->getId() === $user->getId()) {
+            return true;
+        }
+        return false;
     }
 }

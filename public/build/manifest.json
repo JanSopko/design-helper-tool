@@ -2,8 +2,9 @@
   "build/app.css": "/build/app.css",
   "build/app.js": "/build/app.js",
   "build/appCss.css": "/build/appCss.css",
+  "build/browse.js": "/build/browse.js",
+  "build/browse~create~homepage~sign.js": "/build/browse~create~homepage~sign.js",
   "build/create.js": "/build/create.js",
-  "build/create~homepage~sign.js": "/build/create~homepage~sign.js",
   "build/footer.css": "/build/footer.css",
   "build/homepage.js": "/build/homepage.js",
   "build/homepage_wrapper.css": "/build/homepage_wrapper.css",
@@ -11,7 +12,8 @@
   "build/runtime.js": "/build/runtime.js",
   "build/sign.js": "/build/sign.js",
   "build/signpage_wrapper.css": "/build/signpage_wrapper.css",
+  "build/themes_wrapper.css": "/build/themes_wrapper.css",
+  "build/vendors~browse~create~homepage~sign.js": "/build/vendors~browse~create~homepage~sign.js",
   "build/vendors~create.js": "/build/vendors~create.js",
-  "build/vendors~create~homepage~sign.js": "/build/vendors~create~homepage~sign.js",
   "build/vendors~sign.js": "/build/vendors~sign.js"
 }

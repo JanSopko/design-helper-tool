@@ -12,27 +12,35 @@
     "homepage": {
       "js": [
         "/build/runtime.js",
-        "/build/vendors~create~homepage~sign.js",
-        "/build/create~homepage~sign.js",
+        "/build/vendors~browse~create~homepage~sign.js",
+        "/build/browse~create~homepage~sign.js",
         "/build/homepage.js"
       ]
     },
     "sign": {
       "js": [
         "/build/runtime.js",
-        "/build/vendors~create~homepage~sign.js",
+        "/build/vendors~browse~create~homepage~sign.js",
         "/build/vendors~sign.js",
-        "/build/create~homepage~sign.js",
+        "/build/browse~create~homepage~sign.js",
         "/build/sign.js"
       ]
     },
     "create": {
       "js": [
         "/build/runtime.js",
-        "/build/vendors~create~homepage~sign.js",
+        "/build/vendors~browse~create~homepage~sign.js",
         "/build/vendors~create.js",
-        "/build/create~homepage~sign.js",
+        "/build/browse~create~homepage~sign.js",
         "/build/create.js"
+      ]
+    },
+    "browse": {
+      "js": [
+        "/build/runtime.js",
+        "/build/vendors~browse~create~homepage~sign.js",
+        "/build/browse~create~homepage~sign.js",
+        "/build/browse.js"
       ]
     },
     "appCss": {
@@ -65,6 +73,14 @@
       ],
       "css": [
         "/build/signpage_wrapper.css"
+      ]
+    },
+    "themes_wrapper": {
+      "js": [
+        "/build/runtime.js"
+      ],
+      "css": [
+        "/build/themes_wrapper.css"
       ]
     },
     "footer": {
