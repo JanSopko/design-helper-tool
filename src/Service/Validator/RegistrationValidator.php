@@ -9,17 +9,17 @@ use App\Repository\UserRepository;
 
 class RegistrationValidator extends Validator
 {
-    const USERNAME_KEY = 'username';
-    const EMAIL_KEY = 'email';
-    const PASSWORD_KEY = 'password';
-    const PASSWORD_CONFIRM_KEY = 'passwordConfirm';
+    private const USERNAME_KEY = 'username';
+    private const EMAIL_KEY = 'email';
+    private const PASSWORD_KEY = 'password';
+    private const PASSWORD_CONFIRM_KEY = 'passwordConfirm';
 
-    const USERNAME_MIN_LENGTH = 4;
-    const USERNAME_MAX_LENGTH = 30;
-    const PASSWORD_MIN_LENGTH = 6;
-    const PASSWORD_MAX_LENGTH = 256; //length in db
-    const PASSWORD_REGEX = '/^(?:[0-9]+[a-z]|[a-z]+[0-9])[a-z0-9]*$/';
-    const EMAIL_REGEX = '/^[\w\-\.]+@([\w\-]+\.)+[\w\-]{2,4}$/';
+    private const USERNAME_MIN_LENGTH = 4;
+    private const USERNAME_MAX_LENGTH = 30;
+    private const PASSWORD_MIN_LENGTH = 6;
+    private const PASSWORD_MAX_LENGTH = 256; //length in db
+    private const PASSWORD_REGEX = '/^(?:[0-9]+[a-z]|[a-z]+[0-9])[a-z0-9]*$/';
+    private const EMAIL_REGEX = '/^[\w\-\.]+@([\w\-]+\.)+[\w\-]{2,4}$/';
 
     public function __construct(UserRepository $userRepository)
     {
@@ -95,7 +95,7 @@ class RegistrationValidator extends Validator
      * @param string $password
      * @param string $passwordConfirm
      */
-    private function validatePasswordConfirm(string $password, string $passwordConfirm)
+    private function validatePasswordConfirm(string $password, string $passwordConfirm): void
     {
         if ($password !== $passwordConfirm && empty($this->errorMessages[self::PASSWORD_KEY])) {
             $this->errorMessages[self::PASSWORD_CONFIRM_KEY] = 'Passwords do not match.';

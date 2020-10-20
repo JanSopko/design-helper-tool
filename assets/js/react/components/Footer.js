@@ -4,9 +4,6 @@ export default class Footer extends React.Component{
     constructor(props) {
         super(props);
 
-        this.ulStyle = {
-            color: 'red'
-        }
     }
 
     render() {

@@ -11,8 +11,8 @@ use App\Service\PasswordManager;
 
 class LoginValidator extends Validator
 {
-    const CREDENTIALS_KEY = 'credentials';
-    const WRONG_CREDENTIALS_TEXT = 'Sorry, wrong credentials.';
+    private const CREDENTIALS_KEY = 'credentials';
+    private const WRONG_CREDENTIALS_TEXT = 'Sorry, wrong credentials.';
 
     private ?User $successFullyLoggedUser = null;
 
