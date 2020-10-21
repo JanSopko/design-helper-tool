@@ -1,4 +1,5 @@
 .theme-card {
+    display: inline-block;
     padding: 1rem;
     border: 0 solid white;
     border-radius: .5rem;
@@ -15,8 +16,23 @@
     box-shadow: 0 0 25px -8px rgba(0,0,0,0.4);
 }
 
+.theme-card:hover img {
+    transform: scale(1.05);
+}
+
 .theme-card>h1 {
     font-family: 'Ubuntu', sans-serif;
+}
+
+.theme-card img {
+    height: 200px;
+    width: 200px;
+    margin:auto;
+    transition: transform .2s ease;
+}
+
+.theme-card-img-wrapper {
+    overflow: hidden;
 }
 
 @keyframes card-darken-on-hover {

@@ -12,7 +12,7 @@ export const ThemeCard = ({themeId , name, imgPath, author}) => {
             <h1>{name}</h1>
             <div><small>By <a href={pathToTheme} onClick={themePath2 => redirect(themePath2)}>{author}</a></small></div>
             <hr/>
-            <div>
+            <div className="theme-card-img-wrapper">
                 <img src={imgPath} alt="theme detail"/>
             </div>
         </div>

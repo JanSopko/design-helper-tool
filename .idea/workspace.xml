@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="23010fe4-d294-4d04-b7b2-5e67385fe2b8" name="Default Changelist" comment="" />
+    <list default="true" id="23010fe4-d294-4d04-b7b2-5e67385fe2b8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/themes-wrapper.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/themes-wrapper.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/react/components/browse/ThemeCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/react/components/browse/ThemeCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/browse.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/browse.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/browse~create~homepage~sign.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/browse~create~homepage~sign.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/themes_wrapper.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/themes_wrapper.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -157,6 +165,9 @@
       <workItem from="1602615245436" duration="6002000" />
       <workItem from="1602834507280" duration="525000" />
       <workItem from="1602840496650" duration="15977000" />
+      <workItem from="1603220243652" duration="180000" />
+      <workItem from="1603261980619" duration="42000" />
+      <workItem from="1603265672326" duration="908000" />
     </task>
     <servers />
   </component>
