@@ -36,6 +36,8 @@ class ThemeController extends AbstractController
 
     /**
      * @Route("/my_themes", name="myThemes", methods={"GET"})
+     * @param Request $request
+     * @param ThemeRepository $themeRepository
      * @return Response
      */
     public function showMyThemes(Request $request, ThemeRepository $themeRepository): Response
