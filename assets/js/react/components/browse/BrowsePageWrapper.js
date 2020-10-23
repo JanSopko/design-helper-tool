@@ -18,7 +18,6 @@ export default function browsePageWrapper() {
 
     return(
         <div id="content">
-            <div className="search-bar"/>
             {themes.map(theme => {
                 return(
                     <ThemeCard

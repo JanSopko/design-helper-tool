@@ -40,13 +40,6 @@
     overflow: hidden;
 }
 
-.search-bar {
-    width: 30%;
-    height: 1.4rem;
-    padding: .2rem;
-    border: 1px solid #5a5a5a;
-}
-
 @keyframes card-darken-on-hover {
     from {color:inherit;box-shadow: 0 0 25px -10px rgba(0,0,0,0.3);}
     to {color:black;box-shadow: 0 0 25px -8px rgba(0,0,0,0.4);}
