@@ -18,21 +18,33 @@
 
 .theme-card:hover img {
     transform: scale(1.05);
+    filter: grayscale(0%);
 }
 
 .theme-card>h1 {
     font-family: 'Ubuntu', sans-serif;
+    font-size: 1.2rem;
 }
 
 .theme-card img {
     height: 200px;
     width: 200px;
     margin:auto;
+    filter: grayscale(7%);
     transition: transform .2s ease;
 }
 
 .theme-card-img-wrapper {
+    height: 200px;
+    width: 200px;
     overflow: hidden;
+}
+
+.search-bar {
+    width: 30%;
+    height: 1.4rem;
+    padding: .2rem;
+    border: 1px solid #5a5a5a;
 }
 
 @keyframes card-darken-on-hover {

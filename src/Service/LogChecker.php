@@ -4,7 +4,10 @@
 namespace App\Service;
 
 
+use App\Entity\User;
+use App\Repository\UserRepository;
 use Symfony\Component\HttpFoundation\Request;
+use function mysql_xdevapi\getSession;
 
 class LogChecker
 {
@@ -17,5 +20,19 @@ class LogChecker
     public static function isLogged(Request $request): bool
     {
         return $request->getSession()->has(self::LOGGED_USER_SESSION_KEY);
+    }
+
+    /**
+     * @param Request $request
+     * @param UserRepository $userRepository
+     * @return User|null
+     */
+    public static function getLoggedUser(Request $request, UserRepository $userRepository): ?User
+    {
+        $user = $request->getSession()->get(self::LOGGED_USER_SESSION_KEY);
+        if (!($user instanceof User)) {
+            return null;
+        }
+        return $userRepository->find($user->getId());
     }
 }

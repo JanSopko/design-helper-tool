@@ -5,9 +5,6 @@ export default class Canvas extends React.Component {
         super(props);
     }
 
-    componentDidMount() {
-
-    }
 
     handleClick(e) {
         console.log(e.clientX);

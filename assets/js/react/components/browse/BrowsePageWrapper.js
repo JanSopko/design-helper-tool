@@ -18,10 +18,15 @@ export default function browsePageWrapper() {
 
     return(
         <div id="content">
+            <div className="search-bar"/>
             {themes.map(theme => {
                 return(
-                    <ThemeCard themeId={theme.id} author={theme.user_name} name={theme.name} imgPath={theme.img_path}>
-                    </ThemeCard>
+                    <ThemeCard
+                        themeId={theme.id}
+                        author={theme.user_name}
+                        name={theme.name}
+                        imgPath={theme.img_path}
+                    />
                 );
             })}
             <Footer>

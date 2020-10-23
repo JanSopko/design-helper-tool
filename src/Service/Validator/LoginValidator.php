@@ -13,6 +13,7 @@ class LoginValidator extends Validator
 {
     private const CREDENTIALS_KEY = 'credentials';
     private const WRONG_CREDENTIALS_TEXT = 'Sorry, wrong credentials.';
+    private const VALIDATION_FAILED_MESSAGE = 'Login validation failed.';
 
     private ?User $successFullyLoggedUser = null;
 
@@ -41,16 +42,25 @@ class LoginValidator extends Validator
 
     /**
      * @param string $username
-     * @return User
+     * @return User|null
      * @throws ValidationException
      */
-    private function validateUsernameAndGetUser(string $username): User
+    private function validateUsernameAndGetUser(string $username): ?User
     {
         $user = $this->userRepository->findOneBy(['username' => $username]);
         if ($user === null) {
             $this->throwWrongCredentials();
         }
         return $user;
+    }
+
+    /**
+     * @throws ValidationException
+     */
+    private function throwWrongCredentials(): void
+    {
+        $this->errorMessages[self::CREDENTIALS_KEY] = self::WRONG_CREDENTIALS_TEXT;
+        throw new ValidationException(self::VALIDATION_FAILED_MESSAGE);
     }
 
     /**
@@ -71,15 +81,6 @@ class LoginValidator extends Validator
     public function getErrorMessages(): array
     {
         return $this->errorMessages;
-    }
-
-    /**
-     * @throws ValidationException
-     */
-    private function throwWrongCredentials(): void
-    {
-        $this->errorMessages[self::CREDENTIALS_KEY] = self::WRONG_CREDENTIALS_TEXT;
-        throw new ValidationException(self::CREDENTIALS_KEY);
     }
 
     /**

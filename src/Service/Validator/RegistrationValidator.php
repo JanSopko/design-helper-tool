@@ -43,7 +43,7 @@ class RegistrationValidator extends Validator
         $this->validatePasswordConfirm($password, $passwordConfirm);
 
         if (!empty($this->errorMessages)) {
-            throw new ValidationException();
+            throw new ValidationException('Registration validation failed.');
         }
     }
 

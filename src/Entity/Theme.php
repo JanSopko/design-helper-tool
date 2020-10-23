@@ -17,6 +17,12 @@ class Theme implements JsonSerializable
     public const COMMUNITY_VISIBLE = 2;
     public const GLOBALLY_VISIBLE = 3;
 
+    public const ALLOWED_PRIVACY_LEVEL_VALUES = [
+        self::PRIVATE,
+        self::COMMUNITY_VISIBLE,
+        self::GLOBALLY_VISIBLE
+    ];
+
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
@@ -50,7 +56,7 @@ class Theme implements JsonSerializable
     private $name;
 
     /**
-     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="themes")
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="themes", cascade={"persist"})
      * @ORM\JoinColumn(nullable=false)
      */
     private User $user;
@@ -183,10 +189,10 @@ class Theme implements JsonSerializable
     {
         return [
             'id' => $this->id,
+            'name' => $this->name,
             'user_name' => $this->user->getUsername(),
             'user_id' => $this->user->getId(),
             'img_path' => $this->imgPath,
-            'name' => $this->name,
             'pages_count' => count($this->pages)
         ];
     }

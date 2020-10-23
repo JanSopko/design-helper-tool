@@ -14,6 +14,12 @@ class RequestDataGetter
      */
     public static function getRequestData(Request $request): array
     {
-        return json_decode($request->getContent(), true);
+        switch ($request->getMethod()) {
+            case "POST":
+                return json_decode($request->getContent(), true) ?? [];
+            case "GET":
+            default:
+                return $request->query->all();
+        }
     }
 }
