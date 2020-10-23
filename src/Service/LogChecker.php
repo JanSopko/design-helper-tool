@@ -7,7 +7,6 @@ namespace App\Service;
 use App\Entity\User;
 use App\Repository\UserRepository;
 use Symfony\Component\HttpFoundation\Request;
-use function mysql_xdevapi\getSession;
 
 class LogChecker
 {

@@ -12,35 +12,43 @@
     "homepage": {
       "js": [
         "/build/runtime.js",
-        "/build/vendors~browse~create~homepage~sign.js",
-        "/build/browse~create~homepage~sign.js",
+        "/build/vendors~browse~create~homepage~myThemes~sign.js",
+        "/build/browse~create~homepage~myThemes~sign.js",
         "/build/homepage.js"
       ]
     },
     "sign": {
       "js": [
         "/build/runtime.js",
-        "/build/vendors~browse~create~homepage~sign.js",
+        "/build/vendors~browse~create~homepage~myThemes~sign.js",
         "/build/vendors~sign.js",
-        "/build/browse~create~homepage~sign.js",
+        "/build/browse~create~homepage~myThemes~sign.js",
         "/build/sign.js"
       ]
     },
     "create": {
       "js": [
         "/build/runtime.js",
-        "/build/vendors~browse~create~homepage~sign.js",
+        "/build/vendors~browse~create~homepage~myThemes~sign.js",
         "/build/vendors~create.js",
-        "/build/browse~create~homepage~sign.js",
+        "/build/browse~create~homepage~myThemes~sign.js",
         "/build/create.js"
       ]
     },
     "browse": {
       "js": [
         "/build/runtime.js",
-        "/build/vendors~browse~create~homepage~sign.js",
-        "/build/browse~create~homepage~sign.js",
+        "/build/vendors~browse~create~homepage~myThemes~sign.js",
+        "/build/browse~create~homepage~myThemes~sign.js",
         "/build/browse.js"
+      ]
+    },
+    "myThemes": {
+      "js": [
+        "/build/runtime.js",
+        "/build/vendors~browse~create~homepage~myThemes~sign.js",
+        "/build/browse~create~homepage~myThemes~sign.js",
+        "/build/myThemes.js"
       ]
     },
     "appCss": {

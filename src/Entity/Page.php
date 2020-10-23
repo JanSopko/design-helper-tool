@@ -22,7 +22,7 @@ class Page
     /**
      * @ORM\ManyToMany(targetEntity=Element::class, inversedBy="pages")
      */
-    private $Elements;
+    private $elements;
 
     /**
      * @ORM\ManyToOne(targetEntity=Theme::class, inversedBy="pages")
@@ -32,7 +32,7 @@ class Page
 
     public function __construct()
     {
-        $this->Elements = new ArrayCollection();
+        $this->elements = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -45,13 +45,13 @@ class Page
      */
     public function getElements(): Collection
     {
-        return $this->Elements;
+        return $this->elements;
     }
 
     public function addElement(Element $element): self
     {
-        if (!$this->Elements->contains($element)) {
-            $this->Elements[] = $element;
+        if (!$this->elements->contains($element)) {
+            $this->elements[] = $element;
         }
 
         return $this;
@@ -59,8 +59,8 @@ class Page
 
     public function removeElement(Element $element): self
     {
-        if ($this->Elements->contains($element)) {
-            $this->Elements->removeElement($element);
+        if ($this->elements->contains($element)) {
+            $this->elements->removeElement($element);
         }
 
         return $this;

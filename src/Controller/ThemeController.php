@@ -38,22 +38,27 @@ class ThemeController extends AbstractController
      * @Route("/my_themes", name="myThemes", methods={"GET"})
      * @param Request $request
      * @param ThemeRepository $themeRepository
+     * @param UserRepository $userRepository
      * @return Response
      */
-    public function showMyThemes(Request $request, ThemeRepository $themeRepository): Response
-    {
-        return new JsonResponse($this->getMyPrivateThemes($request, $themeRepository));
+    public function showMyThemes(
+        Request $request,
+        ThemeRepository $themeRepository,
+        UserRepository $userRepository
+    ): Response {
+        $myThemes = $this->getMyAllThemes($request, $themeRepository, $userRepository);
+        return $this->render('myThemes/my_themes.html.twig', [
+            'my_themes' => json_encode($myThemes)
+        ]);
     }
 
-    /**
-     * @param Request $request
-     * @param ThemeRepository $themeRepository
-     * @return array
-     */
-    private function getMyPrivateThemes(Request $request, ThemeRepository $themeRepository): array
-    {
-        $loggedUser = $request->getSession()->get(LogChecker::LOGGED_USER_SESSION_KEY);
-        return $themeRepository->findBy(['privacyLevel' => Theme::PRIVATE, 'user' => $loggedUser]);
+    private function getMyAllThemes(
+        Request $request,
+        ThemeRepository $themeRepository,
+        UserRepository $userRepository
+    ): array {
+        $user = LogChecker::getLoggedUser($request, $userRepository);
+        return $themeRepository->findBy(['user' => $user]);
     }
 
     /**
@@ -100,10 +105,14 @@ class ThemeController extends AbstractController
      * @Route("/data/themes", name="themesData", methods={"GET"})
      * @param Request $request
      * @param ThemeRepository $themeRepository
+     * @param UserRepository $userRepository
      * @return JsonResponse
      */
-    public function getThemesData(Request $request, ThemeRepository $themeRepository): JsonResponse
-    {
+    public function getThemesData(
+        Request $request,
+        ThemeRepository $themeRepository,
+        UserRepository $userRepository
+    ): JsonResponse {
         $user = $request->getSession()->get(LogChecker::LOGGED_USER_SESSION_KEY);
         $themes = $themeRepository->findBy(['privacyLevel' => Theme::GLOBALLY_VISIBLE]);
         if ($user instanceof User) {
@@ -111,10 +120,25 @@ class ThemeController extends AbstractController
                 $themes,
                 $themeRepository->findBy(['privacyLevel' => Theme::COMMUNITY_VISIBLE])
             );
-            $themes = array_merge($themes, $this->getMyPrivateThemes($request, $themeRepository));
+            $themes = array_merge($themes, $this->getMyPrivateThemes($request, $themeRepository, $userRepository));
         }
 
         return new JsonResponse($themes);
+    }
+
+    /**
+     * @param Request $request
+     * @param ThemeRepository $themeRepository
+     * @param UserRepository $userRepository
+     * @return array
+     */
+    private function getMyPrivateThemes(
+        Request $request,
+        ThemeRepository $themeRepository,
+        UserRepository $userRepository
+    ): array {
+        $loggedUser = LogChecker::getLoggedUser($request, $userRepository);
+        return $themeRepository->findBy(['privacyLevel' => Theme::PRIVATE, 'user' => $loggedUser]);
     }
 
     /**

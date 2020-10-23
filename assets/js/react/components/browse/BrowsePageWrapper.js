@@ -22,6 +22,7 @@ export default function browsePageWrapper() {
             {themes.map(theme => {
                 return(
                     <ThemeCard
+                        key={theme.id}
                         themeId={theme.id}
                         author={theme.user_name}
                         name={theme.name}

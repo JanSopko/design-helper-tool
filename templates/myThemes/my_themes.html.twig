@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+    My Themes
+{% endblock %}
+{% block stylesheets %}
+    {{ encore_entry_link_tags('navbar') }}
+    {{ encore_entry_link_tags('themes_wrapper') }}
+{% endblock %}
+{% block body %}
+    <div id="root">
+    </div>
+{% endblock %}
+{% block javascripts %}
+    <script>
+        const layoutData = {
+            themes: JSON.parse('{{ my_themes|raw }}')
+        };
+        console.log(layoutData.themes);
+    </script>
+    {{ encore_entry_script_tags('myThemes') }}
+{% endblock %}
+

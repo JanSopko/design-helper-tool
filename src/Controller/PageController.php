@@ -4,12 +4,25 @@
 namespace App\Controller;
 
 
+use App\Entity\Page;
+use App\Entity\Theme;
+use App\Entity\User;
+use App\Exception\ValidationException;
+use App\Repository\ThemeRepository;
+use App\Repository\UserRepository;
+use App\Service\LogChecker;
+use App\Service\RequestDataGetter;
+use App\Service\Validator\PageValidator;
+use Doctrine\Persistence\ObjectManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class PageController extends AbstractController
 {
+    private ?ObjectManager $entityManager = null;
 
     /**
      * @Route("/testing_response")
@@ -24,9 +37,58 @@ class PageController extends AbstractController
         return new Response($res);
     }
 
-    public function createPage()
-    {
+    /**
+     * @Route("/create/page", name="createPage", methods={"POST"})
+     * @param Request $request
+     * @param UserRepository $userRepository
+     * @param ThemeRepository $themeRepository
+     * @return JsonResponse
+     */
+    public function createPage(
+        Request $request,
+        UserRepository $userRepository,
+        ThemeRepository $themeRepository
+    ): JsonResponse {
+        $user = LogChecker::getLoggedUser($request, $userRepository);
+        if (!$user instanceof User) {
+            return new JsonResponse(['success' => false, 'message' => 'You must be logged in to create pages.'],
+                Response::HTTP_PRECONDITION_REQUIRED);
+        }
 
+        $requestContent = RequestDataGetter::getRequestData($request);
+        $pageValidator = new PageValidator();
+        try {
+            $pageValidator->validate($requestContent);
+        } catch (ValidationException $exception) {
+            return new JsonResponse($pageValidator->getErrorMessages(), Response::HTTP_PRECONDITION_FAILED);
+        }
+        $theme = $themeRepository->find($requestContent['themeId']);
+        if (!$theme instanceof Theme) {
+            return new JsonResponse(['success' => false, 'message' => 'Theme not found.'],
+                Response::HTTP_PRECONDITION_FAILED);
+        }
+        if ($theme->getUser()->getId() !== $user->getId()) {
+            return new JsonResponse(['success' => false, 'message' => 'Permission denied.']);
+        }
+
+        $page = new Page();
+        $page->setTheme($theme);
+        $em = $this->getEntityManager();
+        $em->persist($page);
+        $em->flush();
+
+        return new JsonResponse(['success' => 'true']);
+    }
+
+    /**
+     * @return ObjectManager
+     */
+    private function getEntityManager(): ObjectManager
+    {
+        if ($this->entityManager === null) {
+            $this->entityManager = $this->getDoctrine()->getManager();
+        }
+        return $this->entityManager;
     }
 
     public function readPage()
@@ -43,5 +105,4 @@ class PageController extends AbstractController
     {
 
     }
-
 }

@@ -28,6 +28,7 @@ Encore
     .addEntry('sign', './assets/js/react/pages/sign.js')
     .addEntry('create', './assets/js/react/pages/create.js')
     .addEntry('browse', './assets/js/react/pages/browse.js')
+    .addEntry('myThemes', './assets/js/react/pages/myThemes.js')
     // -----style entries-----
     .addStyleEntry('appCss', './assets/css/app.css')
     .addStyleEntry('navbar', './assets/css/navbar.css')

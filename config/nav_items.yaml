@@ -8,9 +8,6 @@ parameters:
         name: "Sign in/up"
         link: "/sign"
       - id: 3
-        name: "Create"
-        link: "/create"
-      - id: 4
         name: "Browse"
         link: "/browse"
     logged:
