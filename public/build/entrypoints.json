@@ -30,7 +30,6 @@
       "js": [
         "/build/runtime.js",
         "/build/vendors~browse~create~homepage~myThemes~sign.js",
-        "/build/vendors~create.js",
         "/build/browse~create~homepage~myThemes~sign.js",
         "/build/create.js"
       ]

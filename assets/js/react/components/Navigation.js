@@ -10,7 +10,8 @@ export default class Navigation extends React.Component{
 
         this.navbarDataUrl = '/ui-data/navbar';
         this.state = {
-            navItems: []
+            navItems: [],
+            active: false
         }
     }
 
@@ -28,21 +29,29 @@ export default class Navigation extends React.Component{
             {
                 e.preventDefault();
                 document.getElementById("menu-list").classList.remove("active");
+                document.getElementById("bar1").classList.remove('rotate1');
+                document.getElementById("bar3").classList.remove('rotate2');
             }
         });
     }
 
     toggleMenu() {
         document.getElementById("menu-list").classList.toggle('active');
+        document.getElementById("bar1").classList.toggle('rotate1');
+        document.getElementById("bar3").classList.toggle('rotate2');
+        const newState = !this.state.active;
+        this.setState({
+            active: newState
+        });
     }
 
     render() {
         return(
             <div id="navbar">
                 <div className="hamburger" id="menu-hamburger" onClick={this.toggleMenu}>
-                    <span className="hamburger-bar"></span>
-                    <span className="hamburger-bar"></span>
-                    <span className="hamburger-bar"></span>
+                    <span className="hamburger-bar" id="bar1"></span>
+                    <span className="hamburger-bar" id="bar2"></span>
+                    <span className="hamburger-bar" id="bar3"></span>
                 </div>
                 <ul id="menu-list">
                 {this.state.navItems.map(item => {

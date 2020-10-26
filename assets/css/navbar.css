@@ -78,6 +78,16 @@
         height: 4px;
         width: 75%;
         border-radius: 2px;
+        transition: transform .3s ease;
+    }
+
+    .rotate1 {
+        transform: rotate(45deg);
+        margin-bottom: -5rem;
+    }
+
+    .rotate2 {
+        transform: rotate(135deg);
     }
 
     .active {
