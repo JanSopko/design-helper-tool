@@ -22,7 +22,6 @@ body {
 #content>section {
     background-color: white;
     padding: 1rem;
-    /*border: 1px solid #d0d0d0;*/
     border: 1px solid white;
     border-radius: .3rem;
     font-size: .9rem;

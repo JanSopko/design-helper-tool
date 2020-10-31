@@ -40,7 +40,7 @@ export default function LoginForm() {
         <div className="form-div">
             <form action={layoutData.loginPath} id="sign-form" method="post">
                 <div className="form-grouping">
-                    <label htmlFor="username-input" id="username-label">Username</label>
+                    <label htmlFor="username-input" id="username-label">{LABEL_TEXT_USERNAME}</label>
                     <input type="text" name="username" id="username-input"/>
                 </div>
                 <PasswordInput id="password-input" name="password" labelText="Password" labelId="password-label">

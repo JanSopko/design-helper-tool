@@ -5,11 +5,12 @@
 {% block stylesheets %}
     {{ encore_entry_link_tags('navbar') }}
     {{ encore_entry_link_tags('create_wrapper') }}
+    {{ encore_entry_link_tags('create_index_wrapper') }}
 {% endblock %}
 {% block body %}
     <div id="root">
     </div>
 {% endblock %}
 {% block javascripts %}
-    {{ encore_entry_script_tags('create') }}
+    {{ encore_entry_script_tags('createIndex') }}
 {% endblock %}

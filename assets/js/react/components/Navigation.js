@@ -10,8 +10,7 @@ export default class Navigation extends React.Component{
 
         this.navbarDataUrl = '/ui-data/navbar';
         this.state = {
-            navItems: [],
-            active: false
+            navItems: []
         }
     }
 
@@ -39,10 +38,6 @@ export default class Navigation extends React.Component{
         document.getElementById("menu-list").classList.toggle('active');
         document.getElementById("bar1").classList.toggle('rotate1');
         document.getElementById("bar3").classList.toggle('rotate2');
-        const newState = !this.state.active;
-        this.setState({
-            active: newState
-        });
     }
 
     render() {
@@ -59,9 +54,9 @@ export default class Navigation extends React.Component{
                   if (item.id !== undefined) {
                       return (
                           <li key={item.id} onClick={() => window.location.href = item.link}>
-                              {item.link === '/' &&
-                              <img src="favicon.png" alt="logo" id="navbar-logo"/>
-                              }
+                              {/*{item.link === '/' &&*/}
+                              {/*<img src="favicon.png" alt="logo" id="navbar-logo"/>*/}
+                              {/*}*/}
                               <a href={item.link}>{item.name}</a>
                           </li>
                       );

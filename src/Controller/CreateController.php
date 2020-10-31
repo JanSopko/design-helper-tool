@@ -13,6 +13,19 @@ use Symfony\Component\Routing\Annotation\Route;
 class CreateController extends AbstractController
 {
     /**
+     * @Route("/create-page")
+     * @param Request $request
+     * @return Response
+     */
+    public function createPage(Request $request): Response
+    {
+        if (!LogChecker::isLogged($request)) {
+            return $this->redirectToRoute('signForm');
+        }
+        return $this->render('create/create.html.twig');
+    }
+
+    /**
      * @Route("/create")
      * @param Request $request
      * @return Response
@@ -22,6 +35,6 @@ class CreateController extends AbstractController
         if (!LogChecker::isLogged($request)) {
             return $this->redirectToRoute('signForm');
         }
-        return $this->render('create/create.html.twig');
+        return $this->render('create/index.html.twig');
     }
 }

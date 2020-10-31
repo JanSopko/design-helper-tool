@@ -2,17 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="23010fe4-d294-4d04-b7b2-5e67385fe2b8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/css/navbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/navbar.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/react/components/Navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/react/components/Navigation.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/react/components/create/CreatePageWrapper.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/react/components/create/CreatePageWrapper.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/react/containers/createPageContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/react/containers/createPageContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/browse~create~homepage~myThemes~sign.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/browse~create~homepage~myThemes~sign.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/react/components/sign/LoginForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/react/components/sign/LoginForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/appCss.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/appCss.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/browse.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/browse.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/browse~create~homepage~myThemes~sign.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/public/build/create.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/create.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/build/entrypoints.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/entrypoints.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/homepage.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/homepage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/build/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/myThemes.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/myThemes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/build/navbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/navbar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/vendors~create.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/sign.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/sign.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/vendors~browse~create~homepage~myThemes~sign.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/CreateController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CreateController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/create/create.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/create/create.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,10 +37,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="HTML File" />
         <option value="twig" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -138,17 +149,18 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/public/img" />
-      <recent name="$PROJECT_DIR$/assets/js/react/components" />
-      <recent name="$PROJECT_DIR$/assets/js/react/pages" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/config/packages" />
       <recent name="$PROJECT_DIR$/config/packages/prod" />
       <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/public/img" />
       <recent name="$PROJECT_DIR$/templates" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets/js/react/components/create/cards" />
+      <recent name="$PROJECT_DIR$/public/img" />
+      <recent name="$PROJECT_DIR$/assets/js/react/components" />
+      <recent name="$PROJECT_DIR$/assets/js/react/pages" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -173,7 +185,13 @@
       <workItem from="1603261980619" duration="42000" />
       <workItem from="1603265672326" duration="1115000" />
       <workItem from="1603345926052" duration="901000" />
-      <workItem from="1603398436062" duration="22561000" />
+      <workItem from="1603398436062" duration="30573000" />
+      <workItem from="1603795816228" duration="327000" />
+      <workItem from="1603833969309" duration="1070000" />
+      <workItem from="1603871171792" duration="173000" />
+      <workItem from="1604039881914" duration="724000" />
+      <workItem from="1604041998695" duration="384000" />
+      <workItem from="1604045889189" duration="12623000" />
     </task>
     <servers />
   </component>

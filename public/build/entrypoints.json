@@ -12,41 +12,50 @@
     "homepage": {
       "js": [
         "/build/runtime.js",
-        "/build/vendors~browse~create~homepage~myThemes~sign.js",
-        "/build/browse~create~homepage~myThemes~sign.js",
+        "/build/vendors~browse~create~createIndex~homepage~myThemes~sign.js",
+        "/build/browse~create~createIndex~homepage~myThemes~sign.js",
         "/build/homepage.js"
       ]
     },
     "sign": {
       "js": [
         "/build/runtime.js",
-        "/build/vendors~browse~create~homepage~myThemes~sign.js",
+        "/build/vendors~browse~create~createIndex~homepage~myThemes~sign.js",
         "/build/vendors~sign.js",
-        "/build/browse~create~homepage~myThemes~sign.js",
+        "/build/browse~create~createIndex~homepage~myThemes~sign.js",
         "/build/sign.js"
       ]
     },
     "create": {
       "js": [
         "/build/runtime.js",
-        "/build/vendors~browse~create~homepage~myThemes~sign.js",
-        "/build/browse~create~homepage~myThemes~sign.js",
+        "/build/vendors~browse~create~createIndex~homepage~myThemes~sign.js",
+        "/build/vendors~create.js",
+        "/build/browse~create~createIndex~homepage~myThemes~sign.js",
         "/build/create.js"
+      ]
+    },
+    "createIndex": {
+      "js": [
+        "/build/runtime.js",
+        "/build/vendors~browse~create~createIndex~homepage~myThemes~sign.js",
+        "/build/browse~create~createIndex~homepage~myThemes~sign.js",
+        "/build/createIndex.js"
       ]
     },
     "browse": {
       "js": [
         "/build/runtime.js",
-        "/build/vendors~browse~create~homepage~myThemes~sign.js",
-        "/build/browse~create~homepage~myThemes~sign.js",
+        "/build/vendors~browse~create~createIndex~homepage~myThemes~sign.js",
+        "/build/browse~create~createIndex~homepage~myThemes~sign.js",
         "/build/browse.js"
       ]
     },
     "myThemes": {
       "js": [
         "/build/runtime.js",
-        "/build/vendors~browse~create~homepage~myThemes~sign.js",
-        "/build/browse~create~homepage~myThemes~sign.js",
+        "/build/vendors~browse~create~createIndex~homepage~myThemes~sign.js",
+        "/build/browse~create~createIndex~homepage~myThemes~sign.js",
         "/build/myThemes.js"
       ]
     },
@@ -96,6 +105,22 @@
       ],
       "css": [
         "/build/footer.css"
+      ]
+    },
+    "create_wrapper": {
+      "js": [
+        "/build/runtime.js"
+      ],
+      "css": [
+        "/build/create_wrapper.css"
+      ]
+    },
+    "create_index_wrapper": {
+      "js": [
+        "/build/runtime.js"
+      ],
+      "css": [
+        "/build/create_index_wrapper.css"
       ]
     }
   }

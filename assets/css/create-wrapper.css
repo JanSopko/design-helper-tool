@@ -1,0 +1,41 @@
+#creation-desk {
+    width: calc(100% - 4rem);
+    height: 30rem;
+    background-color: white;
+    margin-left: 6rem;
+    position: relative;
+}
+
+#create-menu {
+    position: absolute;
+    left: 0;
+    width: 10rem;
+    min-height: 10rem;
+    background-color: #5a5a5a;
+    border: 1px solid #313131;
+    display: flex;
+    flex-flow: column wrap;
+    z-index: 2;
+}
+
+.menu-option {
+    color: #cacaca;
+    border: 1px solid #313131;
+    width: calc(100% - 2px);
+    min-height: 2.5rem;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: 'Ubuntu', sans-serif;
+    transition: height 5s ease;
+}
+
+#side-bar-choice {
+    transition: height 5s ease;
+}
+
+.invis {
+  display: none;
+  height: 0;
+}

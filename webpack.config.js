@@ -27,6 +27,7 @@ Encore
     .addEntry('homepage', './assets/js/react/pages/homepage.js')
     .addEntry('sign', './assets/js/react/pages/sign.js')
     .addEntry('create', './assets/js/react/pages/create.js')
+    .addEntry('createIndex', './assets/js/react/pages/createIndex.js')
     .addEntry('browse', './assets/js/react/pages/browse.js')
     .addEntry('myThemes', './assets/js/react/pages/myThemes.js')
     // -----style entries-----
@@ -36,6 +37,8 @@ Encore
     .addStyleEntry('signpage_wrapper', './assets/css/signpage-wrapper.css')
     .addStyleEntry('themes_wrapper', './assets/css/themes-wrapper.css')
     .addStyleEntry('footer', './assets/css/footer.css')
+    .addStyleEntry('create_wrapper', './assets/css/create-wrapper.css')
+    .addStyleEntry('create_index_wrapper', './assets/css/create-index-wrapper.css')
     //.addEntry('page1', './assets/js/page1.js')
     //.addEntry('page2', './assets/js/page2.js')
 
