@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="23010fe4-d294-4d04-b7b2-5e67385fe2b8" name="Default Changelist" comment="" />
+    <list default="true" id="23010fe4-d294-4d04-b7b2-5e67385fe2b8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/react/components/browse/ThemeCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/react/components/browse/ThemeCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/browse.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/browse.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/createIndex.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/createIndex.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/myThemes.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/myThemes.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -109,7 +115,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/img" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -127,10 +133,10 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/img" />
       <recent name="$PROJECT_DIR$/config/packages" />
       <recent name="$PROJECT_DIR$/config/packages/prod" />
       <recent name="$PROJECT_DIR$/public" />
-      <recent name="$PROJECT_DIR$/public/img" />
       <recent name="$PROJECT_DIR$/templates" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -168,7 +174,7 @@
       <workItem from="1603871171792" duration="173000" />
       <workItem from="1604039881914" duration="724000" />
       <workItem from="1604041998695" duration="384000" />
-      <workItem from="1604045889189" duration="12925000" />
+      <workItem from="1604045889189" duration="13619000" />
     </task>
     <servers />
   </component>

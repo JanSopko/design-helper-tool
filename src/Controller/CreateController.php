@@ -32,9 +32,9 @@ class CreateController extends AbstractController
      */
     public function create(Request $request): Response
     {
-//        if (!LogChecker::isLogged($request)) {
-//            return $this->redirectToRoute('signForm');
-//        }
+        if (!LogChecker::isLogged($request)) {
+            return $this->redirectToRoute('signForm');
+        }
         return $this->render('create/index.html.twig');
     }
 }

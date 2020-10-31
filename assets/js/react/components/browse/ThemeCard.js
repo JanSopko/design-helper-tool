@@ -7,6 +7,9 @@ const redirect = location => {
 
 export const ThemeCard = ({themeId , name, imgPath, author}) => {
     const pathToTheme = '/theme/' + themeId;
+    if (imgPath === '') {
+        imgPath = './img/no-preview.png';
+    }
     return(
         <div className="theme-card" id={themeId} onClick={() => redirect(pathToTheme)}>
             <h1>{name}</h1>
