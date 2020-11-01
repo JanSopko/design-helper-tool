@@ -3,10 +3,12 @@
   "build/app.js": "/build/app.js",
   "build/appCss.css": "/build/appCss.css",
   "build/browse.js": "/build/browse.js",
-  "build/browse~create~createIndex~homepage~myThemes~sign.js": "/build/browse~create~createIndex~homepage~myThemes~sign.js",
+  "build/browse~create~createIndex~createTheme~homepage~myThemes~sign.js": "/build/browse~create~createIndex~createTheme~homepage~myThemes~sign.js",
   "build/create.js": "/build/create.js",
   "build/createIndex.js": "/build/createIndex.js",
+  "build/createTheme.js": "/build/createTheme.js",
   "build/create_index_wrapper.css": "/build/create_index_wrapper.css",
+  "build/create_theme_wrapper.css": "/build/create_theme_wrapper.css",
   "build/create_wrapper.css": "/build/create_wrapper.css",
   "build/footer.css": "/build/footer.css",
   "build/homepage.js": "/build/homepage.js",
@@ -17,7 +19,7 @@
   "build/sign.js": "/build/sign.js",
   "build/signpage_wrapper.css": "/build/signpage_wrapper.css",
   "build/themes_wrapper.css": "/build/themes_wrapper.css",
-  "build/vendors~browse~create~createIndex~homepage~myThemes~sign.js": "/build/vendors~browse~create~createIndex~homepage~myThemes~sign.js",
+  "build/vendors~browse~create~createIndex~createTheme~homepage~myThemes~sign.js": "/build/vendors~browse~create~createIndex~createTheme~homepage~myThemes~sign.js",
   "build/vendors~create.js": "/build/vendors~create.js",
   "build/vendors~sign.js": "/build/vendors~sign.js"
 }

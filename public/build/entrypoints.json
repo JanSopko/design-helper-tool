@@ -12,50 +12,58 @@
     "homepage": {
       "js": [
         "/build/runtime.js",
-        "/build/vendors~browse~create~createIndex~homepage~myThemes~sign.js",
-        "/build/browse~create~createIndex~homepage~myThemes~sign.js",
+        "/build/vendors~browse~create~createIndex~createTheme~homepage~myThemes~sign.js",
+        "/build/browse~create~createIndex~createTheme~homepage~myThemes~sign.js",
         "/build/homepage.js"
       ]
     },
     "sign": {
       "js": [
         "/build/runtime.js",
-        "/build/vendors~browse~create~createIndex~homepage~myThemes~sign.js",
+        "/build/vendors~browse~create~createIndex~createTheme~homepage~myThemes~sign.js",
         "/build/vendors~sign.js",
-        "/build/browse~create~createIndex~homepage~myThemes~sign.js",
+        "/build/browse~create~createIndex~createTheme~homepage~myThemes~sign.js",
         "/build/sign.js"
       ]
     },
     "create": {
       "js": [
         "/build/runtime.js",
-        "/build/vendors~browse~create~createIndex~homepage~myThemes~sign.js",
+        "/build/vendors~browse~create~createIndex~createTheme~homepage~myThemes~sign.js",
         "/build/vendors~create.js",
-        "/build/browse~create~createIndex~homepage~myThemes~sign.js",
+        "/build/browse~create~createIndex~createTheme~homepage~myThemes~sign.js",
         "/build/create.js"
       ]
     },
     "createIndex": {
       "js": [
         "/build/runtime.js",
-        "/build/vendors~browse~create~createIndex~homepage~myThemes~sign.js",
-        "/build/browse~create~createIndex~homepage~myThemes~sign.js",
+        "/build/vendors~browse~create~createIndex~createTheme~homepage~myThemes~sign.js",
+        "/build/browse~create~createIndex~createTheme~homepage~myThemes~sign.js",
         "/build/createIndex.js"
+      ]
+    },
+    "createTheme": {
+      "js": [
+        "/build/runtime.js",
+        "/build/vendors~browse~create~createIndex~createTheme~homepage~myThemes~sign.js",
+        "/build/browse~create~createIndex~createTheme~homepage~myThemes~sign.js",
+        "/build/createTheme.js"
       ]
     },
     "browse": {
       "js": [
         "/build/runtime.js",
-        "/build/vendors~browse~create~createIndex~homepage~myThemes~sign.js",
-        "/build/browse~create~createIndex~homepage~myThemes~sign.js",
+        "/build/vendors~browse~create~createIndex~createTheme~homepage~myThemes~sign.js",
+        "/build/browse~create~createIndex~createTheme~homepage~myThemes~sign.js",
         "/build/browse.js"
       ]
     },
     "myThemes": {
       "js": [
         "/build/runtime.js",
-        "/build/vendors~browse~create~createIndex~homepage~myThemes~sign.js",
-        "/build/browse~create~createIndex~homepage~myThemes~sign.js",
+        "/build/vendors~browse~create~createIndex~createTheme~homepage~myThemes~sign.js",
+        "/build/browse~create~createIndex~createTheme~homepage~myThemes~sign.js",
         "/build/myThemes.js"
       ]
     },
@@ -121,6 +129,14 @@
       ],
       "css": [
         "/build/create_index_wrapper.css"
+      ]
+    },
+    "create_theme_wrapper": {
+      "js": [
+        "/build/runtime.js"
+      ],
+      "css": [
+        "/build/create_theme_wrapper.css"
       ]
     }
   }

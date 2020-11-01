@@ -28,6 +28,7 @@ Encore
     .addEntry('sign', './assets/js/react/pages/sign.js')
     .addEntry('create', './assets/js/react/pages/create.js')
     .addEntry('createIndex', './assets/js/react/pages/createIndex.js')
+    .addEntry('createTheme', './assets/js/react/pages/createTheme.js')
     .addEntry('browse', './assets/js/react/pages/browse.js')
     .addEntry('myThemes', './assets/js/react/pages/myThemes.js')
     // -----style entries-----
@@ -39,6 +40,7 @@ Encore
     .addStyleEntry('footer', './assets/css/footer.css')
     .addStyleEntry('create_wrapper', './assets/css/create-wrapper.css')
     .addStyleEntry('create_index_wrapper', './assets/css/create-index-wrapper.css')
+    .addStyleEntry('create_theme_wrapper', './assets/css/create-theme-wrapper.css')
     //.addEntry('page1', './assets/js/page1.js')
     //.addEntry('page2', './assets/js/page2.js')
 

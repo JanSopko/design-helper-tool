@@ -20,50 +20,28 @@ class Page
     private $id;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Element::class, inversedBy="pages")
-     */
-    private $elements;
-
-    /**
      * @ORM\ManyToOne(targetEntity=Theme::class, inversedBy="pages")
      * @ORM\JoinColumn(nullable=false)
      */
     private $theme;
 
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $pageHtml;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $pageCss;
+
     public function __construct()
     {
-        $this->elements = new ArrayCollection();
     }
 
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    /**
-     * @return Collection|Element[]
-     */
-    public function getElements(): Collection
-    {
-        return $this->elements;
-    }
-
-    public function addElement(Element $element): self
-    {
-        if (!$this->elements->contains($element)) {
-            $this->elements[] = $element;
-        }
-
-        return $this;
-    }
-
-    public function removeElement(Element $element): self
-    {
-        if ($this->elements->contains($element)) {
-            $this->elements->removeElement($element);
-        }
-
-        return $this;
     }
 
     public function getTheme(): ?Theme
@@ -75,6 +53,40 @@ class Page
     {
         $this->theme = $theme;
 
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPageHtml()
+    {
+        return $this->pageHtml;
+    }
+
+    /**
+     * @param mixed $pageHtml
+     */
+    public function setPageHtml($pageHtml): self
+    {
+        $this->pageHtml = $pageHtml;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPageCss()
+    {
+        return $this->pageCss;
+    }
+
+    /**
+     * @param mixed $pageCss
+     */
+    public function setPageCss($pageCss): self
+    {
+        $this->pageCss = $pageCss;
         return $this;
     }
 }

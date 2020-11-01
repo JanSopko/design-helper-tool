@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+    Create
+{% endblock %}
+{% block stylesheets %}
+    {{ encore_entry_link_tags('navbar') }}
+    {{ encore_entry_link_tags('create_wrapper') }}
+    {{ encore_entry_link_tags('create_theme_wrapper') }}
+{% endblock %}
+{% block body %}
+    <div id="root">
+    </div>
+{% endblock %}
+{% block javascripts %}
+    {{ encore_entry_script_tags('createTheme') }}
+{% endblock %}

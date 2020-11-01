@@ -18,7 +18,8 @@ export default function browsePageWrapper() {
 
     return(
         <div id="content">
-            {themes.map(theme => {
+            {
+                themes.map(theme => {
                 return(
                     <ThemeCard
                         key={theme.id}
@@ -27,8 +28,9 @@ export default function browsePageWrapper() {
                         name={theme.name}
                         imgPath={theme.img_path}
                     />
-                );
-            })}
+                    );
+                })
+            }
             <Footer>
             </Footer>
         </div>

@@ -142,6 +142,16 @@ class ThemeController extends AbstractController
     }
 
     /**
+     * @Route("/create-theme", name="createThemeForm", methods={"GET"})
+     * @param Request $request
+     * @return Response
+     */
+    public function showCreateThemeForm(Request $request): Response
+    {
+        return $this->render('create/createThemeForm.html.twig');
+    }
+
+    /**
      * @Route("/create/theme", name="createTheme", methods={"POST","GET"})
      * @param Request $request
      * @param UserRepository $userRepository
@@ -250,5 +260,14 @@ class ThemeController extends AbstractController
         $em->remove($theme);
         $em->flush();
         return new JsonResponse(['success' => true]);
+    }
+
+    /**
+     * @Route("/data/allowed_privacy_levels", name="allowedPrivacyLevels", methods={"GET"})
+     * @return JsonResponse
+     */
+    public function getAllowedPrivacyLevels(): JsonResponse
+    {
+        return new JsonResponse(Theme::ALLOWED_PRIVACY_LEVEL_VALUES);
     }
 }

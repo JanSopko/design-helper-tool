@@ -4,6 +4,7 @@
     background-color: white;
     margin-left: 6rem;
     position: relative;
+    border: 1px solid lightgray;
 }
 
 #create-menu {

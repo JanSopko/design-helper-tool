@@ -7,7 +7,7 @@ const redirect = location => {
 
 export const ThemeCard = ({themeId , name, imgPath, author}) => {
     const pathToTheme = '/theme/' + themeId;
-    if (imgPath === '') {
+    if (!imgPath || imgPath === '') {
         imgPath = './img/no-preview.png';
     }
     return(
