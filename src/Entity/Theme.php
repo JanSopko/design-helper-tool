@@ -13,16 +13,6 @@ use JsonSerializable;
  */
 class Theme implements JsonSerializable
 {
-    public const PRIVATE = 1;
-    public const COMMUNITY_VISIBLE = 2;
-    public const GLOBALLY_VISIBLE = 3;
-
-    public const ALLOWED_PRIVACY_LEVEL_VALUES = [
-        self::PRIVATE,
-        self::COMMUNITY_VISIBLE,
-        self::GLOBALLY_VISIBLE
-    ];
-
     /**
      * @ORM\Id
      * @ORM\GeneratedValue

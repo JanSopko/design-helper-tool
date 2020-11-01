@@ -11,6 +11,7 @@ use App\Repository\ThemeRepository;
 use App\Repository\UserRepository;
 use App\Service\LogChecker;
 use App\Service\RequestDataGetter;
+use App\Service\ThemePrivacyManager;
 use App\Service\Validator\ThemeValidator;
 use Doctrine\Persistence\ObjectManager;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -87,14 +88,14 @@ class ThemeController extends AbstractController
      */
     private function canUserSeeTheme(?User $user, Theme $theme): bool
     {
-        if ($theme->getPrivacyLevel() === Theme::GLOBALLY_VISIBLE) {
+        if ($theme->getPrivacyLevel() === ThemePrivacyManager::GLOBALLY_VISIBLE) {
             return true;
         }
-        if ($user instanceof User && $theme->getPrivacyLevel() === Theme::COMMUNITY_VISIBLE) {
+        if ($user instanceof User && $theme->getPrivacyLevel() === ThemePrivacyManager::COMMUNITY_VISIBLE) {
             return true;
         }
         if ($user instanceof User
-            && $theme->getPrivacyLevel() === Theme::PRIVATE
+            && $theme->getPrivacyLevel() === ThemePrivacyManager::PRIVATE
             && $theme->getUser()->getId() === $user->getId()) {
             return true;
         }
@@ -114,11 +115,11 @@ class ThemeController extends AbstractController
         UserRepository $userRepository
     ): JsonResponse {
         $user = $request->getSession()->get(LogChecker::LOGGED_USER_SESSION_KEY);
-        $themes = $themeRepository->findBy(['privacyLevel' => Theme::GLOBALLY_VISIBLE]);
+        $themes = $themeRepository->findBy(['privacyLevel' => ThemePrivacyManager::GLOBALLY_VISIBLE]);
         if ($user instanceof User) {
             $themes = array_merge(
                 $themes,
-                $themeRepository->findBy(['privacyLevel' => Theme::COMMUNITY_VISIBLE])
+                $themeRepository->findBy(['privacyLevel' => ThemePrivacyManager::COMMUNITY_VISIBLE])
             );
             $themes = array_merge($themes, $this->getMyPrivateThemes($request, $themeRepository, $userRepository));
         }
@@ -138,7 +139,7 @@ class ThemeController extends AbstractController
         UserRepository $userRepository
     ): array {
         $loggedUser = LogChecker::getLoggedUser($request, $userRepository);
-        return $themeRepository->findBy(['privacyLevel' => Theme::PRIVATE, 'user' => $loggedUser]);
+        return $themeRepository->findBy(['privacyLevel' => ThemePrivacyManager::PRIVATE, 'user' => $loggedUser]);
     }
 
     /**
@@ -217,7 +218,7 @@ class ThemeController extends AbstractController
             throw $this->createNotFoundException();
         }
         $privacyLevel = $theme->getPrivacyLevel();
-        if ($privacyLevel === Theme::GLOBALLY_VISIBLE) {
+        if ($privacyLevel === ThemePrivacyManager::GLOBALLY_VISIBLE) {
             return new JsonResponse($theme);
         }
         $user = LogChecker::getLoggedUser($request, $userRepository);
@@ -268,6 +269,6 @@ class ThemeController extends AbstractController
      */
     public function getAllowedPrivacyLevels(): JsonResponse
     {
-        return new JsonResponse(Theme::ALLOWED_PRIVACY_LEVEL_VALUES);
+        return new JsonResponse(ThemePrivacyManager::PRIVACY_LEVELS_DESCRIPTIONS);
     }
 }

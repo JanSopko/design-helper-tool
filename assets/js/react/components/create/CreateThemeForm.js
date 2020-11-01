@@ -18,23 +18,42 @@ const CreateThemeForm = () => {
             if (res.data && res.data.length > 0) {
                 setAllowedPrivacyLevels(res.data);
             }
+
         });
     }, []);
-
     return(
         <div id="form-wrapper">
-            <form action="/create/theme">
-                <input type="text" name="name" onChange={e => setName(e.target.value)}/>
-                <select name="privacyLevel" id="privacy-level-select">
+            <form action="/create/theme" id="create-theme-form">
+                <div className="form-grouping">
+                    <label htmlFor="theme-name-input">Theme name</label>
+                    <input type="text" id="theme-name-input" name="name" onChange={e => setName(e.target.value)}/>
+                </div>
+                <div className="form-grouping">
+                    <label htmlFor="privacy-level-select">Theme visibility</label>
+                <select
+                    name="privacyLevel"
+                    id="privacy-level-select"
+                    onChange={e => setPrivacyLevel(e.target.value)}
+                >
                     {
                         allowedPrivacyLevels.map(item => {
                             return(
-                                <option key={item} value={item}>{item}</option>
+                                <option
+                                    key={item.id}
+                                    value={item.id}
+                                >
+                                    {item.description}
+                                </option>
                             );
                         })
                     }
                 </select>
-                <input type="submit" onClick={() => sendCreateThemeRequest(name, privacyLevel)}/>
+                </div>
+                <input
+                    type="submit"
+                    onClick={() => sendCreateThemeRequest(name, privacyLevel)}
+                    className="button-green"
+                />
             </form>
         </div>
     );

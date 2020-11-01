@@ -6,6 +6,7 @@ namespace App\Service\Validator;
 
 use App\Entity\Theme;
 use App\Exception\ValidationException;
+use App\Service\ThemePrivacyManager;
 
 class ThemeValidator extends Validator
 {
@@ -56,7 +57,7 @@ class ThemeValidator extends Validator
     {
         if (empty($privacyLevel)) {
             $this->errorMessages[self::PRIVACY_LEVEL_KEY] = 'Please choose privacy setting.' . $privacyLevel;
-        } elseif (!in_array($privacyLevel, Theme::ALLOWED_PRIVACY_LEVEL_VALUES)) {
+        } elseif (!in_array($privacyLevel, ThemePrivacyManager::ALLOWED_PRIVACY_LEVEL_VALUES)) {
             $this->errorMessages[self::PRIVACY_LEVEL_KEY] = 'Unknown option of privacy settings.';
         }
     }

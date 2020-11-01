@@ -2,34 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="23010fe4-d294-4d04-b7b2-5e67385fe2b8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/create-index-wrapper.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/create-index-wrapper.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/create-wrapper.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/create-wrapper.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/themes-wrapper.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/themes-wrapper.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/react/components/browse/BrowsePageWrapper.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/react/components/browse/BrowsePageWrapper.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/react/components/browse/ThemeCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/react/components/browse/ThemeCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/react/components/create/cards/CreateNewThemeCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/react/components/create/cards/CreateNewThemeCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/react/components/myThemes/myThemesWrapper.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/react/components/myThemes/myThemesWrapper.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/browse.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/browse.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/browse~create~createIndex~homepage~myThemes~sign.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/create.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/create.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/createIndex.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/createIndex.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/create_index_wrapper.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/create_index_wrapper.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/create_wrapper.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/create_wrapper.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/entrypoints.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/entrypoints.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/homepage.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/homepage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/myThemes.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/myThemes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/sign.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/sign.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/themes_wrapper.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/themes_wrapper.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/vendors~browse~create~createIndex~homepage~myThemes~sign.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ElementController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/create-theme-wrapper.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/create-theme-wrapper.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/react/components/create/CreateThemeForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/react/components/create/CreateThemeForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/createTheme.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/createTheme.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/create_theme_wrapper.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/create_theme_wrapper.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/ThemeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ThemeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Element.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Page.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Page.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/ElementRepository.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Theme.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Theme.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/Validator/ElementValidator.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/Validator/ThemeValidator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/Validator/ThemeValidator.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -197,7 +178,7 @@
       <workItem from="1603871171792" duration="173000" />
       <workItem from="1604039881914" duration="724000" />
       <workItem from="1604041998695" duration="384000" />
-      <workItem from="1604045889189" duration="20213000" />
+      <workItem from="1604045889189" duration="23555000" />
     </task>
     <servers />
   </component>
@@ -229,10 +210,10 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="378" y="162" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1280.800@0.0.1280.800" timestamp="1603465025037" />
-    <state x="281" y="133" key="NewPhpClassDialog" timestamp="1603450828736">
+    <state x="281" y="133" key="NewPhpClassDialog" timestamp="1604215465743">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="281" y="133" key="NewPhpClassDialog/0.0.1280.800@0.0.1280.800" timestamp="1603450828736" />
+    <state x="281" y="133" key="NewPhpClassDialog/0.0.1280.800@0.0.1280.800" timestamp="1604215465743" />
     <state x="442" y="330" key="NewPhpFileDialog" timestamp="1602331155407">
       <screen x="0" y="0" width="1280" height="800" />
     </state>

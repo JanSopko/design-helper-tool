@@ -1,11 +1,37 @@
 #form-wrapper {
     background-color: white;
-    padding: 0 0 1rem 0;
+    padding: 1.5rem;
     border: 0 solid white;
     box-shadow: 0 0 25px -8px rgba(0,0,0,0.4);
     border-radius: .5rem;
     font-size: 1.2rem;
     margin: 1rem auto;
     max-width: 30rem;
+}
+
+#create-theme-form {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.form-grouping {
+    display:flex;
+    flex-flow: column wrap;
+}
+
+.form-grouping:last-of-type {
+    margin-bottom: 2rem;
+}
+
+.form-grouping>label,.form-grouping>input,.form-grouping>div>input, .form-grouping select {
+    margin: .3rem;
+}
+
+.form-grouping>input[type=text],.form-grouping>select {
+    font-family: soleil,sans-serif!important;
+}
+
+.form-grouping>label {
+    font-size: .9rem;
 }
 
