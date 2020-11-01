@@ -10,8 +10,9 @@ use App\Service\ThemePrivacyManager;
 
 class ThemeValidator extends Validator
 {
-    private const NAME_KEY = 'name';
-    private const PRIVACY_LEVEL_KEY = 'privacyLevel';
+    public const NAME_KEY = 'name';
+    public const PRIVACY_LEVEL_KEY = 'privacyLevel';
+    public const DESCRIPTION_KEY = 'description';
 
     private const NAME_REGEX = '/^[a-zA-Z0-9]+/';
     private const NAME_MIN_LENGTH = 3;
@@ -23,8 +24,8 @@ class ThemeValidator extends Validator
      */
     public function validate(array $content): void
     {
-        $name = $content['name'] ?? '';
-        $privacyLevel = (int)($content['privacyLevel'] ?? '');
+        $name = $content[self::NAME_KEY] ?? '';
+        $privacyLevel = (int)($content[self::PRIVACY_LEVEL_KEY] ?? '');
 
         $this->validateName($name);
         $this->validatePrivacyLevel($privacyLevel);

@@ -9,7 +9,6 @@
       <change beforePath="$PROJECT_DIR$/public/build/create_theme_wrapper.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/create_theme_wrapper.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/ThemeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ThemeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Theme.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Theme.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/Validator/ElementValidator.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Service/Validator/ThemeValidator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/Validator/ThemeValidator.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -178,7 +177,7 @@
       <workItem from="1603871171792" duration="173000" />
       <workItem from="1604039881914" duration="724000" />
       <workItem from="1604041998695" duration="384000" />
-      <workItem from="1604045889189" duration="23555000" />
+      <workItem from="1604045889189" duration="24990000" />
     </task>
     <servers />
   </component>
@@ -194,10 +193,10 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="337" y="209" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.800@0.0.1280.800" timestamp="1601020495915" />
-    <state x="439" y="89" key="#com.intellij.ide.util.MemberChooser" timestamp="1604213457055">
+    <state x="439" y="89" key="#com.intellij.ide.util.MemberChooser" timestamp="1604223366677">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="439" y="89" key="#com.intellij.ide.util.MemberChooser/0.0.1280.800@0.0.1280.800" timestamp="1604213457055" />
+    <state x="439" y="89" key="#com.intellij.ide.util.MemberChooser/0.0.1280.800@0.0.1280.800" timestamp="1604223366677" />
     <state x="437" y="119" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1602844917329">
       <screen x="0" y="0" width="1280" height="800" />
     </state>

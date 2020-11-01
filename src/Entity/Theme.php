@@ -31,6 +31,11 @@ class Theme implements JsonSerializable
     private $themeCss;
 
     /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $description;
+
+    /**
      * @ORM\Column(type="integer", nullable=false)
      */
     private $privacyLevel;
@@ -169,6 +174,23 @@ class Theme implements JsonSerializable
     public function setName($name): self
     {
         $this->name = $name;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * @param mixed $description
+     */
+    public function setDescription($description): self
+    {
+        $this->description = $description;
         return $this;
     }
 

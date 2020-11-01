@@ -171,14 +171,18 @@ class ThemeController extends AbstractController
         } catch (ValidationException $exception) {
             return new JsonResponse($themeValidator->getErrorMessages());
         }
-        $name = $requestContent['name'];
-        //@todo userId premysliet
-        $privacyLevel = $requestContent['privacyLevel'];
+//        $name = $requestContent[ThemeValidator::NAME_KEY];
+//        //@todo userId premysliet
+//        $privacyLevel = $requestContent[ThemeValidator::PRIVACY_LEVEL_KEY];
+//        $description = $requestContent[ThemeValidator::DESCRIPTION_KEY];
+//
+//        $theme = new Theme();
+//        $theme->setName($name)
+//            ->setUser($user)
+//            ->setPrivacyLevel($privacyLevel)
+//            ->setDescription($description);
 
-        $theme = new Theme();
-        $theme->setName($name)
-            ->setUser($user)
-            ->setPrivacyLevel($privacyLevel);
+        $theme = $this->createThemeFromRequestContent($user, $requestContent);
 
         $em = $this->getEntityManager();
         $em->persist($theme);
@@ -261,6 +265,27 @@ class ThemeController extends AbstractController
         $em->remove($theme);
         $em->flush();
         return new JsonResponse(['success' => true]);
+    }
+
+    /**
+     * @param User $user
+     * @param array $requestContent
+     * @return Theme
+     */
+    private function createThemeFromRequestContent(User $user, array $requestContent): Theme
+    {
+        $name = $requestContent[ThemeValidator::NAME_KEY];
+        //@todo userId premysliet
+        $privacyLevel = $requestContent[ThemeValidator::PRIVACY_LEVEL_KEY];
+        $description = $requestContent[ThemeValidator::DESCRIPTION_KEY];
+
+        $theme = new Theme();
+        $theme->setName($name)
+            ->setUser($user)
+            ->setPrivacyLevel($privacyLevel)
+            ->setDescription($description);
+
+        return $theme;
     }
 
     /**

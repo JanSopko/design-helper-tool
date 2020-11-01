@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import axios from "axios";
 
-const sendCreateThemeRequest = (name, privacyLevel) => {
-    axios.post('/create/theme', {name: name, privacyLevel: privacyLevel})
-        .then(res => {
+const sendCreateThemeRequest = (name, privacyLevel, description) => {
+    axios.post('/create/theme', {
+        name: name,
+        privacyLevel: privacyLevel,
+        description: description
+    }).then(res => {
             console.log(res);
         });
 }
@@ -11,6 +14,7 @@ const sendCreateThemeRequest = (name, privacyLevel) => {
 const CreateThemeForm = () => {
     const [name, setName] = useState('');
     const [privacyLevel, setPrivacyLevel] = useState(1);
+    const [description, setDescription] = useState(1);
     const [allowedPrivacyLevels, setAllowedPrivacyLevels] = useState([]);
 
     useEffect(() => {
@@ -49,9 +53,19 @@ const CreateThemeForm = () => {
                     }
                 </select>
                 </div>
+                <div className="form-grouping">
+                    <label htmlFor="description-input">Description (optional)</label>
+                    <textarea
+                        name="description"
+                        id="description-input"
+                        cols="30"
+                        rows="5"
+                        onChange={e => setDescription(e.target.value)}
+                    />
+                </div>
                 <input
                     type="submit"
-                    onClick={() => sendCreateThemeRequest(name, privacyLevel)}
+                    onClick={() => sendCreateThemeRequest(name, privacyLevel, description)}
                     className="button-green"
                 />
             </form>

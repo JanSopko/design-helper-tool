@@ -35,3 +35,7 @@
     font-size: .9rem;
 }
 
+.form-grouping>textarea {
+    resize: none;
+}
+
