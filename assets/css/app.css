@@ -100,6 +100,10 @@ canvas {
     border: 1px solid black;
 }
 
+.warning {
+    color: red;
+}
+
 @keyframes button-recolor-on-hover {
     from {background-color:#cddc39}
     to {background-color:#4caf50}

@@ -3,12 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="23010fe4-d294-4d04-b7b2-5e67385fe2b8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/css/create-theme-wrapper.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/create-theme-wrapper.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/signpage-wrapper.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/signpage-wrapper.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/react/components/create/CreateThemeForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/react/components/create/CreateThemeForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/appCss.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/appCss.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/build/createTheme.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/createTheme.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/build/create_theme_wrapper.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/create_theme_wrapper.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/signpage_wrapper.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/signpage_wrapper.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/ThemeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ThemeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Theme.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Theme.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Service/Validator/ThemeValidator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/Validator/ThemeValidator.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -177,7 +181,7 @@
       <workItem from="1603871171792" duration="173000" />
       <workItem from="1604039881914" duration="724000" />
       <workItem from="1604041998695" duration="384000" />
-      <workItem from="1604045889189" duration="24990000" />
+      <workItem from="1604045889189" duration="27108000" />
     </task>
     <servers />
   </component>

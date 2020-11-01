@@ -1,14 +1,53 @@
 import React, { useState, useEffect } from 'react';
 import axios from "axios";
 
+const LABEL_TEXT_NAME = 'Theme name';
+const LABEL_TEXT_PRIVACY_LEVEL = 'Theme visibility';
+const LABEL_TEXT_DESCRIPTION = 'Description (optional)';
+
 const sendCreateThemeRequest = (name, privacyLevel, description) => {
     axios.post('/create/theme', {
         name: name,
         privacyLevel: privacyLevel,
         description: description
     }).then(res => {
-            console.log(res);
+            if (res.data.length > 0) {
+                showWarnings(res.data)
+            } else {
+                alert('Theme successfully created!');
+                window.location.href = '/my_themes';
+            }
         });
+}
+
+const showWarnings = data => {
+    const nameLabel = document.getElementById('theme-name-label');
+    const privacyLevelLabel = document.getElementById('privacy-level-label');
+    const descriptionLabel = document.getElementById('description-label');
+
+    if (data.name) {
+        nameLabel.classList.add('warning');
+        nameLabel.innerHTML = data.name;
+    } else {
+        nameLabel.classList.remove('warning');
+        nameLabel.innerHTML = LABEL_TEXT_NAME;
+    }
+
+    if (data.privacyLevel) {
+        nameLabel.classList.add('warning');
+        nameLabel.innerHTML = data.privacyLevel;
+    } else {
+        privacyLevelLabel.classList.remove('warning');
+        privacyLevelLabel.innerHTML = LABEL_TEXT_PRIVACY_LEVEL;
+    }
+
+    if (data.description) {
+        descriptionLabel.classList.add('warning');
+        descriptionLabel.innerHTML = data.description;
+    } else {
+        descriptionLabel.classList.remove('warning');
+        descriptionLabel.innerHTML = LABEL_TEXT_DESCRIPTION;
+    }
 }
 
 const CreateThemeForm = () => {
@@ -29,11 +68,11 @@ const CreateThemeForm = () => {
         <div id="form-wrapper">
             <form action="/create/theme" id="create-theme-form">
                 <div className="form-grouping">
-                    <label htmlFor="theme-name-input">Theme name</label>
+                    <label id="theme-name-label" htmlFor="theme-name-input">{LABEL_TEXT_NAME}</label>
                     <input type="text" id="theme-name-input" name="name" onChange={e => setName(e.target.value)}/>
                 </div>
                 <div className="form-grouping">
-                    <label htmlFor="privacy-level-select">Theme visibility</label>
+                    <label id="privacy-level-label" htmlFor="privacy-level-select">{LABEL_TEXT_PRIVACY_LEVEL}</label>
                 <select
                     name="privacyLevel"
                     id="privacy-level-select"
@@ -54,7 +93,7 @@ const CreateThemeForm = () => {
                 </select>
                 </div>
                 <div className="form-grouping">
-                    <label htmlFor="description-input">Description (optional)</label>
+                    <label id="description-label" htmlFor="description-input">{LABEL_TEXT_DESCRIPTION}</label>
                     <textarea
                         name="description"
                         id="description-input"
@@ -67,6 +106,7 @@ const CreateThemeForm = () => {
                     type="submit"
                     onClick={() => sendCreateThemeRequest(name, privacyLevel, description)}
                     className="button-green"
+                    value="Create Theme"
                 />
             </form>
         </div>

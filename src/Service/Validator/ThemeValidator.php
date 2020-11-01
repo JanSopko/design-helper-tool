@@ -17,6 +17,7 @@ class ThemeValidator extends Validator
     private const NAME_REGEX = '/^[a-zA-Z0-9]+/';
     private const NAME_MIN_LENGTH = 3;
     private const NAME_MAX_LENGTH = 30;
+    private const DESCRIPTION_MAX_LENGTH = 255;
 
     /**
      * @param array $content
@@ -26,9 +27,11 @@ class ThemeValidator extends Validator
     {
         $name = $content[self::NAME_KEY] ?? '';
         $privacyLevel = (int)($content[self::PRIVACY_LEVEL_KEY] ?? '');
+        $description = $content[self::DESCRIPTION_KEY];
 
         $this->validateName($name);
         $this->validatePrivacyLevel($privacyLevel);
+        $this->validateDescription($description);
 
         if (!empty($this->errorMessages)) {
             throw new ValidationException('Theme validation failed.');
@@ -60,6 +63,17 @@ class ThemeValidator extends Validator
             $this->errorMessages[self::PRIVACY_LEVEL_KEY] = 'Please choose privacy setting.' . $privacyLevel;
         } elseif (!in_array($privacyLevel, ThemePrivacyManager::ALLOWED_PRIVACY_LEVEL_VALUES)) {
             $this->errorMessages[self::PRIVACY_LEVEL_KEY] = 'Unknown option of privacy settings.';
+        }
+    }
+
+    /**
+     * @param string $description
+     */
+    private function validateDescription(string $description): void
+    {
+        if (strlen($description) > self::DESCRIPTION_MAX_LENGTH) {
+            $this->errorMessages[self::DESCRIPTION_KEY] =
+                'Description must be shorter than ' . self::DESCRIPTION_MAX_LENGTH . ' characters';
         }
     }
 

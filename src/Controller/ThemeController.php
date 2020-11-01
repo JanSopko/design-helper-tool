@@ -162,7 +162,10 @@ class ThemeController extends AbstractController
     {
         $user = LogChecker::getLoggedUser($request, $userRepository);
         if ($user === null) {
-            return new JsonResponse(['success' => false, 'message' => 'You must be logged to create themes.']);
+            return new JsonResponse([
+                'success' => false,
+                'message' => 'You must be logged to create themes.'
+            ]);
         }
         $requestContent = RequestDataGetter::getRequestData($request);
         $themeValidator = new ThemeValidator();
@@ -171,16 +174,6 @@ class ThemeController extends AbstractController
         } catch (ValidationException $exception) {
             return new JsonResponse($themeValidator->getErrorMessages());
         }
-//        $name = $requestContent[ThemeValidator::NAME_KEY];
-//        //@todo userId premysliet
-//        $privacyLevel = $requestContent[ThemeValidator::PRIVACY_LEVEL_KEY];
-//        $description = $requestContent[ThemeValidator::DESCRIPTION_KEY];
-//
-//        $theme = new Theme();
-//        $theme->setName($name)
-//            ->setUser($user)
-//            ->setPrivacyLevel($privacyLevel)
-//            ->setDescription($description);
 
         $theme = $this->createThemeFromRequestContent($user, $requestContent);
 
