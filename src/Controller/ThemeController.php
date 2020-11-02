@@ -77,7 +77,8 @@ class ThemeController extends AbstractController
             throw $this->createNotFoundException();
         }
         return $this->render('themes/theme.html.twig', [
-            'theme' => $theme->jsonSerialize()
+            'theme' => $theme->jsonSerialize(),
+            'isMyTheme' => ($user instanceof  User) ?? $theme->getUser()->getId() === $user->getId()
         ]);
     }
 
@@ -156,9 +157,14 @@ class ThemeController extends AbstractController
      * @Route("/create/theme", name="createTheme", methods={"POST","GET"})
      * @param Request $request
      * @param UserRepository $userRepository
+     * @param ThemeRepository $themeRepository
      * @return JsonResponse
      */
-    public function createTheme(Request $request, UserRepository $userRepository): JsonResponse
+    public function createTheme(
+        Request $request,
+        UserRepository $userRepository,
+        ThemeRepository $themeRepository
+    ): JsonResponse
     {
         $user = LogChecker::getLoggedUser($request, $userRepository);
         if ($user === null) {
@@ -174,7 +180,12 @@ class ThemeController extends AbstractController
         } catch (ValidationException $exception) {
             return new JsonResponse($themeValidator->getErrorMessages());
         }
-
+        if ($this->userHasThemeWithSameName($user, $requestContent[ThemeValidator::NAME_KEY], $themeRepository)) {
+            return new JsonResponse([
+                'success' => false,
+                'message' => 'You already have a Theme with the same name.'
+            ]);
+        }
         $theme = $this->createThemeFromRequestContent($user, $requestContent);
 
         $em = $this->getEntityManager();
@@ -279,6 +290,17 @@ class ThemeController extends AbstractController
             ->setDescription($description);
 
         return $theme;
+    }
+
+    /**
+     * @param User $user
+     * @param string $name
+     * @param ThemeRepository $themeRepository
+     * @return bool
+     */
+    private function userHasThemeWithSameName(User $user, string $name, ThemeRepository $themeRepository): bool
+    {
+       return $themeRepository->findOneBy(['name' => $name, 'user' => $user]) !== null;
     }
 
     /**

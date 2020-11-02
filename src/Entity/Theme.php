@@ -199,12 +199,19 @@ class Theme implements JsonSerializable
      */
     public function jsonSerialize(): array
     {
+        $pageIds = [];
+        foreach ($this->pages as $page) {
+            /** @var Page $page */
+            $pageIds[] = $page->getId();
+        }
         return [
             'id' => $this->id,
             'name' => $this->name,
+            'description' => $this->description,
             'user_name' => $this->user->getUsername(),
             'user_id' => $this->user->getId(),
             'img_path' => $this->imgPath,
+            'page_ids' => $pageIds,
             'pages_count' => count($this->pages)
         ];
     }

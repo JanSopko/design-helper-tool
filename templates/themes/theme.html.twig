@@ -3,6 +3,7 @@
     Browse Themes
 {% endblock %}
 {% block stylesheets %}
+    {{ encore_entry_link_tags('navbar') }}
 {% endblock %}
 {% block body %}
     <div id="root">
@@ -10,8 +11,15 @@
 {% endblock %}
 {% block javascripts %}
     <script>
-        const layoutData = {
-            themeName: '{{ theme.name }}'
+        let layoutData = {
+            themeName: '{{ theme.name }}',
+            themeDescription: '{{ theme.description }}',
+            isMyTheme: '{{ isMyTheme }}'
         }
+        layoutData.pages = [];
+        {% for page in theme.page_ids %}
+        layoutData.pages.push({{ page }});
+        {% endfor %}
     </script>
+    {{ encore_entry_script_tags('theme') }}
 {% endblock %}

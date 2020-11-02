@@ -11,7 +11,7 @@ const sendCreateThemeRequest = (name, privacyLevel, description) => {
         privacyLevel: privacyLevel,
         description: description
     }).then(res => {
-            if (res.data.length > 0) {
+            if (res.data.length > 0 || !res.data.success) {
                 showWarnings(res.data)
             } else {
                 alert('Theme successfully created!');
@@ -47,6 +47,14 @@ const showWarnings = data => {
     } else {
         descriptionLabel.classList.remove('warning');
         descriptionLabel.innerHTML = LABEL_TEXT_DESCRIPTION;
+    }
+
+    if (data.message) {
+        nameLabel.classList.add('warning');
+        nameLabel.innerHTML = data.message;
+    } else {
+        nameLabel.classList.remove('warning');
+        nameLabel.innerHTML = LABEL_TEXT_NAME;
     }
 }
 
