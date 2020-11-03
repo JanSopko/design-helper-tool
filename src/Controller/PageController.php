@@ -8,6 +8,7 @@ use App\Entity\Page;
 use App\Entity\Theme;
 use App\Entity\User;
 use App\Exception\ValidationException;
+use App\Repository\PageRepository;
 use App\Repository\ThemeRepository;
 use App\Repository\UserRepository;
 use App\Service\LogChecker;
@@ -60,12 +61,11 @@ class PageController extends AbstractController
         try {
             $pageValidator->validate($requestContent);
         } catch (ValidationException $exception) {
-            return new JsonResponse($pageValidator->getErrorMessages(), Response::HTTP_PRECONDITION_FAILED);
+            return new JsonResponse($pageValidator->getErrorMessages());
         }
         $theme = $themeRepository->find($requestContent['themeId']);
         if (!$theme instanceof Theme) {
-            return new JsonResponse(['success' => false, 'message' => 'Theme not found.'],
-                Response::HTTP_PRECONDITION_FAILED);
+            return new JsonResponse(['success' => false, 'message' => 'Theme not found.']);
         }
         if ($theme->getUser()->getId() !== $user->getId()) {
             return new JsonResponse(['success' => false, 'message' => 'Permission denied.']);
@@ -78,6 +78,25 @@ class PageController extends AbstractController
         $em->flush();
 
         return new JsonResponse(['success' => 'true']);
+    }
+
+    /**
+     * @Route("/data/theme/{themeId}/pages", name="getPagesOfTheme", methods={"GET"})
+     * @param ThemeRepository $themeRepository
+     * @param int $themeId
+     * @param PageRepository $pageRepository
+     * @return JsonResponse
+     */
+    public function getPagesOfTheme(ThemeRepository $themeRepository, int $themeId, PageRepository $pageRepository): JsonResponse
+    {
+        $theme = $themeRepository->find($themeId);
+        if ($theme === null) {
+            return new JsonResponse([]);
+        }
+        $pages = $pageRepository->findBy([
+            'theme' => $theme
+        ]);
+        return new JsonResponse($pages);
     }
 
     /**

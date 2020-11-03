@@ -6,11 +6,12 @@ use App\Repository\PageRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use JsonSerializable;
 
 /**
  * @ORM\Entity(repositoryClass=PageRepository::class)
  */
-class Page
+class Page implements JsonSerializable
 {
     /**
      * @ORM\Id
@@ -88,5 +89,12 @@ class Page
     {
         $this->pageCss = $pageCss;
         return $this;
+    }
+
+    public function jsonSerialize()
+    {
+        return [
+            'id' => $this->id
+        ];
     }
 }

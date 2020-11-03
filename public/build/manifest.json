@@ -16,6 +16,7 @@
   "build/myThemes.js": "/build/myThemes.js",
   "build/navbar.css": "/build/navbar.css",
   "build/runtime.js": "/build/runtime.js",
+  "build/show_theme_wrapper.css": "/build/show_theme_wrapper.css",
   "build/sign.js": "/build/sign.js",
   "build/signpage_wrapper.css": "/build/signpage_wrapper.css",
   "build/theme.js": "/build/theme.js",

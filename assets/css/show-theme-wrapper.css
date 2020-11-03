@@ -1,0 +1,27 @@
+button {
+    margin: .3rem;
+    width: 7rem;
+}
+
+p {
+    margin-top: 3rem;
+}
+
+#option-buttons-wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+}
+
+@media only screen and (max-width: 520px) {
+    #option-buttons-wrapper {
+        flex-flow: column wrap;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    button {
+        width: 100% !important;
+        margin: .4rem 0;
+    }
+}

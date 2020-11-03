@@ -42,6 +42,7 @@ Encore
     .addStyleEntry('create_wrapper', './assets/css/create-wrapper.css')
     .addStyleEntry('create_index_wrapper', './assets/css/create-index-wrapper.css')
     .addStyleEntry('create_theme_wrapper', './assets/css/create-theme-wrapper.css')
+    .addStyleEntry('show_theme_wrapper', './assets/css/show-theme-wrapper.css')
     //.addEntry('page1', './assets/js/page1.js')
     //.addEntry('page2', './assets/js/page2.js')
 

@@ -78,7 +78,7 @@ class ThemeController extends AbstractController
         }
         return $this->render('themes/theme.html.twig', [
             'theme' => $theme->jsonSerialize(),
-            'isMyTheme' => ($user instanceof  User) ?? $theme->getUser()->getId() === $user->getId()
+            'isMyTheme' => ($user instanceof  User) ? $theme->getUser()->getId() === $user->getId() : false
         ]);
     }
 

@@ -4,6 +4,7 @@
 {% endblock %}
 {% block stylesheets %}
     {{ encore_entry_link_tags('navbar') }}
+    {{ encore_entry_link_tags('show_theme_wrapper') }}
 {% endblock %}
 {% block body %}
     <div id="root">
@@ -12,9 +13,11 @@
 {% block javascripts %}
     <script>
         let layoutData = {
+            themeId: '{{ theme.id }}',
             themeName: '{{ theme.name }}',
             themeDescription: '{{ theme.description }}',
-            isMyTheme: '{{ isMyTheme }}'
+            isMyTheme: '{{ isMyTheme }}',
+            themeAuthor: '{{ theme.user_name }}'
         }
         layoutData.pages = [];
         {% for page in theme.page_ids %}

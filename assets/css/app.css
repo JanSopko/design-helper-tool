@@ -56,10 +56,44 @@ body {
     color: black;
 }
 
+.button-blue {
+    padding: .5rem;
+    border-radius: .2rem;
+    background-color: #00bcd4;
+    border: none;
+    font-family: 'Lora', serif;
+    font-size: 1rem;
+    color: black;
+}
+
+.button-yellow {
+    padding: .5rem;
+    border-radius: .2rem;
+    background-color: #ffeb3b;
+    border: none;
+    font-family: 'Lora', serif;
+    font-size: 1rem;
+    color: black;
+}
+
 .button-green:hover {
     animation-name: button-recolor-on-hover;
     animation-duration: .2s;
     background-color: #4caf50;
+    cursor: pointer;
+}
+
+.button-blue:hover {
+    animation-name: button-recolor-on-hover2;
+    animation-duration: .2s;
+    background-color: #03a9f4;
+    cursor: pointer;
+}
+
+.button-yellow:hover {
+    animation-name: button-recolor-on-hover3;
+    animation-duration: .2s;
+    background-color: #fbc02d;
     cursor: pointer;
 }
 
@@ -108,6 +142,16 @@ canvas {
     from {background-color:#cddc39}
     to {background-color:#4caf50}
 }
+@keyframes button-recolor-on-hover2 {
+    from {background-color:#00bcd4}
+    to {background-color:#03a9f4}
+}
+
+@keyframes button-recolor-on-hover3 {
+    from {background-color:#ffeb3b}
+    to {background-color:#fbc02d}
+}
+
 
 @media only screen and (max-width:768px) {
     #content {

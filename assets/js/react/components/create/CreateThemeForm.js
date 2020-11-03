@@ -21,6 +21,7 @@ const sendCreateThemeRequest = (name, privacyLevel, description) => {
 }
 
 const showWarnings = data => {
+    console.log (data.name);
     const nameLabel = document.getElementById('theme-name-label');
     const privacyLevelLabel = document.getElementById('privacy-level-label');
     const descriptionLabel = document.getElementById('description-label');
@@ -34,8 +35,8 @@ const showWarnings = data => {
     }
 
     if (data.privacyLevel) {
-        nameLabel.classList.add('warning');
-        nameLabel.innerHTML = data.privacyLevel;
+        privacyLevelLabel.classList.add('warning');
+        privacyLevelLabel.innerHTML = data.privacyLevel;
     } else {
         privacyLevelLabel.classList.remove('warning');
         privacyLevelLabel.innerHTML = LABEL_TEXT_PRIVACY_LEVEL;
@@ -49,10 +50,10 @@ const showWarnings = data => {
         descriptionLabel.innerHTML = LABEL_TEXT_DESCRIPTION;
     }
 
-    if (data.message) {
+    if (data.message && !data.name) {
         nameLabel.classList.add('warning');
         nameLabel.innerHTML = data.message;
-    } else {
+    } else if (!data.name) {
         nameLabel.classList.remove('warning');
         nameLabel.innerHTML = LABEL_TEXT_NAME;
     }

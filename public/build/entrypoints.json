@@ -146,6 +146,14 @@
       "css": [
         "/build/create_theme_wrapper.css"
       ]
+    },
+    "show_theme_wrapper": {
+      "js": [
+        "/build/runtime.js"
+      ],
+      "css": [
+        "/build/show_theme_wrapper.css"
+      ]
     }
   }
 }
