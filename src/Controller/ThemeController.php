@@ -73,7 +73,7 @@ class ThemeController extends AbstractController
     {
         $theme = $themeRepository->find($themeId);
         $user = $request->getSession()->get(LogChecker::LOGGED_USER_SESSION_KEY);
-        if ($theme === null || !$this->canUserSeeTheme($user, $theme)) {
+        if ($theme === null || !ThemePrivacyManager::canUserSeeTheme($user, $theme)) {
             throw $this->createNotFoundException();
         }
         return $this->render('themes/theme.html.twig', [
@@ -230,7 +230,7 @@ class ThemeController extends AbstractController
             return new JsonResponse($theme);
         }
         $user = LogChecker::getLoggedUser($request, $userRepository);
-        if ($this->canUserSeeTheme($user, $theme)) {
+        if (ThemePrivacyManager::canUserSeeTheme($user, $theme)) {
             return new JsonResponse($theme);
         }
         return new JsonResponse(['not ok']);
@@ -257,7 +257,7 @@ class ThemeController extends AbstractController
     ): JsonResponse {
         $theme = $themeRepository->find($themeId);
         $user = LogChecker::getLoggedUser($request, $userRepository);
-        if (!($user instanceof  User) || !($theme instanceof Theme) || !$this->canUserSeeTheme($user, $theme)) {
+        if (!($user instanceof  User) || !($theme instanceof Theme) || !ThemePrivacyManager::canUserSeeTheme($user, $theme)) {
             return new JsonResponse(['success' => false, 'message' => 'Theme not found.']);
         }
         if ($theme->getUser()->getId() !== $user->getId()) {

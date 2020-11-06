@@ -14,6 +14,7 @@ use App\Repository\UserRepository;
 use App\Service\LogChecker;
 use App\Service\PageHashGenerator;
 use App\Service\RequestDataGetter;
+use App\Service\ThemePrivacyManager;
 use App\Service\Validator\PageValidator;
 use Doctrine\Persistence\ObjectManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -27,17 +28,20 @@ class PageController extends AbstractController
     private ?ObjectManager $entityManager = null;
 
     /**
-     * @Route("/preview-page/{pageHash}")
+     * @Route("/preview-page/{pageHash}", name="previewPage", methods={"GET"})
+     * @param Request $request
      * @param string $pageHash
      * @param PageRepository $pageRepository
+     * @param UserRepository $userRepository
      * @return Response
      */
-    public function previewPage(string $pageHash, PageRepository $pageRepository): Response
+    public function previewPage(Request $request, string $pageHash, PageRepository $pageRepository, UserRepository $userRepository): Response
     {
+        $user = LogChecker::getLoggedUser($request, $userRepository);
         $page = $pageRepository->findOneBy([
             'urlHash' => $pageHash
         ]);
-        if (!$page instanceof Page) {
+        if (!$page instanceof Page || !ThemePrivacyManager::canUserSeeTheme($user, $page->getTheme())) {
             return new Response("Page doesn't exist.");
         }
         $pageHtml = $page->getPageHtml();

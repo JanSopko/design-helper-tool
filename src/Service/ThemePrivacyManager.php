@@ -4,6 +4,9 @@
 namespace App\Service;
 
 
+use App\Entity\Theme;
+use App\Entity\User;
+
 class ThemePrivacyManager
 {
     public const PRIVATE = 1;
@@ -31,4 +34,21 @@ class ThemePrivacyManager
         ]
     ];
 
+    /**
+     * @param User|null $user
+     * @param Theme $theme
+     * @return bool
+     */
+    public static function canUserSeeTheme(?User $user, Theme $theme): bool
+    {
+        if ($theme->getPrivacyLevel() === self::GLOBALLY_VISIBLE) {
+            return true;
+        }
+        if ($user instanceof User && $theme->getPrivacyLevel() === self::COMMUNITY_VISIBLE) {
+            return true;
+        }
+        return ($user instanceof User
+            && $theme->getPrivacyLevel() === ThemePrivacyManager::PRIVATE
+            && $theme->getUser()->getId() === $user->getId());
+    }
 }
