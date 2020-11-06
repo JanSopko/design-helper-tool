@@ -3,8 +3,6 @@
 namespace App\Entity;
 
 use App\Repository\PageRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use JsonSerializable;
 
@@ -35,6 +33,11 @@ class Page implements JsonSerializable
      * @ORM\Column(type="text", nullable=true)
      */
     private $pageCss;
+
+    /**
+     * @ORM\Column(type="string", nullable=false)
+     */
+    private $urlHash;
 
     public function __construct()
     {
@@ -91,10 +94,28 @@ class Page implements JsonSerializable
         return $this;
     }
 
+    /**
+     * @return string
+     */
+    public function getUrlHash(): string
+    {
+        return $this->urlHash;
+    }
+
+    /**
+     * @param string $urlHash
+     */
+    public function setUrlHash(string $urlHash): self
+    {
+        $this->urlHash = $urlHash;
+        return $this;
+    }
+
     public function jsonSerialize()
     {
         return [
-            'id' => $this->id
+            'id' => $this->id,
+            'url_hash' => $this->urlHash
         ];
     }
 }
