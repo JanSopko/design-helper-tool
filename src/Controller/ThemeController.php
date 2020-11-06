@@ -242,7 +242,7 @@ class ThemeController extends AbstractController
     }
 
     /**
-     * @Route("/delete/theme/{themeId}", name="deleteTheme", methods={"POST","DELETE"})
+     * @Route("/delete/theme/{themeId}", name="deleteTheme", methods={"DELETE"})
      * @param Request $request
      * @param int $themeId
      * @param ThemeRepository $themeRepository
@@ -255,10 +255,9 @@ class ThemeController extends AbstractController
         ThemeRepository $themeRepository,
         UserRepository $userRepository
     ): JsonResponse {
-        //@todo REFACTOR!!!
         $theme = $themeRepository->find($themeId);
         $user = LogChecker::getLoggedUser($request, $userRepository);
-        if (!($theme instanceof Theme) || !$this->canUserSeeTheme($user, $theme)) {
+        if (!($user instanceof  User) || !($theme instanceof Theme) || !$this->canUserSeeTheme($user, $theme)) {
             return new JsonResponse(['success' => false, 'message' => 'Theme not found.']);
         }
         if ($theme->getUser()->getId() !== $user->getId()) {
@@ -279,7 +278,6 @@ class ThemeController extends AbstractController
     private function createThemeFromRequestContent(User $user, array $requestContent): Theme
     {
         $name = $requestContent[ThemeValidator::NAME_KEY];
-        //@todo userId premysliet
         $privacyLevel = $requestContent[ThemeValidator::PRIVACY_LEVEL_KEY];
         $description = $requestContent[ThemeValidator::DESCRIPTION_KEY];
 

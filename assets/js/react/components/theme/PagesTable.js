@@ -1,6 +1,20 @@
-import React from 'react';
+import React, {useState} from 'react';
+import axios from 'axios';
 
 const PagesTable = ({pages, isMyTheme = false}) => {
+    const [myPages, setMyPages] = useState(pages);
+
+    const deletePage = pageId => {
+        axios.delete(`/delete/page/${pageId}`).then(res => {
+            if (res.data.success) {
+                const newPages = myPages.filter(page => page.id !== pageId);
+                setMyPages(newPages);
+            } else if (res.data.message) {
+                alert(res.data.message);
+            }
+        });
+    }
+
     return(
         <table id="pages-table">
             <thead>
@@ -10,7 +24,7 @@ const PagesTable = ({pages, isMyTheme = false}) => {
                 </tr>
             </thead>
             <tbody>
-            {pages.map(page => {
+            {myPages.map(page => {
                 return(
                   <tr key={page.urlHash}>
                       <td>
@@ -21,6 +35,12 @@ const PagesTable = ({pages, isMyTheme = false}) => {
                               isMyTheme &&
                               <button
                                   className="button-red"
+                                  onClick={() => {
+                                      if (confirm('Are you sure you want to delete this Page?')) {
+                                          deletePage(page.id);
+                                      }
+                                  }
+                                  }
                               >
                                   Delete
                               </button>

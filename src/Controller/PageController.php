@@ -157,8 +157,36 @@ class PageController extends AbstractController
 
     }
 
-    public function deletePage()
+    /**
+     * @Route("/delete/page/{pageId}", name="deletePage", methods={"DELETE"})
+     * @param Request $request
+     * @param int $pageId
+     * @param UserRepository $userRepository
+     * @param PageRepository $pageRepository
+     * @return JsonResponse
+     */
+    public function deletePage(
+        Request $request,
+        int $pageId,
+        UserRepository $userRepository,
+        PageRepository $pageRepository): JsonResponse
     {
+        $user = LogChecker::getLoggedUser($request, $userRepository);
+        $page = $pageRepository->find($pageId);
 
+        if (!($user instanceof User) || !($page instanceof Page)) {
+            return new JsonResponse(['success' => false, 'message' => "Permission denied."]);
+        }
+
+        $theme = $page->getTheme();
+
+        if (!($theme instanceof Theme) || $theme->getUser()->getId() !== $user->getId()) {
+            return new JsonResponse(['success' => false, 'message' => "Permission denied."]);
+        }
+
+        $em = $this->getEntityManager();
+        $em->remove($page);
+        $em->flush();
+        return new JsonResponse(['success' => true]);
     }
 }

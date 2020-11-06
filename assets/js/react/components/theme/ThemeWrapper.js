@@ -90,10 +90,10 @@ const ThemeWrapper = () => {
                         </div>
                 }
                 {
-                    (pages.length === 0) && layoutData.isMyTheme &&
-                        <section>
-                            <h3>This Theme is empty, let's add some pages!</h3>
-                        </section>
+                    // (pages.length === 0) && layoutData.isMyTheme &&
+                    //     <section>
+                    //         <h3>This Theme is empty, let's add some pages!</h3>
+                    //     </section>
                 }
                 </div>
             </section>

@@ -17,18 +17,17 @@ p {
     width: 100%;
     border-collapse: collapse;
     padding: .5rem;
-    margin: auto;
 }
 
 #pages-table th, #pages-table td {
     padding: .3rem;
 }
 
-#pages-table tr:nth-of-type(odd) {
+#pages-table tr:nth-of-type(even) {
     background-color: white;
 }
 
-#pages-table tr:nth-of-type(even) {
+#pages-table tr:nth-of-type(odd) {
     background-color: whitesmoke;
 }
 
