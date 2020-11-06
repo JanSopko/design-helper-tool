@@ -76,6 +76,16 @@ body {
     color: black;
 }
 
+.button-red {
+    padding: .5rem;
+    border-radius: .2rem;
+    background-color: #e53935;
+    border: none;
+    font-family: 'Lora', serif;
+    font-size: 1rem;
+    color: black;
+}
+
 .button-green:hover {
     animation-name: button-recolor-on-hover;
     animation-duration: .2s;
@@ -94,6 +104,13 @@ body {
     animation-name: button-recolor-on-hover3;
     animation-duration: .2s;
     background-color: #fbc02d;
+    cursor: pointer;
+}
+
+.button-red:hover {
+    animation-name: button-recolor-on-hover4;
+    animation-duration: .2s;
+    background-color: #c62828;
     cursor: pointer;
 }
 
@@ -150,6 +167,11 @@ canvas {
 @keyframes button-recolor-on-hover3 {
     from {background-color:#ffeb3b}
     to {background-color:#fbc02d}
+}
+
+@keyframes button-recolor-on-hover4 {
+    from {background-color:#e53935}
+    to {background-color:#c62828}
 }
 
 

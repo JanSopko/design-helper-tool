@@ -13,7 +13,30 @@ p {
     justify-content: flex-end;
 }
 
-@media only screen and (max-width: 520px) {
+#pages-table {
+    width: 100%;
+    border-collapse: collapse;
+    padding: .5rem;
+    border: 1px solid black;
+}
+
+#pages-table thead {
+    border-bottom: 1px solid #5a5a5a;
+}
+
+#pages-table th, #pages-table td {
+    padding: .3rem;
+}
+
+#pages-table tr:nth-of-type(odd) {
+    background-color: white;
+}
+
+#pages-table tr:nth-of-type(even) {
+    background-color: whitesmoke;
+}
+
+@media only screen and (max-width: 780px) {
     #option-buttons-wrapper {
         flex-flow: column wrap;
         justify-content: flex-end;

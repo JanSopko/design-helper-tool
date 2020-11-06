@@ -21,7 +21,7 @@
       "js": [
         "/build/runtime.js",
         "/build/vendors~browse~create~createIndex~createTheme~homepage~myThemes~sign~theme.js",
-        "/build/vendors~sign.js",
+        "/build/vendors~sign~theme.js",
         "/build/browse~create~createIndex~createTheme~homepage~myThemes~sign~theme.js",
         "/build/sign.js"
       ]
@@ -71,6 +71,7 @@
       "js": [
         "/build/runtime.js",
         "/build/vendors~browse~create~createIndex~createTheme~homepage~myThemes~sign~theme.js",
+        "/build/vendors~sign~theme.js",
         "/build/browse~create~createIndex~createTheme~homepage~myThemes~sign~theme.js",
         "/build/theme.js"
       ]

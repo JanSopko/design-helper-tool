@@ -9,8 +9,7 @@ const ThemeWrapper = () => {
     const addPage = () => {
         axios.post('/create/page', {
             themeId: layoutData.themeId
-        });
-        showPages();
+        }).then(() => showPages());
     }
 
     const showPages = () => {
@@ -37,6 +36,19 @@ const ThemeWrapper = () => {
         });
     }
 
+    const deleteTheme = themeId => {
+        axios.delete(`/delete/theme/${themeId}`).then(res => {
+            if (res.data.success) {
+                //todo setTimeout, loader kruzok + redirect
+                alert('Theme deleted');
+                window.location.replace('/my_themes');
+            } else if (res.data.message) {
+                alert(res.data.message);
+            }
+        });
+
+    }
+
     useEffect(() => {
         showPages();
     }, []);
@@ -49,7 +61,12 @@ const ThemeWrapper = () => {
                 <div id="option-buttons-wrapper">
                     {
                         layoutData.isMyTheme &&
-                        <button className="button-green">Edit</button>
+                        <button
+                            className="button-green"
+                            onClick={() => {window.location.href = '/create-page'}}
+                        >
+                            Edit
+                        </button>
                     }
                     {
                         layoutData.isMyTheme &&
@@ -61,12 +78,26 @@ const ThemeWrapper = () => {
                         </button>
                     }
                     <button className="button-blue">Download</button>
+                    {
+                        layoutData.isMyTheme &&
+                        <button
+                            className="button-red"
+                            onClick={() => {
+                                    if (confirm('Are you sure you want to delete this Theme?')) {
+                                        deleteTheme(layoutData.themeId);
+                                    }
+                                }
+                            }
+                        >
+                            Delete Theme
+                        </button>
+                    }
                 </div>
                 <p>{layoutData.themeDescription}</p>
                 <div>
                 {
                     pages.length > 0 &&
-                        <PagesTable pages={pages} />
+                        <PagesTable pages={pages} isMyTheme={layoutData.isMyTheme}/>
                 }
                 {
                     (pages.length === 0) && layoutData.isMyTheme &&

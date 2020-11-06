@@ -242,7 +242,7 @@ class ThemeController extends AbstractController
     }
 
     /**
-     * @Route("/delete/theme/{themeId}", name="deleteTheme", methods={"POST","GET"})
+     * @Route("/delete/theme/{themeId}", name="deleteTheme", methods={"POST","DELETE"})
      * @param Request $request
      * @param int $themeId
      * @param ThemeRepository $themeRepository
@@ -258,10 +258,10 @@ class ThemeController extends AbstractController
         //@todo REFACTOR!!!
         $theme = $themeRepository->find($themeId);
         $user = LogChecker::getLoggedUser($request, $userRepository);
-        if (!($theme instanceof Theme) || $this->canUserSeeTheme($user, $theme)) {
+        if (!($theme instanceof Theme) || !$this->canUserSeeTheme($user, $theme)) {
             return new JsonResponse(['success' => false, 'message' => 'Theme not found.']);
         }
-        if (!($user instanceof User) || $theme->getUser()->getId() !== $user->getId()) {
+        if ($theme->getUser()->getId() !== $user->getId()) {
             return new JsonResponse(['success' => false, 'message' => 'Permission denied.']);
         }
 
