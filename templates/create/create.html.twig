@@ -11,5 +11,10 @@
     </div>
 {% endblock %}
 {% block javascripts %}
+    <script>
+        let layoutData = {
+            pageHash: '{{ page_hash }}'
+        };
+    </script>
     {{ encore_entry_script_tags('create') }}
 {% endblock %}

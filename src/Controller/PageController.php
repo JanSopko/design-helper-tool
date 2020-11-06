@@ -12,6 +12,7 @@ use App\Repository\PageRepository;
 use App\Repository\ThemeRepository;
 use App\Repository\UserRepository;
 use App\Service\LogChecker;
+use App\Service\PageHashGenerator;
 use App\Service\RequestDataGetter;
 use App\Service\Validator\PageValidator;
 use Doctrine\Persistence\ObjectManager;
@@ -36,6 +37,40 @@ class PageController extends AbstractController
 
         $res = "<style>$css</style>$html";
         return new Response($res);
+    }
+
+    /**
+     * @Route("/design-page/{pageHash}")
+     * @param Request $request
+     * @param string $pageHash
+     * @param PageRepository $pageRepository
+     * @param UserRepository $userRepository
+     * @return Response
+     */
+    public function designPage(
+        Request $request,
+        string $pageHash,
+        PageRepository $pageRepository,
+        UserRepository  $userRepository): Response
+    {
+        $page = $pageRepository->findOneBy([
+            'urlHash' => $pageHash
+        ]);
+        if (!$page instanceof  Page) {
+            return $this->redirectToRoute('browse');
+        }
+        $theme = $page->getTheme();
+        $user = LogChecker::getLoggedUser($request, $userRepository);
+        if (
+            !($user instanceof User) ||
+            !($theme instanceof Theme) ||
+            $user->getId() !== $theme->getUser()->getId()
+        ) {
+            return $this->redirectToRoute('browse');
+        }
+        return $this->render('create/create.html.twig', [
+            'page_hash' => $pageHash
+        ]);
     }
 
     /**
@@ -71,8 +106,10 @@ class PageController extends AbstractController
             return new JsonResponse(['success' => false, 'message' => 'Permission denied.']);
         }
 
+        $pageHash = PageHashGenerator::generatePageHash($theme);
         $page = new Page();
         $page->setTheme($theme);
+        $page->setUrlHash($pageHash);
         $em = $this->getEntityManager();
         $em->persist($page);
         $em->flush();

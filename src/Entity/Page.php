@@ -115,7 +115,7 @@ class Page implements JsonSerializable
     {
         return [
             'id' => $this->id,
-            'url_hash' => $this->urlHash
+            'urlHash' => $this->urlHash
         ];
     }
 }

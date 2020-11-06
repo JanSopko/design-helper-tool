@@ -19,11 +19,11 @@ const PagesTable = ({pages, isMyTheme = false}) => {
                       <td className="page-buttons">
                           {
                               isMyTheme &&
-                              <button className="button-green">Edit</button>
+                              <button className="button-red">Delete</button>
                           }
                           {
                               isMyTheme &&
-                              <button className="button-red">Delete</button>
+                              <button className="button-green">Edit</button>
                           }
                           <button className="button-blue">Preview</button>
                       </td>

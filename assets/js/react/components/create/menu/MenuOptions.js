@@ -26,7 +26,6 @@ export const OptionNavbar = () => {
 }
 
 function showNavbar(color, height) {
-    console.log(height);
     if (height < 50) {
         height = 50;
     }

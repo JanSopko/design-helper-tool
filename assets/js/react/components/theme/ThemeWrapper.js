@@ -17,7 +17,7 @@ const ThemeWrapper = () => {
         axios.get(`/data/theme/${layoutData.themeId}/pages`).then(res => {
             if (res.data.length > 0) {
                 newPages = res.data.map(page => {
-                    return page.id;
+                    return page.urlHash;
                 });
             }
             setPages(newPages);
@@ -63,7 +63,6 @@ const ThemeWrapper = () => {
                         layoutData.isMyTheme &&
                         <button
                             className="button-green"
-                            onClick={() => {window.location.href = '/create-page'}}
                         >
                             Edit
                         </button>
