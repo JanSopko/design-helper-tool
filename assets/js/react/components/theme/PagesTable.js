@@ -5,8 +5,6 @@ const PagesTable = ({pages, isMyTheme = false}) => {
         <table id="pages-table">
             <thead>
                 <tr>
-                    <th>Page Hash</th>
-                    <th></th>
                     <th></th>
                     <th></th>
                 </tr>
@@ -18,20 +16,16 @@ const PagesTable = ({pages, isMyTheme = false}) => {
                       <td>
                           {page}
                       </td>
-                      <td>
-                          <button className="button-blue">Preview</button>
-                      </td>
-                      <td>
+                      <td className="page-buttons">
                           {
                               isMyTheme &&
-                                <button className="button-green">Edit</button>
+                              <button className="button-green">Edit</button>
                           }
-                      </td>
-                      <td>
                           {
                               isMyTheme &&
                               <button className="button-red">Delete</button>
                           }
+                          <button className="button-blue">Preview</button>
                       </td>
                   </tr>
                 );

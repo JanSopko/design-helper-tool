@@ -17,11 +17,7 @@ p {
     width: 100%;
     border-collapse: collapse;
     padding: .5rem;
-    border: 1px solid black;
-}
-
-#pages-table thead {
-    border-bottom: 1px solid #5a5a5a;
+    margin: auto;
 }
 
 #pages-table th, #pages-table td {
@@ -36,6 +32,10 @@ p {
     background-color: whitesmoke;
 }
 
+.page-buttons>button {
+    float: right;
+}
+
 @media only screen and (max-width: 780px) {
     #option-buttons-wrapper {
         flex-flow: column wrap;
@@ -43,7 +43,7 @@ p {
         align-items: center;
     }
 
-    button {
+    #option-buttons-wrapper button {
         width: 100% !important;
         margin: .4rem 0;
     }

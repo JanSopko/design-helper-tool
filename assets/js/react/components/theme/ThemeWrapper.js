@@ -97,7 +97,10 @@ const ThemeWrapper = () => {
                 <div>
                 {
                     pages.length > 0 &&
-                        <PagesTable pages={pages} isMyTheme={layoutData.isMyTheme}/>
+                        <div>
+                            <h2>List of pages:</h2>
+                            <PagesTable pages={pages} isMyTheme={layoutData.isMyTheme}/>
+                        </div>
                 }
                 {
                     (pages.length === 0) && layoutData.isMyTheme &&
