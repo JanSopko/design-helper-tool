@@ -64,7 +64,12 @@ const ThemeWrapper = () => {
                             Add page
                         </button>
                     }
-                    <button className="button-blue">Download</button>
+                    <button
+                        className="button-blue"
+                        onClick={() => {window.location.href = `/download-theme/${layoutData.themeId}`}}
+                    >
+                        Download
+                    </button>
                     {
                         layoutData.isMyTheme &&
                         <button

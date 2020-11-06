@@ -111,6 +111,20 @@ class Page implements JsonSerializable
         return $this;
     }
 
+    public function getBody(): string
+    {
+        $style = '';
+        $html = '';
+        if (!empty($this->pageHtml)) {
+            $html = $this->getPageHtml();
+        }
+        if (!empty($this->pageCss)) {
+            $css = $this->getPageCss();
+            $style = "<style>$css</style>";
+        }
+        return !empty($html . $style) ? "<body>$style$html</body>" : '';
+    }
+
     public function jsonSerialize()
     {
         return [

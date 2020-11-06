@@ -74,6 +74,17 @@ class Theme implements JsonSerializable
         return $this->pages;
     }
 
+    public function getNonEmptyPages(): Collection
+    {
+        $nonEmptyPages = $this->getPages();
+        foreach ($nonEmptyPages as $page) {
+            if ($page->getBody() === "") {
+                $nonEmptyPages->removeElement($page);
+            }
+        }
+        return $nonEmptyPages;
+    }
+
     public function addPage(Page $page): self
     {
         if (!$this->pages->contains($page)) {

@@ -42,7 +42,7 @@ class PageController extends AbstractController
             'urlHash' => $pageHash
         ]);
         if (!$page instanceof Page || !ThemePrivacyManager::canUserSeeTheme($user, $page->getTheme())) {
-            return new Response("Page doesn't exist.");
+            return new Response("Page does not exist.");
         }
         $pageHtml = $page->getPageHtml();
         $pageCss = $page->getPageCss();

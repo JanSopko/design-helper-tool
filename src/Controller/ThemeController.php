@@ -14,6 +14,7 @@ use App\Service\RequestDataGetter;
 use App\Service\ThemePrivacyManager;
 use App\Service\Validator\ThemeValidator;
 use Doctrine\Persistence\ObjectManager;
+use Symfony\Component\HttpFoundation\BinaryFileResponse;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -308,5 +309,33 @@ class ThemeController extends AbstractController
     public function getAllowedPrivacyLevels(): JsonResponse
     {
         return new JsonResponse(ThemePrivacyManager::PRIVACY_LEVELS_DESCRIPTIONS);
+    }
+
+    /**
+     * @Route("/download-theme/{themeId}")
+     * @return JsonResponse
+     */
+    public function downloadTheme(Request $request, int $themeId, UserRepository $userRepository, ThemeRepository $themeRepository): Response
+    {
+        $latestPage = '';
+        $user = LogChecker::getLoggedUser($request, $userRepository);
+        $theme = $themeRepository->find($themeId);
+        if (!$theme instanceof Theme || !ThemePrivacyManager::canUserSeeTheme($user, $theme)) {
+            return new Response('Theme does not exist.');
+        }
+        $pages = $theme->getNonEmptyPages();
+        if ($pages->isEmpty()) {
+            return new Response('Theme is empty.');
+        }
+
+        foreach ($pages as $page) {
+            $pageHash = $page->getUrlHash();
+            $file = fopen("themes/page-$pageHash.html", 'w+');
+            fwrite($file, $page->getBody());
+            fclose($file);
+            $latestPage = "page-$pageHash.html";
+        }
+
+        return $this->file("themes/$latestPage");
     }
 }
