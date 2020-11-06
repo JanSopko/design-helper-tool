@@ -9,7 +9,6 @@
       <change beforePath="$PROJECT_DIR$/public/build/show_theme_wrapper.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/show_theme_wrapper.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/build/theme.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/theme.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/PageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/PageController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ThemeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ThemeController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,7 +179,7 @@
       <workItem from="1604045889189" duration="32101000" />
       <workItem from="1604422401075" duration="10906000" />
       <workItem from="1604515361878" duration="986000" />
-      <workItem from="1604662774831" duration="11212000" />
+      <workItem from="1604662774831" duration="14102000" />
     </task>
     <servers />
   </component>

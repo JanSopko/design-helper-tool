@@ -23,12 +23,16 @@ p {
     padding: .3rem;
 }
 
-#pages-table tr:nth-of-type(even) {
-    background-color: white;
-}
+/*#pages-table tr:nth-of-type(even) {*/
+/*    background-color: white;*/
+/*}*/
 
-#pages-table tr:nth-of-type(odd) {
-    background-color: whitesmoke;
+/*#pages-table tr:nth-of-type(odd) {*/
+/*    background-color: whitesmoke;*/
+/*}*/
+
+#pages-table tbody tr {
+    border-top: 1px solid #868686;
 }
 
 .page-buttons>button {

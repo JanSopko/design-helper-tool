@@ -3,6 +3,15 @@ import axios from 'axios';
 
 const PagesTable = ({pages, isMyTheme = false}) => {
     const [myPages, setMyPages] = useState(pages);
+    const latestPage = pages.reduce(function(prev, current) {
+        return (prev.id > current.id) ? prev : current;
+    })
+    const [latestId, setLatestId] = useState(latestPage.id);
+
+    if (latestPage.id > latestId) {
+        setMyPages(pages);
+        setLatestId(latestPage.id);
+    }
 
     const deletePage = pageId => {
         axios.delete(`/delete/page/${pageId}`).then(res => {
@@ -16,6 +25,7 @@ const PagesTable = ({pages, isMyTheme = false}) => {
     }
 
     return(
+        myPages.length > 0 &&
         <table id="pages-table">
             <thead>
                 <tr>
@@ -56,6 +66,7 @@ const PagesTable = ({pages, isMyTheme = false}) => {
                           }
                           <button
                               className="button-blue"
+                              onClick={() => {window.location.href = `/preview-page/${page.urlHash}`}}
                           >
                               Preview
                           </button>

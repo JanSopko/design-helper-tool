@@ -27,16 +27,23 @@ class PageController extends AbstractController
     private ?ObjectManager $entityManager = null;
 
     /**
-     * @Route("/testing_response")
+     * @Route("/preview-page/{pageHash}")
+     * @param string $pageHash
+     * @param PageRepository $pageRepository
      * @return Response
      */
-    public function showPagePreview(): Response
+    public function previewPage(string $pageHash, PageRepository $pageRepository): Response
     {
-        $html = "<div><div class='grn'>Hello World!</div><ul><li>1</li><li>2</li></ul></div>";
-        $css = ".grn{color:green}ul{background-color:red}";
-
-        $res = "<style>$css</style>$html";
-        return new Response($res);
+        $page = $pageRepository->findOneBy([
+            'urlHash' => $pageHash
+        ]);
+        if (!$page instanceof Page) {
+            return new Response("Page doesn't exist.");
+        }
+        $pageHtml = $page->getPageHtml();
+        $pageCss = $page->getPageCss();
+        $responseBody = "<style>$pageCss</style>$pageHtml";
+        return new Response($responseBody);
     }
 
     /**

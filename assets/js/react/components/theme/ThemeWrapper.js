@@ -80,8 +80,12 @@ const ThemeWrapper = () => {
                         </button>
                     }
                 </div>
-                <p>{layoutData.themeDescription}</p>
                 <div>
+                    <p>
+                        {layoutData.themeDescription}
+                    </p>
+                </div>
+                <div style={{marginTop:'6rem'}}>
                 {
                     pages.length > 0 &&
                         <div>
