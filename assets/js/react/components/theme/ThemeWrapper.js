@@ -17,22 +17,10 @@ const ThemeWrapper = () => {
         axios.get(`/data/theme/${layoutData.themeId}/pages`).then(res => {
             if (res.data.length > 0) {
                 newPages = res.data.map(page => {
-                    return page.urlHash;
+                    return page;
                 });
             }
             setPages(newPages);
-        });
-    }
-
-    const getNewPages = () => {
-        let newPages = [];
-        axios.get(`/data/theme/${layoutData.themeId}/pages`).then(res => {
-            if (res.data.length > 0) {
-                newPages = res.data.map(page => {
-                    return page.id;
-                });
-            }
-            return newPages;
         });
     }
 

@@ -12,20 +12,33 @@ const PagesTable = ({pages, isMyTheme = false}) => {
             <tbody>
             {pages.map(page => {
                 return(
-                  <tr key={page}>
+                  <tr key={page.urlHash}>
                       <td>
-                          {page}
+                          {page.urlHash}
                       </td>
                       <td className="page-buttons">
                           {
                               isMyTheme &&
-                              <button className="button-red">Delete</button>
+                              <button
+                                  className="button-red"
+                              >
+                                  Delete
+                              </button>
                           }
                           {
                               isMyTheme &&
-                              <button className="button-green">Edit</button>
+                              <button
+                                  className="button-green"
+                                  onClick={() => {window.location.href = `/design-page/${page.urlHash}`}}
+                              >
+                                  Edit
+                              </button>
                           }
-                          <button className="button-blue">Preview</button>
+                          <button
+                              className="button-blue"
+                          >
+                              Preview
+                          </button>
                       </td>
                   </tr>
                 );
