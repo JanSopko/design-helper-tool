@@ -79,8 +79,10 @@ class PageController extends AbstractController
         ) {
             return $this->redirectToRoute('browse');
         }
+
         return $this->render('create/create.html.twig', [
-            'page_hash' => $pageHash
+            'page_hash' => $pageHash,
+            'page_body' => $page->getBody()
         ]);
     }
 

@@ -13,7 +13,8 @@
 {% block javascripts %}
     <script>
         let layoutData = {
-            pageHash: '{{ page_hash }}'
+            pageHash: '{{ page_hash }}',
+            pageBody: '{{ page_body|raw }}'
         };
     </script>
     {{ encore_entry_script_tags('create') }}
