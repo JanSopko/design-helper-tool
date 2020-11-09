@@ -1,8 +1,8 @@
 #creation-desk {
-    width: calc(100% - 4rem);
+    width: calc(100% - 8rem);
     height: 30rem;
     background-color: white;
-    margin-left: 6rem;
+    margin-left: 10rem;
     position: relative;
     border: 1px solid lightgray;
 }
@@ -10,7 +10,7 @@
 #create-menu {
     position: absolute;
     left: 0;
-    width: 10rem;
+    width: 14rem;
     min-height: 10rem;
     background-color: #5a5a5a;
     border: 1px solid #313131;

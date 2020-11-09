@@ -14,12 +14,12 @@ use App\Service\RequestDataGetter;
 use App\Service\ThemePrivacyManager;
 use App\Service\Validator\ThemeValidator;
 use Doctrine\Persistence\ObjectManager;
-use Symfony\Component\HttpFoundation\BinaryFileResponse;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use ZipArchive;
 
 class ThemeController extends AbstractController
 {
@@ -313,11 +313,18 @@ class ThemeController extends AbstractController
 
     /**
      * @Route("/download-theme/{themeId}")
+     * @param Request $request
+     * @param int $themeId
+     * @param UserRepository $userRepository
+     * @param ThemeRepository $themeRepository
      * @return JsonResponse
      */
-    public function downloadTheme(Request $request, int $themeId, UserRepository $userRepository, ThemeRepository $themeRepository): Response
+    public function downloadTheme(
+        Request $request,
+        int $themeId,
+        UserRepository $userRepository,
+        ThemeRepository $themeRepository): Response
     {
-        $latestPage = '';
         $user = LogChecker::getLoggedUser($request, $userRepository);
         $theme = $themeRepository->find($themeId);
         if (!$theme instanceof Theme || !ThemePrivacyManager::canUserSeeTheme($user, $theme)) {
@@ -328,14 +335,20 @@ class ThemeController extends AbstractController
             return new Response('Theme is empty.');
         }
 
+        $zip = new ZipArchive();
+        if (!$zip->open("themes/theme-$themeId.zip", ZipArchive::CREATE)) {
+            return new Response('Zip Creation failed.');
+        }
+
         foreach ($pages as $page) {
             $pageHash = $page->getUrlHash();
             $file = fopen("themes/page-$pageHash.html", 'w+');
             fwrite($file, $page->getBody());
             fclose($file);
             $latestPage = "page-$pageHash.html";
+            $zip->addFile("themes/$latestPage");
         }
 
-        return $this->file("themes/$latestPage");
+        return $this->file("themes/theme-$themeId.zip");
     }
 }
