@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="23010fe4-d294-4d04-b7b2-5e67385fe2b8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/design-helper-tool.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/design-helper-tool.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/create-wrapper.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/create-wrapper.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ThemeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ThemeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/Validator/PageValidator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/Validator/PageValidator.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,7 +174,9 @@
       <workItem from="1604045889189" duration="32101000" />
       <workItem from="1604422401075" duration="10906000" />
       <workItem from="1604515361878" duration="986000" />
-      <workItem from="1604662774831" duration="22806000" />
+      <workItem from="1604662774831" duration="23193000" />
+      <workItem from="1605256703049" duration="178000" />
+      <workItem from="1605373014317" duration="3657000" />
     </task>
     <servers />
   </component>
@@ -196,10 +192,10 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="337" y="209" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.800@0.0.1280.800" timestamp="1601020495915" />
-    <state x="439" y="89" key="#com.intellij.ide.util.MemberChooser" timestamp="1604678015592">
+    <state x="439" y="89" key="#com.intellij.ide.util.MemberChooser" timestamp="1605383751158">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="439" y="89" key="#com.intellij.ide.util.MemberChooser/0.0.1280.800@0.0.1280.800" timestamp="1604678015592" />
+    <state x="439" y="89" key="#com.intellij.ide.util.MemberChooser/0.0.1280.800@0.0.1280.800" timestamp="1605383751158" />
     <state x="437" y="119" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1602844917329">
       <screen x="0" y="0" width="1280" height="800" />
     </state>

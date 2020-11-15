@@ -25,6 +25,8 @@ class ThemeController extends AbstractController
 {
     private ?ObjectManager $entityManager = null;
 
+    const COUNT_OF_THEMES_ON_PAGE = 16;
+
     /**
      * @Route("/browse", name="browse", methods={"GET"})
      * @param Request $request
@@ -33,7 +35,11 @@ class ThemeController extends AbstractController
      */
     public function browseThemes(Request $request, ThemeRepository $themeRepository): Response
     {
-        return $this->render('browse/index.html.twig');
+        $page = RequestDataGetter::getRequestData($request)['page'] ?? 1;
+        $page = (int)$page;
+        return $this->render('browse/index.html.twig', [
+            'page' => $page
+        ]);
     }
 
     /**
@@ -84,27 +90,6 @@ class ThemeController extends AbstractController
     }
 
     /**
-     * @param ?User $user
-     * @param Theme $theme
-     * @return bool
-     */
-    private function canUserSeeTheme(?User $user, Theme $theme): bool
-    {
-        if ($theme->getPrivacyLevel() === ThemePrivacyManager::GLOBALLY_VISIBLE) {
-            return true;
-        }
-        if ($user instanceof User && $theme->getPrivacyLevel() === ThemePrivacyManager::COMMUNITY_VISIBLE) {
-            return true;
-        }
-        if ($user instanceof User
-            && $theme->getPrivacyLevel() === ThemePrivacyManager::PRIVATE
-            && $theme->getUser()->getId() === $user->getId()) {
-            return true;
-        }
-        return false;
-    }
-
-    /**
      * @Route("/data/themes", name="themesData", methods={"GET"})
      * @param Request $request
      * @param ThemeRepository $themeRepository
@@ -116,8 +101,10 @@ class ThemeController extends AbstractController
         ThemeRepository $themeRepository,
         UserRepository $userRepository
     ): JsonResponse {
-        $user = $request->getSession()->get(LogChecker::LOGGED_USER_SESSION_KEY);
+        $user = LogChecker::getLoggedUser($request, $userRepository);
         $themes = $themeRepository->findBy(['privacyLevel' => ThemePrivacyManager::GLOBALLY_VISIBLE]);
+        $page = RequestDataGetter::getRequestData($request)['page'] ?? 1;
+        $page = (int)$page;
         if ($user instanceof User) {
             $themes = array_merge(
                 $themes,
@@ -125,8 +112,14 @@ class ThemeController extends AbstractController
             );
             $themes = array_merge($themes, $this->getMyPrivateThemes($request, $themeRepository, $userRepository));
         }
-
-        return new JsonResponse($themes);
+        $themesOnPage = [];
+        $offset = ($page - 1) * self::COUNT_OF_THEMES_ON_PAGE;
+        for ($i = $offset; $i < $offset + self::COUNT_OF_THEMES_ON_PAGE; $i++) {
+            if (!empty($themes[$i])) {
+                $themesOnPage[] = $themes[$i];
+            }
+        }
+        return new JsonResponse($themesOnPage);
     }
 
     /**

@@ -121,8 +121,9 @@ class PageController extends AbstractController
 
         $pageHash = PageHashGenerator::generatePageHash($theme);
         $page = new Page();
-        $page->setTheme($theme);
-        $page->setUrlHash($pageHash);
+        $page->setTheme($theme)
+            ->setName($requestContent['name'])
+            ->setUrlHash($pageHash);
         $em = $this->getEntityManager();
         $em->persist($page);
         $em->flush();

@@ -37,6 +37,11 @@ class Page implements JsonSerializable
     /**
      * @ORM\Column(type="string", nullable=false)
      */
+    private $name;
+
+    /**
+     * @ORM\Column(type="string", nullable=false)
+     */
     private $urlHash;
 
     public function __construct()
@@ -111,6 +116,24 @@ class Page implements JsonSerializable
         return $this;
     }
 
+    /**
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param string $name
+     * @return Page
+     */
+    public function setName(string $name): self
+    {
+        $this->name = $name;
+        return $this;
+    }
+
     public function getBody(): string
     {
         $style = '';
@@ -129,7 +152,8 @@ class Page implements JsonSerializable
     {
         return [
             'id' => $this->id,
-            'urlHash' => $this->urlHash
+            'urlHash' => $this->urlHash,
+            'name' => $this->name
         ];
     }
 }

@@ -7,9 +7,17 @@ const ThemeWrapper = () => {
     const [pages, setPages] = useState([]);
 
     const addPage = () => {
+        const pageName = prompt('Enter name of the new page');
         axios.post('/create/page', {
-            themeId: layoutData.themeId
-        }).then(() => showPages());
+            themeId: layoutData.themeId,
+            name: pageName
+        }).then(res => {
+            if (res.data.name) {
+                alert(res.data.name);
+            } else {
+                showPages();
+            }
+        });
     }
 
     const showPages = () => {

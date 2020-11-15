@@ -5,7 +5,7 @@ import { ThemeCard } from "./ThemeCard";
 
 
 export default function browsePageWrapper() {
-    const THEMES_DATA_URL = '/data/themes';
+    const THEMES_DATA_URL = `/data/themes?page=${layoutData.page}`;
 
     const [themes, setThemes] = useState([]);
 

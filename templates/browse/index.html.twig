@@ -11,5 +11,10 @@
     </div>
 {% endblock %}
 {% block javascripts %}
+    <script>
+        const layoutData = {
+            page: '{{ page }}'
+        }
+    </script>
     {{ encore_entry_script_tags('browse') }}
 {% endblock %}

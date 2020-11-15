@@ -38,7 +38,7 @@ const PagesTable = ({pages, isMyTheme = false}) => {
                 return(
                   <tr key={page.urlHash}>
                       <td>
-                          {page.urlHash}
+                          {page.name}
                       </td>
                       <td className="page-buttons">
                           {
