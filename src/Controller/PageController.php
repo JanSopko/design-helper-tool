@@ -120,15 +120,27 @@ class PageController extends AbstractController
         }
 
         $pageHash = PageHashGenerator::generatePageHash($theme);
-        $page = new Page();
-        $page->setTheme($theme)
-            ->setName($requestContent['name'])
-            ->setUrlHash($pageHash);
+        $page = $this->preparePage($theme, $requestContent['name'], $pageHash);
         $em = $this->getEntityManager();
         $em->persist($page);
         $em->flush();
 
         return new JsonResponse(['success' => 'true']);
+    }
+
+    /**
+     * @param Theme $theme
+     * @param string $name
+     * @param string $hash
+     * @return Page
+     */
+    private function preparePage(Theme $theme, string $name, string $hash): Page
+    {
+        $page = new Page();
+        $page->setTheme($theme)
+            ->setName($name)
+            ->setUrlHash($hash);
+        return $page;
     }
 
     /**
