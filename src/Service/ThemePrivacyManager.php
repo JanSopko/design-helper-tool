@@ -48,7 +48,7 @@ class ThemePrivacyManager
             return true;
         }
         return ($user instanceof User
-            && $theme->getPrivacyLevel() === ThemePrivacyManager::PRIVATE
+            && $theme->getPrivacyLevel() === self::PRIVATE
             && $theme->getUser()->getId() === $user->getId());
     }
 }
