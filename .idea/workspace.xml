@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="23010fe4-d294-4d04-b7b2-5e67385fe2b8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/Validator/PageValidator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/Validator/PageValidator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/PageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/PageController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,7 +175,7 @@
       <workItem from="1604515361878" duration="986000" />
       <workItem from="1604662774831" duration="23193000" />
       <workItem from="1605256703049" duration="178000" />
-      <workItem from="1605373014317" duration="3657000" />
+      <workItem from="1605373014317" duration="4035000" />
     </task>
     <servers />
   </component>
