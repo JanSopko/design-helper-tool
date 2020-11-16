@@ -1,20 +1,19 @@
 import React from 'react';
+import MenuOption from "./MenuOption";
 import {
-    OptionNavbar,
-    OptionFooter,
-    OptionSideBar,
-    OptionSection,
-    OptionTable
-} from "./MenuOptions";
+    NavbarEditor,
+    SidebarEditor,
+    SectionsEditor,
+    FooterEditor
+} from "./ElementEditors";
 
 export const CreateMenu = () => {
     return(
         <div id="create-menu">
-            <OptionNavbar/>
-            <OptionFooter/>
-            <OptionSideBar/>
-            <OptionSection/>
-            <OptionTable/>
+            <MenuOption text="Navbar" content={<NavbarEditor/>}/>
+            <MenuOption text="Sidebar" content={<SidebarEditor/>}/>
+            <MenuOption text="Sections" content={<SectionsEditor/>}/>
+            <MenuOption text="Footer" content={<FooterEditor/>}/>
         </div>
     );
 }

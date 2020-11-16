@@ -25,6 +25,7 @@
     width: calc(100% - 2px);
     min-height: 2.5rem;
     display: flex;
+    padding: 1rem 0 0 0;
     flex-flow: column wrap;
     justify-content: flex-start;
     align-items: center;
@@ -34,6 +35,23 @@
 
 #side-bar-choice {
     transition: height 5s ease;
+}
+
+.chevron {
+    width: .7rem;
+    margin-left: 1.5rem;
+    transition: transform .25s ease;
+}
+
+.chevron-reverse {
+    transform: rotate(180deg);
+}
+
+.design-menu-editor {
+    padding: 1rem;
+    margin-top: 1rem;
+    border-top: 1px solid #696969;
+    background: linear-gradient(180deg, #5a5a5a, #696969);
 }
 
 .invis {

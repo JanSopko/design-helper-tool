@@ -1,4 +1,4 @@
-export const elementOrParentHasClass = (element, className) => {
+const elementOrParentHasClass = (element, className) => {
     if (element.classList.contains(className)) {
         return true;
     } else if (element.parentElement) {
@@ -6,3 +6,5 @@ export const elementOrParentHasClass = (element, className) => {
     }
     return false;
 }
+
+export default elementOrParentHasClass;
