@@ -12,22 +12,42 @@ export const NavbarEditor = ({
 
     return(
         <div className="design-menu-editor navbar-editor">
-            {/*<div>*/}
-            {/*    background color:*/}
-            {/*    <InputColor*/}
-            {/*        initialValue="#000000"*/}
-            {/*        onChange={setBgColor}*/}
-            {/*        placement="right"*/}
-            {/*    />*/}
-            {/*</div>*/}
-            {/*<div>*/}
-            {/*    text color:*/}
-            {/*    <InputColor*/}
-            {/*        initialValue="#ffffff"*/}
-            {/*        onChange={setTextColor}*/}
-            {/*        placement="right"*/}
-            {/*    />*/}
-            {/*</div>*/}
+            <div>
+                background color:
+                <InputColor
+                    initialValue={navbar.backgroundColor}
+                    onChange={e =>
+                    {
+                        setBgColor;
+                        dispatch({
+                            type: ACTIONS.NAVBAR_BACKGROUND_COLOR,
+                            payload: {
+                                backgroundColor: e.hex
+                            }
+                        });
+                    }
+                    }
+                    placement="right"
+                />
+            </div>
+            <div>
+                text color:
+                <InputColor
+                    initialValue={navbar.color}
+                    onChange={e =>
+                        {
+                            setTextColor;
+                            dispatch({
+                                type: ACTIONS.NAVBAR_TEXT_COLOR,
+                                payload: {
+                                    color: e.hex
+                                }
+                            });
+                        }
+                    }
+                    placement="right"
+                />
+            </div>
             <div>
                 height:
                 <input

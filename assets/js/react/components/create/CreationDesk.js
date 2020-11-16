@@ -14,7 +14,9 @@ export const CreationDesk = ({store = {}}) => {
     const navStyle = {...store.navbar, height: `${store.navbar.height}rem`};
     return(
         <div id="creation-desk">
-            <nav style={navStyle}/>
+            <nav style={navStyle}>
+                tekst
+            </nav>
         </div>
     );
 }
