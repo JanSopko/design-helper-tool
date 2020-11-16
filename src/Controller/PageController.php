@@ -82,7 +82,8 @@ class PageController extends AbstractController
 
         return $this->render('create/create.html.twig', [
             'page_hash' => $pageHash,
-            'page_body' => $page->getBody()
+            'page_body' => $page->getBody(),
+            'page_structure' => json_encode($page->jsonSerializeStructureForStore())
         ]);
     }
 

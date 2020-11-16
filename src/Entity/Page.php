@@ -44,6 +44,11 @@ class Page implements JsonSerializable
      */
     private $urlHash;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Navbar::class, inversedBy="page")
+     */
+    private $navbar;
+
     public function __construct()
     {
     }
@@ -148,12 +153,33 @@ class Page implements JsonSerializable
         return !empty($html . $style) ? "<body>$style$html</body>" : '';
     }
 
-    public function jsonSerialize()
+    public function getNavbar(): ?Navbar
+    {
+        return $this->navbar;
+    }
+
+    public function setNavbar(?Navbar $navbar): self
+    {
+        $this->navbar = $navbar;
+
+        return $this;
+    }
+
+    public function jsonSerialize(): array
     {
         return [
             'id' => $this->id,
             'urlHash' => $this->urlHash,
             'name' => $this->name
+        ];
+    }
+
+    public function jsonSerializeStructureForStore(): array
+    {
+        $navbarStructure = $this->navbar !== null ?
+            $this->getNavbar()->jsonSerialize() : [];
+        return [
+            'navbar' => $navbarStructure
         ];
     }
 }

@@ -4,11 +4,15 @@
     <list default="true" id="23010fe4-d294-4d04-b7b2-5e67385fe2b8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/css/create-wrapper.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/create-wrapper.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/functions/elementOrParentHasClass.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/functions/elementOrParentHasClass.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/react/components/create/CreatePageWrapper.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/react/components/create/CreatePageWrapper.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/react/components/create/CreationDesk.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/react/components/create/CreationDesk.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/react/components/create/menu/CreateMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/react/components/create/menu/CreateMenu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/react/components/create/menu/MenuOptions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/react/components/create/menu/ElementEditors.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/react/components/create/menu/ElementEditors.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/build/create.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/create.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/create_wrapper.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/create_wrapper.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/vendors~create.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/vendors~create.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/PageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/PageController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Page.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Page.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/create/create.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/create/create.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,18 +138,18 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/assets/js/react/components/create/cards" />
-      <recent name="$PROJECT_DIR$/public/img" />
-      <recent name="$PROJECT_DIR$/assets/js/react/components" />
-      <recent name="$PROJECT_DIR$/assets/js/react/pages" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public/img" />
       <recent name="$PROJECT_DIR$/config/packages" />
       <recent name="$PROJECT_DIR$/config/packages/prod" />
       <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/templates" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets/js/react/components/create/cards" />
+      <recent name="$PROJECT_DIR$/public/img" />
+      <recent name="$PROJECT_DIR$/assets/js/react/components" />
+      <recent name="$PROJECT_DIR$/assets/js/react/pages" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -189,10 +193,10 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="240" y="65" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602924902843">
+    <state x="240" y="65" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605535414548">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="240" y="65" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.800@0.0.1280.800" timestamp="1602924902843" />
+    <state x="240" y="65" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.800@0.0.1280.800" timestamp="1605535414548" />
     <state x="337" y="209" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1601020495915">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
@@ -201,10 +205,10 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="439" y="89" key="#com.intellij.ide.util.MemberChooser/0.0.1280.800@0.0.1280.800" timestamp="1605383751158" />
-    <state x="437" y="119" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1602844917329">
+    <state x="437" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1605519555374">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="437" y="119" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1280.800@0.0.1280.800" timestamp="1602844917329" />
+    <state x="437" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1280.800@0.0.1280.800" timestamp="1605519555374" />
     <state x="378" y="154" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1601052081166">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
@@ -213,14 +217,14 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="378" y="162" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1280.800@0.0.1280.800" timestamp="1604694455229" />
-    <state x="281" y="133" key="NewPhpClassDialog" timestamp="1604678502150">
+    <state x="281" y="133" key="NewPhpClassDialog" timestamp="1605540595064">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="281" y="133" key="NewPhpClassDialog/0.0.1280.800@0.0.1280.800" timestamp="1604678502150" />
-    <state x="442" y="330" key="NewPhpFileDialog" timestamp="1602331155407">
+    <state x="281" y="133" key="NewPhpClassDialog/0.0.1280.800@0.0.1280.800" timestamp="1605540595064" />
+    <state x="442" y="330" key="NewPhpFileDialog" timestamp="1605540568207">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="442" y="330" key="NewPhpFileDialog/0.0.1280.800@0.0.1280.800" timestamp="1602331155407" />
+    <state x="442" y="330" key="NewPhpFileDialog/0.0.1280.800@0.0.1280.800" timestamp="1605540568207" />
     <state x="141" y="39" key="SettingsEditor" timestamp="1604694794044">
       <screen x="0" y="0" width="1280" height="800" />
     </state>

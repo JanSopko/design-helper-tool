@@ -14,7 +14,8 @@
     <script>
         let layoutData = {
             pageHash: '{{ page_hash }}',
-            pageBody: '{{ page_body|raw }}'
+            pageBody: '{{ page_body|raw }}',
+            pageStructure: JSON.parse('{{ page_structure|raw }}')
         };
     </script>
     {{ encore_entry_script_tags('create') }}
