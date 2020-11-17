@@ -4,6 +4,7 @@
 namespace App\Controller;
 
 
+use App\Entity\Navbar;
 use App\Entity\Page;
 use App\Entity\Theme;
 use App\Entity\User;
@@ -167,9 +168,40 @@ class PageController extends AbstractController
 
     }
 
-    public function updatePage()
-    {
 
+    /**
+     * @Route("/data/update_page/{pageHash}")
+     * @param Request $request
+     * @param UserRepository $userRepository
+     * @param string $pageHash
+     * @param PageRepository $pageRepository
+     * @return JsonResponse
+     */
+    public function updatePage(Request $request, UserRepository $userRepository, string $pageHash, PageRepository $pageRepository): JsonResponse
+    {
+        $page = $pageRepository->findOneBy([
+            'urlHash' => $pageHash
+        ]);
+        if ($page === null) {
+            return new JsonResponse(['success' => false, 'message' => 'Page does not exist.']);
+        }
+        $user = LogChecker::getLoggedUser($request, $userRepository);
+        $theme = $page->getTheme();
+        if (!($user instanceof User) || $user->getId() !== $theme->getUser()->getId()) {
+            return new JsonResponse(['success' => false, 'message' => 'Unauthorized'], Response::HTTP_UNAUTHORIZED);
+        }
+        $payload = RequestDataGetter::getRequestData($request)['payload'] ?? [];
+        if (empty($payload)) {
+            return new JsonResponse(['success' => false, 'message' => 'Something went wrong']);
+        }
+        $navbar = $page->getNavbar() ?? new Navbar();
+        $navbar = $navbar->updateSelfFromPayload($payload['navbar']);
+        $navbar->addPage($page);
+        $em = $this->getEntityManager();
+        $em->persist($navbar);
+        $em->flush();
+
+        return new JsonResponse($payload);
     }
 
     /**

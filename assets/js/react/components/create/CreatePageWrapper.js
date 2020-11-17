@@ -2,6 +2,8 @@ import React, { useReducer } from 'react';
 import Footer from "../Footer";
 import { CreationDesk } from "./CreationDesk";
 import { CreateMenu } from "./menu/CreateMenu";
+import reducer from "./reducer";
+import axios from 'axios';
 
 export const ACTIONS = {
     NAVBAR_HEIGHT: 'setNavbarHeight',
@@ -9,27 +11,22 @@ export const ACTIONS = {
     NAVBAR_TEXT_COLOR: 'setNavbarTextColor'
 };
 
+export const INIT_STYLE = {
+    navbar: {
+        backgroundColor: '#aaaaaa',
+        color: '#000000',
+        height: 5
+    }
+};
+
 const init = () => {
     return layoutData.pageStructure;
 }
 
-const reducer = (state, action) => {
-    switch (action.type) {
-        case ACTIONS.NAVBAR_HEIGHT:
-            const newNavbarH = {...state.navbar};
-            newNavbarH.height = action.payload.height;
-            return {...state, navbar: newNavbarH};
-        case ACTIONS.NAVBAR_BACKGROUND_COLOR:
-            const newNavbarBg = {...state.navbar};
-            newNavbarBg.backgroundColor = action.payload.backgroundColor;
-            return {...state, navbar: newNavbarBg};
-        case ACTIONS.NAVBAR_TEXT_COLOR:
-            const newNavbarTc = {...state.navbar};
-            newNavbarTc.color = action.payload.color;
-            return {...state, navbar: newNavbarTc};
-        default:
-            return state;
-    }
+const savePage = payload => {
+    payload.navbar.height = payload.navbar.height || INIT_STYLE.navbar.height; //@todo refactor!
+    axios.post(`/data/update_page/${layoutData.pageHash}`, {payload})
+        .then(res => console.log(res.data));
 }
 
 export const CreatePageWrapper = () => {
@@ -38,6 +35,7 @@ export const CreatePageWrapper = () => {
     console.log(state);
     return(
         <div id="content">
+            <button className="button-green" onClick={() => savePage(state)}>Save</button>
             <CreateMenu store={state} dispatch={dispatch}/>
             <CreationDesk store={state}/>
             <Footer/>

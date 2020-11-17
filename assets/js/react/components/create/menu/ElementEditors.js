@@ -1,21 +1,22 @@
 import React, {useState} from 'react';
 import InputColor from 'react-input-color';
-import { ACTIONS } from "../CreatePageWrapper";
+import { ACTIONS, INIT_STYLE } from "../CreatePageWrapper";
 
 export const NavbarEditor = ({
         navbar,
         dispatch
     }) => {
-    const [bgColor, setBgColor] = useState(navbar.backgroundColor);
-    const [textColor, setTextColor] = useState(navbar.color);
-    const [height, setHeight] = useState(navbar.height);
+    const [bgColor, setBgColor] = useState(navbar.backgroundColor || '#ffffff');
+    const [textColor, setTextColor] = useState(navbar.color || '#000000');
+    const [height, setHeight] = useState(navbar.height || 5);
 
+    console.log('props:',bgColor, textColor, height);
     return(
         <div className="design-menu-editor navbar-editor">
             <div>
                 background color:
                 <InputColor
-                    initialValue={navbar.backgroundColor}
+                    initialValue={navbar.backgroundColor || '#ffffff'}
                     onChange={e =>
                     {
                         setBgColor;
@@ -33,7 +34,7 @@ export const NavbarEditor = ({
             <div>
                 text color:
                 <InputColor
-                    initialValue={navbar.color}
+                    initialValue={navbar.color || '#000000'}
                     onChange={e =>
                         {
                             setTextColor;

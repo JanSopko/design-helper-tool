@@ -189,6 +189,21 @@ class Navbar implements JsonSerializable
         return '';
     }
 
+    public function updateSelfFromPayload(array $payload): self
+    {
+        if (isset($payload['backgroundColor'])) {
+            $this->setBgColor($payload['backgroundColor']);
+        }
+        if (isset($payload['color'])) {
+            $this->setTextColor($payload['color']);
+        }
+        if (isset($payload['height'])) {
+            $this->setHeight($payload['height']);
+        }
+
+        return $this;
+    }
+
     public function jsonSerialize(): array
     {
         return [

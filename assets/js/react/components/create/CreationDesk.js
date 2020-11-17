@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
+import { INIT_STYLE } from "./CreatePageWrapper";
 
 export const CreationDesk = ({store = {}}) => {
 
+    store.navbar = store.navbar || INIT_STYLE.navbar;
     // useEffect(() => {
     //     document.getElementById('creation-desk').innerHTML = layoutData.pageBody;
     // }, []);
@@ -11,7 +13,7 @@ export const CreationDesk = ({store = {}}) => {
     //     color: store.navbar.textColor,
     //     fontFamily: store.navbar.font
     // };
-    const navStyle = {...store.navbar, height: `${store.navbar.height}rem`};
+    const navStyle = {...store.navbar, height: `${store.navbar.height || 5}rem`};
     return(
         <div id="creation-desk">
             <nav style={navStyle}>
