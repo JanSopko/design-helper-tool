@@ -14,6 +14,16 @@ const reducer = (state, action) => {
             const newNavbarTc = {...state.navbar};
             newNavbarTc.color = action.payload.color;
             return {...state, navbar: newNavbarTc};
+
+
+        case ACTIONS.BODY_BACKGROUND_COLOR:
+            const newBody = {...state.body};
+            newBody.backgroundColor = action.payload.backgroundColor;
+            return {...state, body: newBody};
+        case ACTIONS.BODY_TEXT_COLOR:
+            const newBodyTc = {...state.body};
+            newBodyTc.color = action.payload.color;
+            return {...state, body: newBodyTc};
         default:
             return state;
     }

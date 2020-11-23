@@ -196,12 +196,20 @@ class PageController extends AbstractController
         }
         $navbar = $page->getNavbar() ?? new Navbar();
         $navbar = $navbar->updateSelfFromPayload($payload['navbar']);
+        //@todo NUTNY REFAKTOR, TAKTO TO NEMOZE BYT
+        if (!empty($payload['body']['backgroundColor'])) {
+            $page->setBackgroundColor($payload['body']['backgroundColor']);
+        }
+        if (!empty($payload['body']['color'])) {
+            $page->setTextColor($payload['body']['color']);
+        }
         $navbar->addPage($page);
         $em = $this->getEntityManager();
         $em->persist($navbar);
+        $em->persist($page);
         $em->flush();
 
-        return new JsonResponse($payload);
+        return new JsonResponse(['success' => true, 'message' => 'Page saved.']);
     }
 
     /**

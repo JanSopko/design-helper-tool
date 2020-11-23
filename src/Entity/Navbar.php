@@ -178,15 +178,22 @@ class Navbar implements JsonSerializable
         $style .= 'background-color: ' . $this->bgColor . ';';
         $style .= 'color: ' . $this->textColor . ';';
         $style .= 'height: ' . $this->height . 'rem;';
-        $style .= 'font-family: ' . $this->font . ';';
+        if (!empty($this->font)) {
+            $style .= 'font-family: ' . $this->font . ';';
+        }
         $style .= '}';
+        if (empty($this->font) && empty($this->textColor) && empty($this->bgColor) && empty($this->height)) {
+            $style = '';
+        }
         return $style;
     }
 
     public function getHtml(): string
     {
         //@todo
-        return '';
+        $html = '<' . self::HTML_TAG . '>';
+        $html .= '</' . self::HTML_TAG . '>';
+        return $html;
     }
 
     public function updateSelfFromPayload(array $payload): self
@@ -206,11 +213,18 @@ class Navbar implements JsonSerializable
 
     public function jsonSerialize(): array
     {
-        return [
+        $items = [];
+        foreach ($this->getItems() as $item) {
+            $items[] = $item->jsonSerialize();
+        }
+        $response = [
             'backgroundColor' => $this->bgColor,
             'color' => $this->textColor,
             'height' => $this->height,
-            'fontFamily' => $this->font
+            'fontFamily' => $this->font,
+            'items' => $items
         ];
+
+        return $response;
     }
 }

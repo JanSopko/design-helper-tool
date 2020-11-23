@@ -4,21 +4,20 @@ import { INIT_STYLE } from "./CreatePageWrapper";
 export const CreationDesk = ({store = {}}) => {
 
     store.navbar = store.navbar || INIT_STYLE.navbar;
-    // useEffect(() => {
-    //     document.getElementById('creation-desk').innerHTML = layoutData.pageBody;
-    // }, []);
-    // const myStyle = {
-    //     height: store.navbar.height,
-    //     backgroundColor: store.navbar.bgColor,
-    //     color: store.navbar.textColor,
-    //     fontFamily: store.navbar.font
-    // };
+    let bodyStyle = store.body || {};
+    let navItems = store.navbar.items || [];
     const navStyle = {...store.navbar, height: `${store.navbar.height || 5}rem`};
+    navStyle.display = 'flex';
+    navStyle.justifyContent = 'space-around';
     return(
-        <div id="creation-desk">
+        <div id="creation-desk" style={bodyStyle}>
             <nav style={navStyle}>
-                tekst
+                    {navItems.map(item => {
+                        return <a href={item.url}>{item.text}</a>;
+                    })}
+                    text
             </nav>
+            text2
         </div>
     );
 }

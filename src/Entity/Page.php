@@ -49,6 +49,16 @@ class Page implements JsonSerializable
      */
     private $navbar;
 
+    /**
+     * @ORM\Column(type="string", nullable=true)
+     */
+    private $backgroundColor;
+
+    /**
+     * @ORM\Column(type="string", nullable=true)
+     */
+    private $textColor;
+
     public function __construct()
     {
     }
@@ -75,7 +85,12 @@ class Page implements JsonSerializable
      */
     public function getPageHtml()
     {
-        return $this->pageHtml;
+        $html = '';
+        $navbar = $this->getNavbar();
+        if ($navbar !== null) {
+            $html = $navbar->getHtml();
+        }
+        return $html;
     }
 
     /**
@@ -92,7 +107,21 @@ class Page implements JsonSerializable
      */
     public function getPageCss()
     {
-        return $this->pageCss;
+//        return $this->pageCss;
+        $style = 'body {';
+        $style .= 'margin: 0;';
+        if ($this->backgroundColor !== null) {
+            $style .= 'background-color: ' . $this->backgroundColor . ';';
+        }
+        if ($this->textColor !== null) {
+            $style .= 'color: ' . $this->textColor . ';';
+        }
+        $style .= '}';
+        $navbar = $this->getNavbar();
+        if ($navbar !== null) {
+            $style .= $navbar->getStyle();
+        }
+        return $style;
     }
 
     /**
@@ -143,14 +172,14 @@ class Page implements JsonSerializable
     {
         $style = '';
         $html = '';
-        if (!empty($this->pageHtml)) {
+        if (!empty($this->getPageHtml())) {
             $html = $this->getPageHtml();
         }
-        if (!empty($this->pageCss)) {
+        if (!empty($this->getPageCss())) {
             $css = $this->getPageCss();
             $style = "<style>$css</style>";
         }
-        return !empty($html . $style) ? "<body>$style$html</body>" : '';
+        return !empty($html) && !empty($style) ? "<body>$style$html</body>" : '';
     }
 
     public function getNavbar(): ?Navbar
@@ -162,6 +191,42 @@ class Page implements JsonSerializable
     {
         $this->navbar = $navbar;
 
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getBackgroundColor(): string
+    {
+        return $this->backgroundColor;
+    }
+
+    /**
+     * @param string $backgroundColor
+     * @return Page
+     */
+    public function setBackgroundColor(string $backgroundColor): self
+    {
+        $this->backgroundColor = $backgroundColor;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTextColor(): string
+    {
+        return $this->textColor;
+    }
+
+    /**
+     * @param string $textColor
+     * @return $this
+     */
+    public function setTextColor(string $textColor): self
+    {
+        $this->textColor = $textColor;
         return $this;
     }
 
@@ -179,6 +244,10 @@ class Page implements JsonSerializable
         $navbarStructure = $this->navbar !== null ?
             $this->getNavbar()->jsonSerialize() : [];
         return [
+            'body' => [
+                'backgroundColor' => $this->backgroundColor,
+                'color' => $this->textColor
+            ],
             'navbar' => $navbarStructure
         ];
     }

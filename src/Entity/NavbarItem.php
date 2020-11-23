@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity(repositoryClass=NavbarItemRepository::class)
  */
-class NavbarItem
+class NavbarItem implements \JsonSerializable
 {
     /**
      * @ORM\Id
@@ -72,5 +72,13 @@ class NavbarItem
         $this->navbar = $navbar;
 
         return $this;
+    }
+
+    public function jsonSerialize(): array
+    {
+        return [
+            'text' => $this->text,
+            'url' => $this->url
+        ];
     }
 }

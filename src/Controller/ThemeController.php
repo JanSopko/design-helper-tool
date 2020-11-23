@@ -11,9 +11,11 @@ use App\Repository\ThemeRepository;
 use App\Repository\UserRepository;
 use App\Service\LogChecker;
 use App\Service\RequestDataGetter;
+use App\Service\ThemeNameManager;
 use App\Service\ThemePrivacyManager;
 use App\Service\Validator\ThemeValidator;
 use Doctrine\Persistence\ObjectManager;
+use Symfony\Component\HttpFoundation\BinaryFileResponse;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -323,25 +325,40 @@ class ThemeController extends AbstractController
         if (!$theme instanceof Theme || !ThemePrivacyManager::canUserSeeTheme($user, $theme)) {
             return new Response('Theme does not exist.');
         }
+        $authorName = ($user instanceof User) ? $user->getUsername() : '';
+        $themeName = ThemeNameManager::generateNameForDownload($theme->getName(), $authorName);
         $pages = $theme->getNonEmptyPages();
         if ($pages->isEmpty()) {
             return new Response('Theme is empty.');
         }
 
         $zip = new ZipArchive();
-        if (!$zip->open("themes/theme-$themeId.zip", ZipArchive::CREATE)) {
+        if (!$zip->open("themes/$themeName.zip", ZipArchive::CREATE)) {
             return new Response('Zip Creation failed.');
         }
 
         foreach ($pages as $page) {
-            $pageHash = $page->getUrlHash();
-            $file = fopen("themes/page-$pageHash.html", 'w+');
+            $pageName = $page->getName();
+            $file = fopen("themes/$pageName.html", 'w+');
             fwrite($file, $page->getBody());
             fclose($file);
-            $latestPage = "page-$pageHash.html";
+            $latestPage = "$pageName.html";
             $zip->addFile("themes/$latestPage");
+//            unlink("themes/$latestPage");
         }
 
-        return $this->file("themes/theme-$themeId.zip");
+        return $this->redirectToRoute('downloadThemeZip', ['themeName' => $themeName]);
+    }
+
+    /**
+     * @Route("/download-theme-zip/{themeName}", name="downloadThemeZip", methods={"GET"})
+     * @param string $themeName
+     * @return BinaryFileResponse
+     */
+    public function downloadThemeZip(string $themeName): BinaryFileResponse
+    {
+        $response =  $this->file("themes/$themeName.zip");
+//        unlink("themes/$themeName.zip");
+        return $response;
     }
 }

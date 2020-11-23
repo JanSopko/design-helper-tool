@@ -74,7 +74,7 @@ const ThemeWrapper = () => {
                     }
                     <button
                         className="button-blue"
-                        onClick={() => {window.location.href = `/download-theme/${layoutData.themeId}`}}
+                        onClick={() => {window.location.href = `/download-theme/${Number.parseInt(layoutData.themeId)}`}}
                     >
                         Download
                     </button>

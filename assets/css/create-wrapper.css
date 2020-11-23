@@ -48,14 +48,21 @@
 }
 
 .design-menu-editor {
-    font-size: .9rem;
+    font-size: .85rem;
     padding: 1rem;
     margin-top: 1rem;
     border-top: 1px solid #696969;
     background: linear-gradient(180deg, #5a5a5a, #696969);
 }
 
-nav {
+.element-editor-item {
+    padding: .2rem;
+    border-bottom: 1px solid #313131;
+    display: flex;
+    justify-content: space-between;
+}
+
+#creation-desk nav {
     transition: height .2s ease;
 }
 

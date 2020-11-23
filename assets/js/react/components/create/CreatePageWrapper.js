@@ -8,7 +8,10 @@ import axios from 'axios';
 export const ACTIONS = {
     NAVBAR_HEIGHT: 'setNavbarHeight',
     NAVBAR_BACKGROUND_COLOR: 'setNavbarBackgroundColor',
-    NAVBAR_TEXT_COLOR: 'setNavbarTextColor'
+    NAVBAR_TEXT_COLOR: 'setNavbarTextColor',
+
+    BODY_BACKGROUND_COLOR: 'setBodyBackroundColor',
+    BODY_TEXT_COLOR: 'setBodyTextColor'
 };
 
 export const INIT_STYLE = {
@@ -23,10 +26,14 @@ const init = () => {
     return layoutData.pageStructure;
 }
 
-const savePage = payload => {
+export const savePage = payload => {
     payload.navbar.height = payload.navbar.height || INIT_STYLE.navbar.height; //@todo refactor!
     axios.post(`/data/update_page/${layoutData.pageHash}`, {payload})
-        .then(res => console.log(res.data));
+        .then(res => {
+            if (res.data.message) {
+                alert(res.data.message);
+            }
+        });
 }
 
 export const CreatePageWrapper = () => {
@@ -35,7 +42,7 @@ export const CreatePageWrapper = () => {
     console.log(state);
     return(
         <div id="content">
-            <button className="button-green" onClick={() => savePage(state)}>Save</button>
+
             <CreateMenu store={state} dispatch={dispatch}/>
             <CreationDesk store={state}/>
             <Footer/>

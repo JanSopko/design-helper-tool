@@ -10,10 +10,9 @@ export const NavbarEditor = ({
     const [textColor, setTextColor] = useState(navbar.color || '#000000');
     const [height, setHeight] = useState(navbar.height || 5);
 
-    console.log('props:',bgColor, textColor, height);
     return(
         <div className="design-menu-editor navbar-editor">
-            <div>
+            <div className="element-editor-item">
                 background color:
                 <InputColor
                     initialValue={navbar.backgroundColor || '#ffffff'}
@@ -31,7 +30,7 @@ export const NavbarEditor = ({
                     placement="right"
                 />
             </div>
-            <div>
+            <div className="element-editor-item">
                 text color:
                 <InputColor
                     initialValue={navbar.color || '#000000'}
@@ -49,7 +48,7 @@ export const NavbarEditor = ({
                     placement="right"
                 />
             </div>
-            <div>
+            <div className="element-editor-item">
                 height:
                 <input
                     type="range"
@@ -69,6 +68,49 @@ export const NavbarEditor = ({
                     }
                 />
             </div>
+        </div>
+    );
+}
+
+export const BodyEditor = ({
+        body,
+        dispatch
+    }) => {
+    const [backgroundColor, setBackgroundColor] = useState(body.backgroundColor || '#ffffff');
+    const [color, setColor] = useState(body.color || '#000000');
+    return (
+        <div className="design-menu-editor">
+            <div className="element-editor-item">
+            background color:
+                <InputColor
+                    initialValue={body.backgroundColor || '#ffffff'}
+                    onChange={e => {
+                        setBackgroundColor;
+                        dispatch({
+                            type: ACTIONS.BODY_BACKGROUND_COLOR,
+                            payload: {
+                                backgroundColor: e.hex
+                            }
+                        });
+                    }}
+                />
+            </div>
+            <div className="element-editor-item">
+                text color:
+                <InputColor
+                    initialValue={body.color || '#000000'}
+                    onChange={e => {
+                        setBackgroundColor;
+                        dispatch({
+                            type: ACTIONS.BODY_TEXT_COLOR,
+                            payload: {
+                                color: e.hex
+                            }
+                        });
+                    }}
+                />
+            </div>
+
         </div>
     );
 }
