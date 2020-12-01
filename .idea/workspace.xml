@@ -3,21 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="23010fe4-d294-4d04-b7b2-5e67385fe2b8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/create-wrapper.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/create-wrapper.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/react/components/create/CreatePageWrapper.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/react/components/create/CreatePageWrapper.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/react/components/create/CreationDesk.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/react/components/create/CreationDesk.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/react/components/create/menu/CreateMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/react/components/create/menu/CreateMenu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/react/components/create/menu/ElementEditors.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/react/components/create/menu/ElementEditors.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/react/components/create/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/react/components/create/reducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/react/components/theme/ThemeWrapper.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/react/components/theme/ThemeWrapper.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/create.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/create.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/create_wrapper.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/create_wrapper.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/theme.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/theme.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/PageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/PageController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/ThemeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ThemeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Navbar.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Navbar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/NavbarItem.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/NavbarItem.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Page.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Page.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -192,7 +178,10 @@
       <workItem from="1605256703049" duration="178000" />
       <workItem from="1605373014317" duration="3657000" />
       <workItem from="1605628461617" duration="23000" />
-      <workItem from="1605983690210" duration="17015000" />
+      <workItem from="1605983690210" duration="17532000" />
+      <workItem from="1606137065015" duration="1969000" />
+      <workItem from="1606159426245" duration="1099000" />
+      <workItem from="1606811374713" duration="697000" />
     </task>
     <servers />
   </component>

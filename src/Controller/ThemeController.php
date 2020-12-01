@@ -215,7 +215,8 @@ class ThemeController extends AbstractController
         int $themeId,
         ThemeRepository $themeRepository,
         UserRepository $userRepository
-    ): JsonResponse {
+    ): JsonResponse
+    {
         //@todo REFACTOR!
         $theme = $themeRepository->find($themeId);
         if ($theme instanceof Theme) {
@@ -232,9 +233,40 @@ class ThemeController extends AbstractController
         return new JsonResponse(['not ok']);
     }
 
-    public function updateTheme()
+    /**
+     * @Route("/data/update_theme/{themeId}")
+     * @param Request $request
+     * @param int $themeId
+     * @param UserRepository $userRepository
+     * @param ThemeRepository $themeRepository
+     * @return JsonResponse
+     */
+    public function updateTheme(
+        Request $request,
+        int $themeId,
+        UserRepository $userRepository,
+        ThemeRepository $themeRepository
+    ): JsonResponse
     {
+        $user = LogChecker::getLoggedUser($request, $userRepository);
+        $theme = $themeRepository->find($themeId);
+        //ak user nevlastni temu
+        if (!($user instanceof User) || !($theme instanceof Theme) || $user->getId() !== $theme->getUser()->getId()) {
+            return new JsonResponse(['success' => false, 'message' => 'You can not update this theme.']);
+        }
+        $content = RequestDataGetter::getRequestData($request);
+        $themeValidator = new ThemeValidator();
+        $themeValidator->validate($content);
 
+        $theme->setName($content[ThemeValidator::NAME_KEY]);
+        $theme->setPrivacyLevel($content[ThemeValidator::PRIVACY_LEVEL_KEY]);
+        $theme->setDescription($content[ThemeValidator::DESCRIPTION_KEY]);
+
+        $em = $this->getEntityManager();
+        $em->persist($theme);
+        $em->flush();
+
+        return new JsonResponse(['success' => true, 'message' => 'Theme successfully updated!']);
     }
 
     /**
