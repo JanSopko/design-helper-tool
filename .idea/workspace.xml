@@ -3,7 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="23010fe4-d294-4d04-b7b2-5e67385fe2b8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/react/components/theme/ThemeWrapper.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/react/components/theme/ThemeWrapper.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/appCss.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/appCss.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/entrypoints.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/entrypoints.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/theme.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/theme.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/ThemeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ThemeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Theme.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Theme.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/themes/theme.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/themes/theme.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,7 +190,10 @@
       <workItem from="1605983690210" duration="17532000" />
       <workItem from="1606137065015" duration="1969000" />
       <workItem from="1606159426245" duration="1099000" />
-      <workItem from="1606811374713" duration="697000" />
+      <workItem from="1606811374713" duration="1771000" />
+      <workItem from="1608395614460" duration="1300000" />
+      <workItem from="1608403562235" duration="3000" />
+      <workItem from="1608461335267" duration="11037000" />
     </task>
     <servers />
   </component>
@@ -225,10 +237,10 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="141" y="39" key="SettingsEditor/0.0.1280.800@0.0.1280.800" timestamp="1604694794044" />
-    <state x="332" y="155" width="727" height="490" key="find.popup" timestamp="1603450396950">
+    <state x="332" y="155" width="727" height="490" key="find.popup" timestamp="1608468380988">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="332" y="155" width="727" height="490" key="find.popup/0.0.1280.800@0.0.1280.800" timestamp="1603450396950" />
+    <state x="332" y="155" width="727" height="490" key="find.popup/0.0.1280.800@0.0.1280.800" timestamp="1608468380988" />
     <state x="305" y="124" width="670" height="676" key="search.everywhere.popup" timestamp="1606061921051">
       <screen x="0" y="0" width="1280" height="800" />
     </state>

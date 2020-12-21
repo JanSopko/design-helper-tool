@@ -256,7 +256,11 @@ class ThemeController extends AbstractController
         }
         $content = RequestDataGetter::getRequestData($request);
         $themeValidator = new ThemeValidator();
-        $themeValidator->validate($content);
+        try {
+            $themeValidator->validate($content);
+        } catch (ValidationException $e) {
+            return new JsonResponse(['success' => false, 'errors' => $themeValidator->getErrorMessages()]);
+        }
 
         $theme->setName($content[ThemeValidator::NAME_KEY]);
         $theme->setPrivacyLevel($content[ThemeValidator::PRIVACY_LEVEL_KEY]);

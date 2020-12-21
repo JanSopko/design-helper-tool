@@ -17,7 +17,8 @@
             themeName: '{{ theme.name }}',
             themeDescription: '{{ theme.description }}',
             isMyTheme: '{{ isMyTheme }}',
-            themeAuthor: '{{ theme.user_name }}'
+            themeAuthor: '{{ theme.user_name }}',
+            privacyLevel: '{{ theme.privacy_level }}'
         }
         layoutData.pages = [];
         {% for page in theme.page_ids %}

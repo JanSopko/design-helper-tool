@@ -155,6 +155,24 @@ canvas {
     color: red;
 }
 
+.floating-window {
+    width: 25rem;
+    background-color: white;
+    border: 1px solid #868686;
+    box-shadow: 0 0 25px -8px rgba(0,0,0,0.4);
+    border-radius: .5rem;
+    padding: 1rem;
+    z-index: 10;
+    position: fixed;
+    top: 10rem;
+    left: calc(50% - 13.5rem);
+    transition: top .3s ease;
+}
+
+.over-top {
+    top: -10rem;
+}
+
 @keyframes button-recolor-on-hover {
     from {background-color:#cddc39}
     to {background-color:#4caf50}

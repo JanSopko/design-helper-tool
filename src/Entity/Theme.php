@@ -223,7 +223,8 @@ class Theme implements JsonSerializable
             'user_id' => $this->user->getId(),
             'img_path' => $this->imgPath,
             'page_ids' => $pageIds,
-            'pages_count' => count($this->pages)
+            'pages_count' => count($this->pages),
+            'privacy_level' => $this->privacyLevel
         ];
     }
 }
