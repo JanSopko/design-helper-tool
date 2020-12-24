@@ -3,6 +3,6 @@ import ReactDOM from 'react-dom';
 import CreatePageContainer from "../containers/createPageContainer";
 
 ReactDOM.render(
-    <CreatePageContainer></CreatePageContainer>,
+    <CreatePageContainer />,
     window.document.getElementById('root')
 );

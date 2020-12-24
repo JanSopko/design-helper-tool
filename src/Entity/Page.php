@@ -116,6 +116,7 @@ class Page implements JsonSerializable
         if ($this->textColor !== null) {
             $style .= 'color: ' . $this->textColor . ';';
         }
+        $style .= 'overflow:scroll;';
         $style .= '}';
         $navbar = $this->getNavbar();
         if ($navbar !== null) {
@@ -246,7 +247,8 @@ class Page implements JsonSerializable
         return [
             'body' => [
                 'backgroundColor' => $this->backgroundColor,
-                'color' => $this->textColor
+                'color' => $this->textColor,
+                'overflow' => 'scroll'
             ],
             'navbar' => $navbarStructure
         ];

@@ -27,7 +27,7 @@ class ThemeController extends AbstractController
 {
     private ?ObjectManager $entityManager = null;
 
-    const COUNT_OF_THEMES_ON_PAGE = 16;
+    const COUNT_OF_THEMES_ON_PAGE = 4;
 
     /**
      * @Route("/browse", name="browse", methods={"GET"})
@@ -39,6 +39,7 @@ class ThemeController extends AbstractController
     {
         $page = RequestDataGetter::getRequestData($request)['page'] ?? 1;
         $page = (int)$page;
+        if ($page < 1) $page = 1;
         return $this->render('browse/index.html.twig', [
             'page' => $page
         ]);
@@ -104,16 +105,10 @@ class ThemeController extends AbstractController
         UserRepository $userRepository
     ): JsonResponse {
         $user = LogChecker::getLoggedUser($request, $userRepository);
-        $themes = $themeRepository->findBy(['privacyLevel' => ThemePrivacyManager::GLOBALLY_VISIBLE]);
+        $themes = $this->getThemesDataArray($user, $request, $themeRepository, $userRepository);
         $page = RequestDataGetter::getRequestData($request)['page'] ?? 1;
         $page = (int)$page;
-        if ($user instanceof User) {
-            $themes = array_merge(
-                $themes,
-                $themeRepository->findBy(['privacyLevel' => ThemePrivacyManager::COMMUNITY_VISIBLE])
-            );
-            $themes = array_merge($themes, $this->getMyPrivateThemes($request, $themeRepository, $userRepository));
-        }
+        if ($page < 1) $page = 1; // ak user zadal stranku menej ako 1
         $themesOnPage = [];
         $offset = ($page - 1) * self::COUNT_OF_THEMES_ON_PAGE;
         for ($i = $offset; $i < $offset + self::COUNT_OF_THEMES_ON_PAGE; $i++) {
@@ -122,6 +117,57 @@ class ThemeController extends AbstractController
             }
         }
         return new JsonResponse($themesOnPage);
+    }
+
+    /**
+     * @Route("/data/pages_count", name="pagesCount", methods={"GET"})
+     * @param Request $request
+     * @param ThemeRepository $themeRepository
+     * @param UserRepository $userRepository
+     * @return JsonResponse
+     */
+    public function getPagesCountResponse(
+        Request $request,
+        ThemeRepository $themeRepository,
+        UserRepository $userRepository): JsonResponse
+    {
+        $user = LogChecker::getLoggedUser($request, $userRepository);
+        $themes = $this->getThemesDataArray($user, $request, $themeRepository, $userRepository);
+        return new JsonResponse(['pagesCount' => $this->getPagesCount($themes)]);
+    }
+
+    /**
+     * @param array $themes
+     * @return int
+     */
+    private function getPagesCount(array $themes): int
+    {
+        return ceil(count($themes) / self::COUNT_OF_THEMES_ON_PAGE);
+    }
+
+    /**
+     * @param User $user
+     * @param Request $request
+     * @param ThemeRepository $themeRepository
+     * @param UserRepository $userRepository
+     * @return array
+     */
+    private function getThemesDataArray(
+        User $user,
+        Request $request,
+        ThemeRepository $themeRepository,
+        UserRepository $userRepository
+    ): array {
+        $themes = $themeRepository->findBy(['privacyLevel' => ThemePrivacyManager::GLOBALLY_VISIBLE]);
+        if ($user instanceof User) {
+            $themes = array_merge(
+                $themes,
+                $themeRepository->findBy(['privacyLevel' => ThemePrivacyManager::COMMUNITY_VISIBLE])
+            );
+            $themes = array_merge($themes, $this->getMyPrivateThemes($request, $themeRepository, $userRepository));
+        }
+
+        return $themes;
     }
 
     /**

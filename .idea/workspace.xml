@@ -2,17 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="23010fe4-d294-4d04-b7b2-5e67385fe2b8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/react/components/theme/ThemeWrapper.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/react/components/theme/ThemeWrapper.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/react/components/browse/BrowsePageWrapper.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/react/components/browse/BrowsePageWrapper.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/react/components/create/CreationDesk.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/react/components/create/CreationDesk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/react/pages/create.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/react/pages/create.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/build/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/build/appCss.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/appCss.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/entrypoints.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/entrypoints.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/theme.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/theme.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/browse.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/browse.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/create.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/create.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/ThemeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ThemeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Theme.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Theme.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/themes/theme.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/themes/theme.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Page.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Page.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +122,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/img" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -138,18 +139,18 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets/js/react/components/create/cards" />
+      <recent name="$PROJECT_DIR$/public/img" />
+      <recent name="$PROJECT_DIR$/assets/js/react/components" />
+      <recent name="$PROJECT_DIR$/assets/js/react/pages" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public/img" />
       <recent name="$PROJECT_DIR$/config/packages" />
       <recent name="$PROJECT_DIR$/config/packages/prod" />
       <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/templates" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/assets/js/react/components/create/cards" />
-      <recent name="$PROJECT_DIR$/public/img" />
-      <recent name="$PROJECT_DIR$/assets/js/react/components" />
-      <recent name="$PROJECT_DIR$/assets/js/react/pages" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -193,7 +194,7 @@
       <workItem from="1606811374713" duration="1771000" />
       <workItem from="1608395614460" duration="1300000" />
       <workItem from="1608403562235" duration="3000" />
-      <workItem from="1608461335267" duration="11037000" />
+      <workItem from="1608461335267" duration="30359000" />
     </task>
     <servers />
   </component>
@@ -209,10 +210,10 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="337" y="209" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.800@0.0.1280.800" timestamp="1601020495915" />
-    <state x="439" y="89" key="#com.intellij.ide.util.MemberChooser" timestamp="1606066077656">
+    <state x="439" y="89" key="#com.intellij.ide.util.MemberChooser" timestamp="1608553365325">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="439" y="89" key="#com.intellij.ide.util.MemberChooser/0.0.1280.800@0.0.1280.800" timestamp="1606066077656" />
+    <state x="439" y="89" key="#com.intellij.ide.util.MemberChooser/0.0.1280.800@0.0.1280.800" timestamp="1608553365325" />
     <state x="437" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1605519555374">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
@@ -233,10 +234,10 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="442" y="330" key="NewPhpFileDialog/0.0.1280.800@0.0.1280.800" timestamp="1605540568207" />
-    <state x="141" y="39" key="SettingsEditor" timestamp="1604694794044">
+    <state x="141" y="39" key="SettingsEditor" timestamp="1608553348810">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="141" y="39" key="SettingsEditor/0.0.1280.800@0.0.1280.800" timestamp="1604694794044" />
+    <state x="141" y="39" key="SettingsEditor/0.0.1280.800@0.0.1280.800" timestamp="1608553348810" />
     <state x="332" y="155" width="727" height="490" key="find.popup" timestamp="1608468380988">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
