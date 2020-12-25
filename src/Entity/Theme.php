@@ -51,6 +51,11 @@ class Theme implements JsonSerializable
     private $name;
 
     /**
+     * @ORM\OneToOne(targetEntity=Navbar::class, inversedBy="theme")
+     */
+    private $navbar;
+
+    /**
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="themes", cascade={"persist"})
      * @ORM\JoinColumn(nullable=false)
      */
@@ -202,6 +207,24 @@ class Theme implements JsonSerializable
     public function setDescription($description): self
     {
         $this->description = $description;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getNavbar()
+    {
+        return $this->navbar;
+    }
+
+    /**
+     * @param mixed $navbar
+     * @return Theme
+     */
+    public function setNavbar($navbar): self
+    {
+        $this->navbar = $navbar;
         return $this;
     }
 

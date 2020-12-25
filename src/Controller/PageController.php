@@ -185,16 +185,19 @@ class PageController extends AbstractController
         if ($page === null) {
             return new JsonResponse(['success' => false, 'message' => 'Page does not exist.']);
         }
+
         $user = LogChecker::getLoggedUser($request, $userRepository);
         $theme = $page->getTheme();
-        if (!($user instanceof User) || $user->getId() !== $theme->getUser()->getId()) {
+        if (!($user instanceof User) || $user->getId() !== $theme->getUser()->getId() || !($theme instanceof  Theme)) {
             return new JsonResponse(['success' => false, 'message' => 'Unauthorized'], Response::HTTP_UNAUTHORIZED);
         }
+
         $payload = RequestDataGetter::getRequestData($request)['payload'] ?? [];
         if (empty($payload)) {
             return new JsonResponse(['success' => false, 'message' => 'Something went wrong']);
         }
-        $navbar = $page->getNavbar() ?? new Navbar();
+
+        $navbar = $theme->getNavbar() ?? new Navbar();
         $navbar = $navbar->updateSelfFromPayload($payload['navbar']);
         //@todo NUTNY REFAKTOR, TAKTO TO NEMOZE BYT
         if (!empty($payload['body']['backgroundColor'])) {
@@ -203,7 +206,8 @@ class PageController extends AbstractController
         if (!empty($payload['body']['color'])) {
             $page->setTextColor($payload['body']['color']);
         }
-        $navbar->addPage($page);
+//        $navbar->addPage($page);
+        $theme->setNavbar($navbar);
         $em = $this->getEntityManager();
         $em->persist($navbar);
         $em->persist($page);

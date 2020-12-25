@@ -3,7 +3,8 @@ import Footer from "../Footer";
 import { ThemeCard } from "../browse/ThemeCard";
 
 export const MyThemesWrapper = () => {
-    if (layoutData.themes && layoutData.themes.length > 0) {
+    console.log(layoutData);
+    if (layoutData && layoutData.themes && layoutData.themes.length > 0) {
         return (
             <div id="content">
                 {

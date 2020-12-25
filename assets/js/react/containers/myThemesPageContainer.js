@@ -6,7 +6,7 @@ export const MyThemesContainer = () => {
     return(
         <div>
            <Navigation/>
-            <MyThemesWrapper/>
+           <MyThemesWrapper/>
         </div>
     );
 }

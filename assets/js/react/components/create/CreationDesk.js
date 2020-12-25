@@ -1,21 +1,57 @@
 import React, { useEffect } from 'react';
 import { INIT_STYLE } from "./CreatePageWrapper";
 
+const availableSpacingOptions = {
+    flexStart: 1,
+    flexEnd: 2,
+    spaceAround: 3
+};
+
+const navItemsNeedMargin = spacingOption => {
+    return spacingOption !== availableSpacingOptions.spaceAround;
+}
+
+const getSpacingStyle = spacingOption => {
+    switch (spacingOption) {
+        case availableSpacingOptions.flexEnd:
+            return {display: 'flex', justifyContent: 'flex-end'};
+        case availableSpacingOptions.spaceAround:
+            return {display: 'flex', justifyContent: 'space-around'};
+        case availableSpacingOptions.flexStart:
+        default:
+            return {display: 'flex', justifyContent: 'flex-start'};
+    }
+};
+
+const getNavItemsStyle = spacingOption => {
+    const style = {textDecoration:'none',color:'inherit'};
+    if (navItemsNeedMargin(spacingOption)) {
+        style.margin = '0 2rem';
+    }
+    return style;
+}
+
 export const CreationDesk = ({store = {}}) => {
 
     store.navbar = store.navbar || INIT_STYLE.navbar;
     let bodyStyle = store.body || {};
     let navItems = store.navbar.items || [];
-    const navStyle = {...store.navbar, height: `${store.navbar.height || 5}rem`};
-    navStyle.display = 'flex';
-    navStyle.justifyContent = 'space-around';
+    const spacing = getSpacingStyle(store.navbar.spacingOption);
+    const navStyle = {...store.navbar, height: `${store.navbar.height || 5}rem`, ...spacing};
+    // navStyle.display = 'flex';
+    // navStyle.justifyContent = 'space-around';
+    const navItemsStyle = getNavItemsStyle();
     return(
         <div id="creation-desk" style={bodyStyle}>
             <nav style={navStyle}>
                     {navItems.map(item => {
-                        return <a href={item.url}>{item.text}</a>;
+                        return <a
+                            style={navItemsStyle}
+                            href={item.url}
+                        >
+                            {item.text}
+                        </a>;
                     })}
-                    text
             </nav>
             <div>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque eu erat lobortis, varius ante at, accumsan tellus. Curabitur varius, neque id dictum ullamcorper, nisi libero egestas est, vel venenatis ex ipsum at est. Ut in lacus ante. Curabitur faucibus risus mauris, a tincidunt metus mollis eu. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Pellentesque a est facilisis, egestas urna et, pharetra arcu. Nam imperdiet dictum nulla in volutpat. Cras tempus ut orci in condimentum. Fusce luctus, dui eget blandit mattis, lacus purus consectetur lorem, nec molestie neque est luctus felis. In hac habitasse platea dictumst. Vivamus magna nunc, accumsan in malesuada id, gravida feugiat tellus. Phasellus a est vitae risus interdum gravida. Ut semper tellus et felis maximus, sit amet tincidunt metus lacinia.

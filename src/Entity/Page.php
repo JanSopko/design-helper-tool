@@ -86,7 +86,8 @@ class Page implements JsonSerializable
     public function getPageHtml()
     {
         $html = '';
-        $navbar = $this->getNavbar();
+        /** @var Navbar $navbar */
+        $navbar = $this->getTheme()->getNavbar();
         if ($navbar !== null) {
             $html = $navbar->getHtml();
         }
@@ -107,7 +108,6 @@ class Page implements JsonSerializable
      */
     public function getPageCss()
     {
-//        return $this->pageCss;
         $style = 'body {';
         $style .= 'margin: 0;';
         if ($this->backgroundColor !== null) {
@@ -118,11 +118,41 @@ class Page implements JsonSerializable
         }
         $style .= 'overflow:scroll;';
         $style .= '}';
-        $navbar = $this->getNavbar();
+        /** @var Navbar $navbar */
+        $navbar = $this->getTheme()->getNavbar();
         if ($navbar !== null) {
             $style .= $navbar->getStyle();
+            $style .= $this->getStyleForNavItems($navbar->getSpacingOption());
         }
         return $style;
+    }
+
+    /**
+     * @param int $spacingOption
+     * @return string
+     */
+    private function getStyleForNavItems(int $spacingOption): string
+    {
+        $style = '.' . NavbarItem::CLASS_NAME . '{';
+        if ($this->navItemsNeedMargin($spacingOption)) {
+            $style .= 'margin:0 2rem;';
+        }
+        $style .= 'text-decoration:none;';
+        $style .= 'color:' . $this->getTheme()->getNavbar()->getTextColor();
+        $style .= '}';
+        return $style;
+    }
+
+    /**
+     * @param int $option
+     * @return bool
+     */
+    private function navItemsNeedMargin(int $option): bool
+    {
+        if (array_key_exists($option, Navbar::AVAILABLE_SPACING_OPTIONS)) {
+            $option = Navbar::SPACING_FLEX_START;
+        }
+        return $option !== Navbar::SPACING_SPACE_AROUND;
     }
 
     /**
@@ -242,15 +272,18 @@ class Page implements JsonSerializable
 
     public function jsonSerializeStructureForStore(): array
     {
-        $navbarStructure = $this->navbar !== null ?
-            $this->getNavbar()->jsonSerialize() : [];
+        $navbar = $this->getTheme()->getNavbar();
+        $navbarStructure = $navbar !== null ?
+            $navbar->jsonSerialize() : [];
+        $navItems = [];
         return [
             'body' => [
                 'backgroundColor' => $this->backgroundColor,
                 'color' => $this->textColor,
                 'overflow' => 'scroll'
             ],
-            'navbar' => $navbarStructure
+            'navbar' => $navbarStructure,
+            'navItems' => $navItems
         ];
     }
 }

@@ -15,6 +15,15 @@ class Navbar implements JsonSerializable
 {
     public const HTML_TAG = 'nav';
 
+    public const SPACING_FLEX_START = 1;
+    public const SPACING_FLEX_END = 2;
+    public const SPACING_SPACE_AROUND = 3;
+
+    public const AVAILABLE_SPACING_OPTIONS = [
+        self::SPACING_FLEX_START => 'flex-start',
+        self::SPACING_FLEX_END => 'flex-end',
+        self::SPACING_SPACE_AROUND => 'space-around'
+    ];
 
     /**
      * @ORM\Id
@@ -32,6 +41,11 @@ class Navbar implements JsonSerializable
      * @ORM\OneToMany(targetEntity=Page::class, mappedBy="navbar")
      */
     private $pages;
+
+    /**
+     * @ORM\OneToOne(targetEntity=Theme::class, mappedBy="navbar")
+     */
+    private $theme;
 
     /**
      * @ORM\Column(type="string", length=7)
@@ -53,10 +67,16 @@ class Navbar implements JsonSerializable
      */
     private $font;
 
+    /**
+     * @ORM\Column(type="integer", nullable=false)
+     */
+    private $spacingOption;
+
     public function __construct()
     {
         $this->items = new ArrayCollection();
         $this->pages = new ArrayCollection();
+        $this->spacingOption = self::SPACING_FLEX_START;
     }
 
     public function getId(): ?int
@@ -172,6 +192,40 @@ class Navbar implements JsonSerializable
         return $this;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getTheme()
+    {
+        return $this->theme;
+    }
+
+    /**
+     * @param mixed $theme
+     * @return Navbar
+     */
+    public function setTheme($theme): self
+    {
+        $this->theme = $theme;
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getSpacingOption(): int
+    {
+        return $this->spacingOption;
+    }
+
+    /**
+     * @param int $spacingOption
+     */
+    public function setSpacingOption(int $spacingOption): void
+    {
+        $this->spacingOption = $spacingOption;
+    }
+
     public function getStyle(): string
     {
         $style = self::HTML_TAG . ' {';
@@ -181,6 +235,7 @@ class Navbar implements JsonSerializable
         if (!empty($this->font)) {
             $style .= 'font-family: ' . $this->font . ';';
         }
+        $style .= $this->getSpacingStyle();
         $style .= '}';
         if (empty($this->font) && empty($this->textColor) && empty($this->bgColor) && empty($this->height)) {
             $style = '';
@@ -188,10 +243,25 @@ class Navbar implements JsonSerializable
         return $style;
     }
 
+    /**
+     * @return string
+     */
+    private function getSpacingStyle(): string
+    {
+        $option = array_key_exists($this->spacingOption, self::AVAILABLE_SPACING_OPTIONS) ? $this->spacingOption : 1;
+        $spacingStyle = 'display:flex;';
+        $spacingStyle .= 'justify-content:' . self::AVAILABLE_SPACING_OPTIONS[$option] . ';';
+        $spacingStyle .= 'align-items:center;';
+        return $spacingStyle;
+    }
+
     public function getHtml(): string
     {
         //@todo
         $html = '<' . self::HTML_TAG . '>';
+        foreach ($this->getItems() as $item) {
+            $html .= "<a href=" . $item->getUrl() . " class=" . NavbarItem::CLASS_NAME .">" . $item->getText() . "</a>";
+        }
         $html .= '</' . self::HTML_TAG . '>';
         return $html;
     }
@@ -222,7 +292,9 @@ class Navbar implements JsonSerializable
             'color' => $this->textColor,
             'height' => $this->height,
             'fontFamily' => $this->font,
-            'items' => $items
+            'items' => $items,
+            'alignItems' => 'center',
+            'spacingOption' => $this->spacingOption
         ];
 
         return $response;

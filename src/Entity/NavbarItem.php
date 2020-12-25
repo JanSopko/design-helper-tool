@@ -10,6 +10,8 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class NavbarItem implements \JsonSerializable
 {
+    public const CLASS_NAME = 'navbar-item';
+
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
