@@ -30,6 +30,7 @@
       "js": [
         "/build/runtime.js",
         "/build/vendors~browse~create~createIndex~createTheme~homepage~myThemes~sign~theme.js",
+        "/build/vendors~browse~create~theme.js",
         "/build/vendors~create.js",
         "/build/browse~create~createIndex~createTheme~homepage~myThemes~sign~theme.js",
         "/build/create.js"
@@ -55,7 +56,7 @@
       "js": [
         "/build/runtime.js",
         "/build/vendors~browse~create~createIndex~createTheme~homepage~myThemes~sign~theme.js",
-        "/build/vendors~browse~theme.js",
+        "/build/vendors~browse~create~theme.js",
         "/build/browse~create~createIndex~createTheme~homepage~myThemes~sign~theme.js",
         "/build/browse.js"
       ]
@@ -72,8 +73,8 @@
       "js": [
         "/build/runtime.js",
         "/build/vendors~browse~create~createIndex~createTheme~homepage~myThemes~sign~theme.js",
+        "/build/vendors~browse~create~theme.js",
         "/build/vendors~sign~theme.js",
-        "/build/vendors~browse~theme.js",
         "/build/browse~create~createIndex~createTheme~homepage~myThemes~sign~theme.js",
         "/build/theme.js"
       ]

@@ -14,7 +14,48 @@ const reducer = (state, action) => {
             const newNavbarTc = {...state.navbar};
             newNavbarTc.color = action.payload.color;
             return {...state, navbar: newNavbarTc};
+        case ACTIONS.NAVBAR_SPACING_OPTION:
+            const newNavbarSpacing = {...state.navbar};
+            newNavbarSpacing.spacingOption = action.payload.spacingOption;
+            return {...state, navbar: newNavbarSpacing};
+        case ACTIONS.NAVBAR_TEXT_SIZE:
+            const newNavbarFontSize = {...state.navbar};
+            newNavbarFontSize.fontSize = action.payload.fontSize;
+            return {...state, navbar: newNavbarFontSize}
 
+        case ACTIONS.NAVBAR_ITEM_TEXT_UPDATED:
+            let newNavbarItemsText = state.navbar.items;
+            newNavbarItemsText.forEach(item => {
+                if (item.id !== undefined && item.id === action.payload.id) {
+                    item.text = action.payload.text;
+                }
+            });
+            const newNavbarChangedItemsText = {...state.navbar, items: newNavbarItemsText};
+            return {...state, navbar: newNavbarChangedItemsText};
+        case ACTIONS.NAVBAR_ITEM_URL_UPDATED:
+            let newNavbarItemsUrl = state.navbar.items;
+            newNavbarItemsUrl = newNavbarItemsUrl.map(item => {
+                if (item.id !== undefined && item.id === action.payload.id) {
+                    return {...item, url: action.payload.url};
+                } else {
+                    return item;
+                }
+            });
+            const newNavbarChangedItemsUrl = {...state.navbar, items: newNavbarItemsUrl};
+            return {...state, navbar: newNavbarChangedItemsUrl};
+        case ACTIONS.NAVBAR_ITEM_ITEM_DELETED:
+            const oldNavbarItems = state.navbar.items;
+            const newNavbarItemsAfterDeleting = oldNavbarItems.filter(item =>
+                item.id !== action.payload.id
+            );
+            const newNavbarAfterDeletion = {...state.navbar};
+            newNavbarAfterDeletion.items = newNavbarItemsAfterDeleting;
+            return {...state, navbar: newNavbarAfterDeletion};
+        case ACTIONS.NAVBAR_ITEM_ADDED:
+            const newNavItems = state.navbar.items;
+            newNavItems.push(action.payload.newItem);
+            const newNavbarAfterAdding = {...state.navbar, items: newNavItems};
+            return {...state, navbar: newNavbarAfterAdding};
 
         case ACTIONS.BODY_BACKGROUND_COLOR:
             const newBody = {...state.body};
@@ -26,6 +67,10 @@ const reducer = (state, action) => {
             return {...state, body: newBodyTc};
         default:
             return state;
+        case ACTIONS.BODY_FONT_SIZE:
+            const newBodyFs = {...state.body};
+            newBodyFs.fontSize = action.payload.fontSize;
+            return {...state, body: newBodyFs};
     }
 }
 

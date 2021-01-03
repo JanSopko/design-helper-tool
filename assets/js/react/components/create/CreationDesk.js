@@ -40,7 +40,7 @@ export const CreationDesk = ({store = {}}) => {
     const navStyle = {...store.navbar, height: `${store.navbar.height || 5}rem`, ...spacing};
     // navStyle.display = 'flex';
     // navStyle.justifyContent = 'space-around';
-    const navItemsStyle = getNavItemsStyle();
+    const navItemsStyle = getNavItemsStyle(store.navbar.spacingOption);
     return(
         <div id="creation-desk" style={bodyStyle}>
             <nav style={navStyle}>

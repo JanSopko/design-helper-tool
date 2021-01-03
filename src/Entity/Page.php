@@ -11,6 +11,8 @@ use JsonSerializable;
  */
 class Page implements JsonSerializable
 {
+    const DEFAULT_FONT_SIZE = 12; //px
+
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
@@ -58,6 +60,11 @@ class Page implements JsonSerializable
      * @ORM\Column(type="string", nullable=true)
      */
     private $textColor;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $textSize;
 
     public function __construct()
     {
@@ -116,6 +123,8 @@ class Page implements JsonSerializable
         if ($this->textColor !== null) {
             $style .= 'color: ' . $this->textColor . ';';
         }
+        $fontSize = $this->textSize ?? self::DEFAULT_FONT_SIZE;
+        $style .= 'font-size:' . $fontSize . 'px;';
         $style .= 'overflow:scroll;';
         $style .= '}';
         /** @var Navbar $navbar */
@@ -196,6 +205,24 @@ class Page implements JsonSerializable
     public function setName(string $name): self
     {
         $this->name = $name;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTextSize()
+    {
+        return $this->textSize;
+    }
+
+    /**
+     * @param mixed $textSize
+     * @return Page
+     */
+    public function setTextSize($textSize): self
+    {
+        $this->textSize = $textSize;
         return $this;
     }
 
@@ -280,7 +307,8 @@ class Page implements JsonSerializable
             'body' => [
                 'backgroundColor' => $this->backgroundColor,
                 'color' => $this->textColor,
-                'overflow' => 'scroll'
+                'overflow' => 'scroll',
+                'fontSize' => $this->textSize ?? self::DEFAULT_FONT_SIZE
             ],
             'navbar' => $navbarStructure,
             'navItems' => $navItems

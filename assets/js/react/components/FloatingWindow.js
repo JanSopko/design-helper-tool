@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 
-const FloatingWindow = ({initActive = false, initContents = []}) => {
+const FloatingWindow = ({initActive = false, initContents = [], needsWide = false}) => {
     const windowClassName = "floating-window";
     const overTopClassName = "over-top";
+    const wideClassName = ' window-wide';
 
     const [active, setActive] = useState(false);
 
@@ -12,6 +13,7 @@ const FloatingWindow = ({initActive = false, initContents = []}) => {
     );
 
     let className = active ? windowClassName : `${windowClassName} ${overTopClassName}`;
+    if (needsWide) className += ' window-wide';
 
     return(
         <div className={className}>

@@ -56,6 +56,17 @@ body {
     color: black;
 }
 
+.button-dark-green {
+    padding: .5rem;
+    border-radius: .2rem;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    font-family: 'Lora', serif;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
 .button-blue {
     padding: .5rem;
     border-radius: .2rem;
@@ -155,6 +166,21 @@ canvas {
     color: red;
 }
 
+.hoverable:hover {
+    cursor: pointer;
+}
+
+.field-group {
+    display: flex;
+    padding: .3rem;
+    margin: .3rem 0;
+    border: 1px solid #868686;
+}
+
+.field-group>button {
+    margin: .5rem;
+}
+
 .floating-window {
     width: 25rem;
     background-color: white;
@@ -167,6 +193,24 @@ canvas {
     top: 8rem;
     left: calc(50% - 13.5rem);
     transition: top .3s ease;
+    max-height: 30rem;
+    overflow: scroll;
+}
+
+.window-wide {
+    width: 40rem;
+    left: calc(50% - 21rem);
+    top: 12rem;
+    max-height: 22rem;
+}
+
+.window-wide>.field-group {
+    display: flex;
+    justify-content: space-around;
+}
+
+.window-wide>.field-group>input {
+    font-size: .8rem;
 }
 
 .over-top {
@@ -249,5 +293,13 @@ canvas {
     .floating-window {
         width: 15rem;
         left: calc(50% - 8.5rem);
+    }
+
+    .field-group {
+        flex-flow: column nowrap;
+    }
+
+    .window-wide {
+        top: 7rem;
     }
 }

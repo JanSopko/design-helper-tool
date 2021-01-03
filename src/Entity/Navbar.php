@@ -25,6 +25,9 @@ class Navbar implements JsonSerializable
         self::SPACING_SPACE_AROUND => 'space-around'
     ];
 
+    public const MAX_NAV_ITEMS = 6;
+    private const DEFAULT_FONT_SIZE = 18; //px
+
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
@@ -56,6 +59,11 @@ class Navbar implements JsonSerializable
      * @ORM\Column(type="string", length=7)
      */
     private $textColor;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $textSize;
 
     /**
      * @ORM\Column(type="integer")
@@ -226,6 +234,24 @@ class Navbar implements JsonSerializable
         $this->spacingOption = $spacingOption;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getTextSize()
+    {
+        return $this->textSize;
+    }
+
+    /**
+     * @param mixed $textSize
+     * @return Navbar
+     */
+    public function setTextSize($textSize): self
+    {
+        $this->textSize = $textSize;
+        return $this;
+    }
+
     public function getStyle(): string
     {
         $style = self::HTML_TAG . ' {';
@@ -235,6 +261,9 @@ class Navbar implements JsonSerializable
         if (!empty($this->font)) {
             $style .= 'font-family: ' . $this->font . ';';
         }
+        $fontSize = $this->textSize ?? self::DEFAULT_FONT_SIZE;
+        $style .= 'font-size:' . $fontSize . 'px;';
+
         $style .= $this->getSpacingStyle();
         $style .= '}';
         if (empty($this->font) && empty($this->textColor) && empty($this->bgColor) && empty($this->height)) {
@@ -277,6 +306,12 @@ class Navbar implements JsonSerializable
         if (isset($payload['height'])) {
             $this->setHeight($payload['height']);
         }
+        if (isset($payload['spacingOption'])) {
+            $this->setSpacingOption($payload['spacingOption']);
+        }
+        if (isset($payload['fontSize'])) {
+            $this->setTextSize($payload['fontSize']);
+        }
 
         return $this;
     }
@@ -292,6 +327,7 @@ class Navbar implements JsonSerializable
             'color' => $this->textColor,
             'height' => $this->height,
             'fontFamily' => $this->font,
+            'fontSize' => $this->textSize ?? self::DEFAULT_FONT_SIZE,
             'items' => $items,
             'alignItems' => 'center',
             'spacingOption' => $this->spacingOption

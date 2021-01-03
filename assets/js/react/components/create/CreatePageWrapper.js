@@ -9,9 +9,16 @@ export const ACTIONS = {
     NAVBAR_HEIGHT: 'setNavbarHeight',
     NAVBAR_BACKGROUND_COLOR: 'setNavbarBackgroundColor',
     NAVBAR_TEXT_COLOR: 'setNavbarTextColor',
+    NAVBAR_TEXT_SIZE: 'setNavbarTextSize',
+    NAVBAR_SPACING_OPTION: 'setNavbarSpacingOption',
+    NAVBAR_ITEM_TEXT_UPDATED: 'setNavbarItemText',
+    NAVBAR_ITEM_URL_UPDATED: 'setNavbarItemUrl',
+    NAVBAR_ITEM_ITEM_DELETED: 'deleteNavbarItem',
+    NAVBAR_ITEM_ADDED: 'addedNavbarItem',
 
     BODY_BACKGROUND_COLOR: 'setBodyBackroundColor',
-    BODY_TEXT_COLOR: 'setBodyTextColor'
+    BODY_TEXT_COLOR: 'setBodyTextColor',
+    BODY_FONT_SIZE: 'setBodyFontSize'
 };
 
 export const INIT_STYLE = {

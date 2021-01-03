@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import InputColor from 'react-input-color';
+import NavbarItemsManager from "./NavbarItemsManager";
 import { ACTIONS, INIT_STYLE } from "../CreatePageWrapper";
+import elementOrParentHasClass from "../../../../functions/elementOrParentHasClass";
 
 export const NavbarEditor = ({
         navbar,
@@ -9,9 +11,31 @@ export const NavbarEditor = ({
     const [bgColor, setBgColor] = useState(navbar.backgroundColor || '#ffffff');
     const [textColor, setTextColor] = useState(navbar.color || '#000000');
     const [height, setHeight] = useState(navbar.height || 5);
+    const [navbarItemsManagerActive, setNavbarItemsManagerActive] = useState(true);
+
+    const closeNavItemsModal = e => {
+        const element = e.target;
+        if (elementOrParentHasClass(element, 'exit-button')
+            || (!elementOrParentHasClass(element, 'floating-window')
+                && !elementOrParentHasClass(element, 'manage-nav-items'))
+                && !elementOrParentHasClass(element, 'delete-button')
+                && !elementOrParentHasClass(element, 'add-button')) {
+            setNavbarItemsManagerActive(false);
+        }
+    }
+
+    window.onclick = closeNavItemsModal;
 
     return(
         <div className="design-menu-editor navbar-editor">
+            {
+                navbarItemsManagerActive &&
+                <NavbarItemsManager
+                    initActive={navbarItemsManagerActive}
+                    items={navbar.items}
+                    dispatch={dispatch}
+                />
+            }
             <div className="element-editor-item">
                 background color:
                 <InputColor
@@ -68,6 +92,51 @@ export const NavbarEditor = ({
                     }
                 />
             </div>
+            <div className="element-editor-item">
+                font size:
+                <input
+                    type="range"
+                    min="16"
+                    max="40"
+                    value={navbar.fontSize}
+                    onChange={e => {
+                        dispatch({
+                            type: ACTIONS.NAVBAR_TEXT_SIZE,
+                            payload: {
+                                fontSize: Number.parseInt(e.target.value)
+                            }
+                        });
+
+                    }}
+                />
+            </div>
+            <div className="element-editor-item">
+                <label htmlFor="spacing-select">Spacing</label>
+                <select
+                    name="spacingOption"
+                    id="spacing-select"
+                    value={navbar.spacingOption}
+                    onChange={e => {
+                        dispatch({
+                            type: ACTIONS.NAVBAR_SPACING_OPTION,
+                            payload: {
+                                spacingOption: Number.parseInt(e.target.value)
+                            }
+                        });
+                    }}
+                >
+                    <option value="1">flex-start</option>
+                    <option value="2">flex-end</option>
+                    <option value="3">space-around</option>
+                </select>
+            </div>
+            <div
+                className="element-editor-item hoverable manage-nav-items"
+                style={{color:'#cddc39'}}
+                onClick={() => setNavbarItemsManagerActive(true)}
+            >
+                Manage navbar items
+            </div>
         </div>
     );
 }
@@ -78,6 +147,7 @@ export const BodyEditor = ({
     }) => {
     const [backgroundColor, setBackgroundColor] = useState(body.backgroundColor || '#ffffff');
     const [color, setColor] = useState(body.color || '#000000');
+
     return (
         <div className="design-menu-editor">
             <div className="element-editor-item">
@@ -110,7 +180,23 @@ export const BodyEditor = ({
                     }}
                 />
             </div>
-
+            <div className="element-editor-item">
+                font size:
+                <input
+                    type="range"
+                    min={12}
+                    max={24}
+                    value={body.fontSize}
+                    onChange={e => {
+                        dispatch({
+                            type: ACTIONS.BODY_FONT_SIZE,
+                            payload: {
+                                fontSize: Number.parseInt(e.target.value)
+                            }
+                        });
+                    }}
+                />
+            </div>
         </div>
     );
 }

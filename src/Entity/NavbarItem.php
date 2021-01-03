@@ -79,6 +79,7 @@ class NavbarItem implements \JsonSerializable
     public function jsonSerialize(): array
     {
         return [
+            'id' => $this->id,
             'text' => $this->text,
             'url' => $this->url
         ];

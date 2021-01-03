@@ -73,6 +73,22 @@ class ThemeController extends AbstractController
     }
 
     /**
+     * @Route("/data/my_all_themes", name="myAllTHemes", methods={"GET"})
+     * @param Request $request
+     * @param ThemeRepository $themeRepository
+     * @param UserRepository $userRepository
+     * @return JsonResponse
+     */
+    public function getMyAllThemesData(
+        Request $request,
+        ThemeRepository $themeRepository,
+        UserRepository $userRepository
+    ): JsonResponse {
+        return new JsonResponse($this->getMyAllThemes($request, $themeRepository,
+        $userRepository));
+    }
+
+    /**
      * @Route("/theme/{themeId}", name="theme", methods={"GET"})
      * @param Request $request
      * @param string $themeId
@@ -146,14 +162,14 @@ class ThemeController extends AbstractController
     }
 
     /**
-     * @param User $user
+     * @param User|null $user
      * @param Request $request
      * @param ThemeRepository $themeRepository
      * @param UserRepository $userRepository
      * @return array
      */
     private function getThemesDataArray(
-        User $user,
+        ?User $user,
         Request $request,
         ThemeRepository $themeRepository,
         UserRepository $userRepository

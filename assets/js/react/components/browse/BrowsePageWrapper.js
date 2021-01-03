@@ -49,7 +49,6 @@ export default function browsePageWrapper() {
                     }).then(() => {
                         let newTTL = new Date().getTime() + LOCALSTORAGE_TTL;
                         myStorage.setItem(LOCALSTORAGE_TTL_KEY, newTTL);
-                        console.log(newTTL);
                     })
                     .then(() => setLoadingDone(true));
             } else {

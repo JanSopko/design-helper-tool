@@ -5,10 +5,12 @@ namespace App\Controller;
 
 
 use App\Entity\Navbar;
+use App\Entity\NavbarItem;
 use App\Entity\Page;
 use App\Entity\Theme;
 use App\Entity\User;
 use App\Exception\ValidationException;
+use App\Repository\NavbarItemRepository;
 use App\Repository\PageRepository;
 use App\Repository\ThemeRepository;
 use App\Repository\UserRepository;
@@ -177,7 +179,12 @@ class PageController extends AbstractController
      * @param PageRepository $pageRepository
      * @return JsonResponse
      */
-    public function updatePage(Request $request, UserRepository $userRepository, string $pageHash, PageRepository $pageRepository): JsonResponse
+    public function updatePage(
+        Request $request,
+        UserRepository $userRepository,
+        string $pageHash,
+        PageRepository $pageRepository,
+        NavbarItemRepository $navbarItemRepository): JsonResponse
     {
         $page = $pageRepository->findOneBy([
             'urlHash' => $pageHash
@@ -199,12 +206,19 @@ class PageController extends AbstractController
 
         $navbar = $theme->getNavbar() ?? new Navbar();
         $navbar = $navbar->updateSelfFromPayload($payload['navbar']);
+        if (isset($payload['navbar']['items']) && is_array($payload['navbar']['items'])) {
+            $this->deleteNavItemsFromPayload($navbar, $payload['navbar']['items']);
+            $this->updateNavItems($payload['navbar']['items'], $navbarItemRepository, $navbar);
+        }
         //@todo NUTNY REFAKTOR, TAKTO TO NEMOZE BYT
         if (!empty($payload['body']['backgroundColor'])) {
             $page->setBackgroundColor($payload['body']['backgroundColor']);
         }
         if (!empty($payload['body']['color'])) {
             $page->setTextColor($payload['body']['color']);
+        }
+        if (!empty($payload['body']['fontSize'])) {
+            $page->setTextSize($payload['body']['fontSize']);
         }
 //        $navbar->addPage($page);
         $theme->setNavbar($navbar);
@@ -214,6 +228,70 @@ class PageController extends AbstractController
         $em->flush();
 
         return new JsonResponse(['success' => true, 'message' => 'Page saved.']);
+    }
+
+    /**
+     * @param array $navItemsData
+     * @param NavbarItemRepository $navbarItemRepository
+     * @param Navbar $navbar
+     */
+    private function updateNavItems(array $navItemsData, NavbarItemRepository $navbarItemRepository, Navbar $navbar)
+    {
+        $em = $this->getEntityManager();
+        foreach ($navItemsData as $navItemArray) {
+            if (isset($navItemArray['id'], $navItemArray['text'], $navItemArray['url'])) {
+                $navItem = $navbarItemRepository->findOneBy([
+                    'id' => $navItemArray['id']
+                ]);
+                if ($navItem === null) {
+                    $this->addNewNavbarItemFromPayload($navItemArray, $navbar);
+                } else {
+                    $navItem->setText($navItemArray['text']);
+                    $navItem->setUrl($navItemArray['url']);
+                    $em->persist($navItem);
+                }
+            }
+        }
+        $em->flush();
+    }
+
+    /**
+     * @param array $navItemArray
+     * @param Navbar $navbar
+     */
+    private function addNewNavbarItemFromPayload(array $navItemArray, Navbar $navbar): void
+    {
+        $em = $this->getEntityManager();
+        $navbarItem = new NavbarItem();
+        $navbarItem
+            ->setUrl($navItemArray['url'])
+            ->setText($navItemArray['text']);
+        $navbarItem->setNavbar($navbar);
+        $em->persist($navbarItem);
+        $em->persist($navbar);
+        $em->flush();
+    }
+
+    /**
+     * @param Navbar $navbar
+     * @param array $navItemsData
+     */
+    private function deleteNavItemsFromPayload(Navbar $navbar, array $navItemsData)
+    {
+        $em = $this->getEntityManager();
+        $navItems = $navbar->getItems();
+        $newNavItemsIds = [];
+        foreach ($navItemsData as $navItemArray) {
+            if (isset($navItemArray['id'])) {
+                $newNavItemsIds[] = $navItemArray['id'];
+            }
+        }
+        foreach ($navItems as $item) {
+            if (!in_array($item->getId(), $newNavItemsIds, true)) {
+                $em->remove($item);
+            }
+        }
+        $em->flush();
     }
 
     /**
