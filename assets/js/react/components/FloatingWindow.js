@@ -13,7 +13,7 @@ const FloatingWindow = ({initActive = false, initContents = [], needsWide = fals
     );
 
     let className = active ? windowClassName : `${windowClassName} ${overTopClassName}`;
-    if (needsWide) className += ' window-wide';
+    if (needsWide) className += wideClassName;
 
     return(
         <div className={className}>

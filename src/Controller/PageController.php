@@ -4,6 +4,7 @@
 namespace App\Controller;
 
 
+use App\Entity\Footer;
 use App\Entity\Navbar;
 use App\Entity\NavbarItem;
 use App\Entity\Page;
@@ -205,7 +206,10 @@ class PageController extends AbstractController
         }
 
         $navbar = $theme->getNavbar() ?? new Navbar();
-        $navbar = $navbar->updateSelfFromPayload($payload['navbar']);
+
+        if (isset($payload['navbar'])) {
+            $navbar = $navbar->updateSelfFromPayload($payload['navbar']);
+        }
         if (isset($payload['navbar']['items']) && is_array($payload['navbar']['items'])) {
             $this->deleteNavItemsFromPayload($navbar, $payload['navbar']['items']);
             $this->updateNavItems($payload['navbar']['items'], $navbarItemRepository, $navbar);
@@ -220,7 +224,15 @@ class PageController extends AbstractController
         if (!empty($payload['body']['fontSize'])) {
             $page->setTextSize($payload['body']['fontSize']);
         }
-//        $navbar->addPage($page);
+        if (!empty($payload['footer'])) {
+            $footer = $theme->getFooter() ?? new Footer();
+            $footer = $footer->updateSelfFromPayload($payload['footer']);
+            $theme->setFooter($footer);
+//            $em = $this->getEntityManager();
+//            $em->persist($footer);
+        }
+
+
         $theme->setNavbar($navbar);
         $em = $this->getEntityManager();
         $em->persist($navbar);
@@ -235,7 +247,7 @@ class PageController extends AbstractController
      * @param NavbarItemRepository $navbarItemRepository
      * @param Navbar $navbar
      */
-    private function updateNavItems(array $navItemsData, NavbarItemRepository $navbarItemRepository, Navbar $navbar)
+    private function updateNavItems(array $navItemsData, NavbarItemRepository $navbarItemRepository, Navbar $navbar): void
     {
         $em = $this->getEntityManager();
         foreach ($navItemsData as $navItemArray) {
@@ -265,8 +277,8 @@ class PageController extends AbstractController
         $navbarItem = new NavbarItem();
         $navbarItem
             ->setUrl($navItemArray['url'])
-            ->setText($navItemArray['text']);
-        $navbarItem->setNavbar($navbar);
+            ->setText($navItemArray['text'])
+            ->setNavbar($navbar);
         $em->persist($navbarItem);
         $em->persist($navbar);
         $em->flush();

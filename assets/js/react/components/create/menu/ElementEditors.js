@@ -209,16 +209,43 @@ export const SidebarEditor = () => {
     );
 }
 
-export const FooterEditor = () => {
+export const FooterEditor = ({footer, dispatch}) => {
+
+    const [backgroundColor, setBackgroundColor] = useState(footer.backgroundColor || '#ffffff');
+    const [textColor, setTextColor] = useState(footer.color || '#000000');
+
     return(
         <div className="design-menu-editor">
-            <div>
+            <div className="element-editor-item">
+                background color:
+                <InputColor
+                    initialValue={footer.backgroundColor || '#ffffff'}
+                    onChange={e => {
+                        setBackgroundColor;
+                        dispatch({
+                            type: ACTIONS.FOOTER_BACKGROUND_COLOR,
+                            payload: {
+                                backgroundColor: e.hex
+                            }
+                        });
+                    }}
+                    placement="right"
+                />
+            </div>
+            <div className="element-editor-item">
                 height:
                 <input
                     type="range"
-                    min="6"
-                    max="20"
-                    onChange={e => console.log(e.target.value)}
+                    min="5"
+                    max="15"
+                    onChange={e => {
+                        dispatch({
+                            type: ACTIONS.FOOTER_HEIGHT,
+                            payload: {
+                                height: Number.parseInt(e.target.value)
+                            }
+                        });
+                    }}
                 />
             </div>
         </div>

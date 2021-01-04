@@ -38,6 +38,7 @@ export const CreationDesk = ({store = {}}) => {
     let navItems = store.navbar.items || [];
     const spacing = getSpacingStyle(store.navbar.spacingOption);
     const navStyle = {...store.navbar, height: `${store.navbar.height || 5}rem`, ...spacing};
+    let footerStyle = {...store.footer, height: `${store.footer.height || 0}rem`};
     // navStyle.display = 'flex';
     // navStyle.justifyContent = 'space-around';
     const navItemsStyle = getNavItemsStyle(store.navbar.spacingOption);
@@ -104,6 +105,11 @@ export const CreationDesk = ({store = {}}) => {
 
                 Etiam sed placerat mi. In pellentesque cursus eros in hendrerit. In facilisis, metus at vulputate pulvinar, felis enim efficitur ante, a laoreet augue diam ut ligula. Maecenas lectus tortor, placerat eu tincidunt sit amet, consectetur a odio. Donec vel lorem eros. Morbi et efficitur tortor, vitae viverra lorem. Cras elit ante, auctor eget turpis sit amet, accumsan laoreet arcu. Donec vel dictum velit. Fusce ut venenatis magna. Cras lacinia urna a lacinia feugiat. Ut at odio ut neque tincidunt malesuada quis nec lacus. Donec euismod felis id consectetur eleifend. Etiam nec ipsum eu nibh maximus aliquet. Aenean nec interdum tortor.
             </div>
+            {   (store.footer && store.footer.height && store.footer.height > 0) &&
+                <div className="creation-desk-footer" style={footerStyle}>
+                    text
+                </div>
+            }
         </div>
     );
 }

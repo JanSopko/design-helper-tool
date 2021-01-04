@@ -18,7 +18,7 @@ export const CreateMenu = ({store, dispatch}) => {
             <MenuOption text="Body" content={<BodyEditor body={store.body || {}} dispatch={dispatch}/>}/>
             <MenuOption text="Sidebar" content={<SidebarEditor/>}/>
             <MenuOption text="Sections" content={<SectionsEditor/>}/>
-            <MenuOption text="Footer" content={<FooterEditor/>}/>
+            <MenuOption text="Footer" content={<FooterEditor footer={store.footer} dispatch={dispatch}/>}/>
         </div>
     );
 }

@@ -303,6 +303,10 @@ class Page implements JsonSerializable
         $navbarStructure = $navbar !== null ?
             $navbar->jsonSerialize() : [];
         $navItems = [];
+
+        $footer = $this->getTheme()->getFooter();
+        $footerStructure = $footer !== null ?
+            $footer->jsonserialize() : [];
         return [
             'body' => [
                 'backgroundColor' => $this->backgroundColor,
@@ -311,7 +315,8 @@ class Page implements JsonSerializable
                 'fontSize' => $this->textSize ?? self::DEFAULT_FONT_SIZE
             ],
             'navbar' => $navbarStructure,
-            'navItems' => $navItems
+            'navItems' => $navItems,
+            'footer' => $footerStructure
         ];
     }
 }

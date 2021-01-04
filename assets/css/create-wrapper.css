@@ -66,6 +66,10 @@
     transition: height .2s ease;
 }
 
+#creation-desk .creation-desk-footer {
+    transition: height .2s ease;
+}
+
 .invis {
   display: none;
   height: 0;

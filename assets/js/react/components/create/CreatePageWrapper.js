@@ -18,7 +18,10 @@ export const ACTIONS = {
 
     BODY_BACKGROUND_COLOR: 'setBodyBackroundColor',
     BODY_TEXT_COLOR: 'setBodyTextColor',
-    BODY_FONT_SIZE: 'setBodyFontSize'
+    BODY_FONT_SIZE: 'setBodyFontSize',
+
+    FOOTER_BACKGROUND_COLOR: 'setFooterBackgroundColor',
+    FOOTER_HEIGHT: 'setFooterHeight'
 };
 
 export const INIT_STYLE = {

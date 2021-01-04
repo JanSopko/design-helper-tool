@@ -56,6 +56,11 @@ class Theme implements JsonSerializable
     private $navbar;
 
     /**
+     * @ORM\OneToOne(targetEntity=Footer::class, inversedBy="theme")
+     */
+    private $footer;
+
+    /**
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="themes", cascade={"persist"})
      * @ORM\JoinColumn(nullable=false)
      */
@@ -249,5 +254,22 @@ class Theme implements JsonSerializable
             'pages_count' => count($this->pages),
             'privacy_level' => $this->privacyLevel
         ];
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFooter()
+    {
+        return $this->footer;
+    }
+
+    /**
+     * @param mixed $footer
+     */
+    public function setFooter($footer): self
+    {
+        $this->footer = $footer;
+        return $this;
     }
 }
