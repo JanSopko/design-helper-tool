@@ -21,6 +21,8 @@ export const ACTIONS = {
     BODY_FONT_SIZE: 'setBodyFontSize',
 
     FOOTER_BACKGROUND_COLOR: 'setFooterBackgroundColor',
+    FOOTER_TEXT_COLOR: 'setFooterTextColor',
+    FOOTER_FONT_SIZE: 'setFooterFontSize',
     FOOTER_HEIGHT: 'setFooterHeight'
 };
 

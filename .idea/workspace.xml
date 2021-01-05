@@ -3,18 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="23010fe4-d294-4d04-b7b2-5e67385fe2b8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/create-wrapper.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/create-wrapper.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/footer.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/footer.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/react/components/create/CreatePageWrapper.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/react/components/create/CreatePageWrapper.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/react/components/create/CreationDesk.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/react/components/create/CreationDesk.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/react/components/create/menu/CreateMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/react/components/create/menu/CreateMenu.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/react/components/create/menu/ElementEditors.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/react/components/create/menu/ElementEditors.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/react/components/create/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/react/components/create/reducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/build/create.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/create.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/create_wrapper.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/create_wrapper.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/footer.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/footer.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/PageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/PageController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Footer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Page.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Page.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -197,7 +191,8 @@
       <workItem from="1608403562235" duration="3000" />
       <workItem from="1608461335267" duration="64985000" />
       <workItem from="1609747974336" duration="2935000" />
-      <workItem from="1609786948447" duration="3587000" />
+      <workItem from="1609786948447" duration="3749000" />
+      <workItem from="1609875912897" duration="2634000" />
     </task>
     <servers />
   </component>
@@ -209,10 +204,10 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="240" y="65" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.800@0.0.1280.800" timestamp="1605535414548" />
-    <state x="439" y="89" key="#com.intellij.ide.util.MemberChooser" timestamp="1609751273638">
+    <state x="439" y="89" key="#com.intellij.ide.util.MemberChooser" timestamp="1609877296126">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="439" y="89" key="#com.intellij.ide.util.MemberChooser/0.0.1280.800@0.0.1280.800" timestamp="1609751273638" />
+    <state x="439" y="89" key="#com.intellij.ide.util.MemberChooser/0.0.1280.800@0.0.1280.800" timestamp="1609877296126" />
     <state x="437" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1605519555374">
       <screen x="0" y="0" width="1280" height="800" />
     </state>

@@ -233,6 +233,21 @@ export const FooterEditor = ({footer, dispatch}) => {
                 />
             </div>
             <div className="element-editor-item">
+                text color:
+                <InputColor
+                    initialValue={footer.color || '#000000'}
+                    onChange={e => {
+                        setTextColor;
+                        dispatch({
+                            type: ACTIONS.FOOTER_TEXT_COLOR,
+                            payload: {
+                                color: e.hex
+                            }
+                        });
+                    }}
+                />
+            </div>
+            <div className="element-editor-item">
                 height:
                 <input
                     type="range"
@@ -243,6 +258,23 @@ export const FooterEditor = ({footer, dispatch}) => {
                             type: ACTIONS.FOOTER_HEIGHT,
                             payload: {
                                 height: Number.parseInt(e.target.value)
+                            }
+                        });
+                    }}
+                />
+            </div>
+            <div className="element-editor-item">
+                font size:
+                <input
+                    type="range"
+                    min="12"
+                    max="24"
+                    value={footer.fontSize || 14}
+                    onChange={e => {
+                        dispatch({
+                            type: ACTIONS.FOOTER_FONT_SIZE,
+                            payload: {
+                                fontSize: Number.parseInt(e.target.value)
                             }
                         });
                     }}

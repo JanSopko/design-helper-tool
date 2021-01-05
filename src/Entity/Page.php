@@ -96,7 +96,12 @@ class Page implements JsonSerializable
         /** @var Navbar $navbar */
         $navbar = $this->getTheme()->getNavbar();
         if ($navbar !== null) {
-            $html = $navbar->getHtml();
+            $html .= $navbar->getHtml();
+        }
+        /** @var Footer $footer */
+        $footer = $this->getTheme()->getFooter();
+        if ($footer !== null) {
+            $html .= ' ' . $footer->getHtml();
         }
         return $html;
     }
@@ -132,6 +137,11 @@ class Page implements JsonSerializable
         if ($navbar !== null) {
             $style .= $navbar->getStyle();
             $style .= $this->getStyleForNavItems($navbar->getSpacingOption());
+        }
+        /** @var Footer $footer */
+        $footer = $this->getTheme()->getFooter();
+        if ($footer !== null) {
+            $style .= $footer->getStyle();
         }
         return $style;
     }

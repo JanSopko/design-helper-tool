@@ -11,6 +11,10 @@ use JsonSerializable;
  */
 class Footer implements JsonSerializable
 {
+
+    const DEFAULT_FONT_SIZE = 14;
+    const CSS_CLASS = 'my-footer';
+
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
@@ -32,6 +36,11 @@ class Footer implements JsonSerializable
      * @ORM\Column(type="string", length=7)
      */
     private $textColor;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $fontSize;
 
     /**
      * @ORM\OneToOne(targetEntity=Theme::class, mappedBy="footer")
@@ -104,17 +113,61 @@ class Footer implements JsonSerializable
         if (isset($payload['backgroundColor'])) {
             $this->setBackgroundColor($payload['backgroundColor']);
         }
+        if (isset($payload['color'])) {
+            $this->setTextColor($payload['color']);
+        }
+        if (isset($payload['fontSize'])) {
+            $this->setFontSize($payload['fontSize']);
+        }
 
         return $this;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getFontSize()
+    {
+        return $this->fontSize;
+    }
+
+    /**
+     * @param mixed $fontSize
+     */
+    public function setFontSize($fontSize): self
+    {
+        $this->fontSize = $fontSize;
+        return $this;
+    }
+
+    public function getHtml(): string
+    {
+        $html = '<div class="'. self::CSS_CLASS . '">';
+        $html .= '</div>';
+        return $html;
+    }
+
+    public function getStyle(): string
+    {
+        $style = '.' . self::CSS_CLASS . '{';
+        $style .= 'position:absolute;';
+        $style .= 'bottom:0;';
+        $style .= 'width:100%;';
+        //editable
+        $style .= 'height:' . $this->height . 'rem;';
+        $style .= 'background-color:' . $this->backgroundColor . ';';
+        $style .= 'color:' . $this->textColor . ';';
+        $style .= '}';
+        return $style;
+    }
 
     public function jsonSerialize()
     {
         $structure = [
             'height' => $this->height,
             'backgroundColor' => $this->backgroundColor,
-            'color' => $this->textColor
+            'color' => $this->textColor,
+            'fontSize' => $this->fontSize ?? self::DEFAULT_FONT_SIZE
         ];
 
         return $structure;

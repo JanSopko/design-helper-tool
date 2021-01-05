@@ -80,6 +80,14 @@ const reducer = (state, action) => {
             const newFooterHeight = {...state.footer};
             newFooterHeight.height = action.payload.height;
             return {...state, footer: newFooterHeight}
+        case ACTIONS.FOOTER_TEXT_COLOR:
+            const newFooterTc = {...state.footer};
+            newFooterTc.color = action.payload.color;
+            return {...state, footer: newFooterTc};
+        case ACTIONS.FOOTER_FONT_SIZE:
+            const newFooterFs = {...state.footer};
+            newFooterFs.fontSize = action.payload.fontSize;
+            return {...state, footer: newFooterFs};
     }
 }
 
