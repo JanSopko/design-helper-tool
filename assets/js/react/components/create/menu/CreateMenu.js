@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useReducer } from 'react';
 import MenuOption from "./MenuOption";
 import { INIT_STYLE, savePage } from "../CreatePageWrapper";
 import {
@@ -9,16 +9,60 @@ import {
     FooterEditor
 } from "./ElementEditors";
 
+const menuTexts = {
+    navbar: 'Navbar',
+    body: 'Body',
+    sidebar: 'Sidebar',
+    sections: 'Sections',
+    footer: 'Footer'
+};
+
+const menuOptionActive = '';
+
+const getMenuOptionActive = () => {
+    return menuOptionActive;
+}
+
+const menuReducer = (currentItem, activeOption) => {
+    return activeOption;
+}
+
 export const CreateMenu = ({store, dispatch}) => {
+    const [activeMenuOption, menuDispatch] = useReducer(menuReducer, {}, getMenuOptionActive);
     store.navbar = store.navbar || {};
     return(
         <div id="create-menu">
             <button className="button-green" onClick={() => savePage(store)}>Save</button>
-            <MenuOption text="Navbar" content={<NavbarEditor navbar={store.navbar || INIT_STYLE.navbar} dispatch={dispatch}/>}/>
-            <MenuOption text="Body" content={<BodyEditor body={store.body || {}} dispatch={dispatch}/>}/>
-            <MenuOption text="Sidebar" content={<SidebarEditor/>}/>
-            <MenuOption text="Sections" content={<SectionsEditor/>}/>
-            <MenuOption text="Footer" content={<FooterEditor footer={store.footer} dispatch={dispatch}/>}/>
+            <MenuOption
+                initActive={activeMenuOption === menuTexts.navbar}
+                menuDispatch={menuDispatch}
+                text={menuTexts.navbar}
+                content={<NavbarEditor navbar={store.navbar || INIT_STYLE.navbar} dispatch={dispatch}/>}
+            />
+            <MenuOption
+                initActive={activeMenuOption === menuTexts.body}
+                menuDispatch={menuDispatch}
+                text={menuTexts.body}
+                content={<BodyEditor body={store.body || {}} dispatch={dispatch}/>}
+            />
+            <MenuOption
+                initActive={activeMenuOption === menuTexts.sidebar}
+                menuDispatch={menuDispatch}
+                text={menuTexts.sidebar}
+                content={<SidebarEditor/>}
+            />
+            <MenuOption
+                initActive={activeMenuOption === menuTexts.sections}
+                menuDispatch={menuDispatch}
+                text={menuTexts.sections}
+                content={<SectionsEditor/>}
+            />
+            <MenuOption
+                initActive={activeMenuOption === menuTexts.footer}
+                menuDispatch={menuDispatch}
+                text={menuTexts.footer}
+                content={<FooterEditor footer={store.footer} dispatch={dispatch}/>}
+            />
         </div>
     );
 }

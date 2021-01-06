@@ -1,13 +1,14 @@
 import React, {useState} from 'react';
 import elementOrParentHasClass from "../../../../functions/elementOrParentHasClass";
 
-const MenuOption = ({text, content}) => {
+const MenuOption = ({text, content, menuDispatch, initActive = false}) => {
     const [active, setActive] = useState(false);
 
-    let chevronClass = active ? 'chevron chevron-reverse' : 'chevron';
+    let chevronClass = initActive && active ? 'chevron chevron-reverse' : 'chevron';
 
     const handleClick = e => {
         if (!elementOrParentHasClass(e.target, 'design-menu-editor')) {
+            menuDispatch(text);
             setActive(!active);
         }
     }
@@ -21,7 +22,7 @@ const MenuOption = ({text, content}) => {
                 {text}
                 <img src="../img/chevron.png" alt="chevron" className={chevronClass}/>
             </span>
-            {active && content}
+            {(initActive && active) && content}
         </div>
     );
 }

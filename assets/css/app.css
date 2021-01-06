@@ -123,6 +123,7 @@ body {
     animation-duration: .2s;
     background-color: #c62828;
     cursor: pointer;
+    color: white;
 }
 
 .eye-icon {
@@ -268,8 +269,8 @@ canvas {
 }
 
 @keyframes button-recolor-on-hover4 {
-    from {background-color:#e53935}
-    to {background-color:#c62828}
+    from {background-color:#e53935;color:black}
+    to {background-color:#c62828;color:white}
 }
 
 

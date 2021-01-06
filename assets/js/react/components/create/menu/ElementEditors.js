@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState, useEffect } from 'react';
 import InputColor from 'react-input-color';
 import NavbarItemsManager from "./NavbarItemsManager";
 import { ACTIONS, INIT_STYLE } from "../CreatePageWrapper";

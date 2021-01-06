@@ -153,6 +153,8 @@ class Footer implements JsonSerializable
         $style .= 'position:absolute;';
         $style .= 'bottom:0;';
         $style .= 'width:100%;';
+        $style .= 'display:flex;';
+        $style .= 'align-items:center;';
         //editable
         $style .= 'height:' . $this->height . 'rem;';
         $style .= 'background-color:' . $this->backgroundColor . ';';
@@ -167,7 +169,9 @@ class Footer implements JsonSerializable
             'height' => $this->height,
             'backgroundColor' => $this->backgroundColor,
             'color' => $this->textColor,
-            'fontSize' => $this->fontSize ?? self::DEFAULT_FONT_SIZE
+            'fontSize' => $this->fontSize ?? self::DEFAULT_FONT_SIZE,
+            'display' => 'flex',
+            'alignItems' => 'center'
         ];
 
         return $structure;
