@@ -224,6 +224,9 @@ class PageController extends AbstractController
         if (!empty($payload['body']['fontSize'])) {
             $page->setTextSize($payload['body']['fontSize']);
         }
+        if (!empty($payload['body']['content']['padding'])) {
+            $page->setPadding($payload['body']['content']['padding']);
+        }
         if (!empty($payload['footer'])) {
             $footer = $theme->getFooter() ?? new Footer();
             $footer = $footer->updateSelfFromPayload($payload['footer']);

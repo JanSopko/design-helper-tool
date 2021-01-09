@@ -52,7 +52,7 @@ const reducer = (state, action) => {
             newNavbarAfterDeletion.items = newNavbarItemsAfterDeleting;
             return {...state, navbar: newNavbarAfterDeletion};
         case ACTIONS.NAVBAR_ITEM_ADDED:
-            const newNavItems = state.navbar.items;
+            const newNavItems = state.navbar.items ?? [];
             newNavItems.push(action.payload.newItem);
             const newNavbarAfterAdding = {...state.navbar, items: newNavItems};
             return {...state, navbar: newNavbarAfterAdding};
