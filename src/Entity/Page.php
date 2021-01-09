@@ -12,6 +12,7 @@ use JsonSerializable;
 class Page implements JsonSerializable
 {
     const DEFAULT_FONT_SIZE = 12; //px
+    const DEFAULT_PADDING = 20; //px
 
     /**
      * @ORM\Id
@@ -65,6 +66,11 @@ class Page implements JsonSerializable
      * @ORM\Column(type="integer", nullable=true)
      */
     private $textSize;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $padding;
 
     public function __construct()
     {
@@ -298,6 +304,23 @@ class Page implements JsonSerializable
         return $this;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getPadding()
+    {
+        return $this->padding;
+    }
+
+    /**
+     * @param mixed $padding
+     */
+    public function setPadding($padding): self
+    {
+        $this->padding = $padding;
+        return $this;
+    }
+
     public function jsonSerialize(): array
     {
         return [
@@ -322,7 +345,10 @@ class Page implements JsonSerializable
                 'backgroundColor' => $this->backgroundColor,
                 'color' => $this->textColor,
                 'overflow' => 'scroll',
-                'fontSize' => $this->textSize ?? self::DEFAULT_FONT_SIZE
+                'fontSize' => $this->textSize ?? self::DEFAULT_FONT_SIZE,
+                'content' => [
+                    'padding' => $this->padding ?? self::DEFAULT_PADDING
+                ]
             ],
             'navbar' => $navbarStructure,
             'navItems' => $navItems,

@@ -19,6 +19,7 @@ export const ACTIONS = {
     BODY_BACKGROUND_COLOR: 'setBodyBackroundColor',
     BODY_TEXT_COLOR: 'setBodyTextColor',
     BODY_FONT_SIZE: 'setBodyFontSize',
+    BODY_PADDING: 'setBodyPadding',
 
     FOOTER_BACKGROUND_COLOR: 'setFooterBackgroundColor',
     FOOTER_TEXT_COLOR: 'setFooterTextColor',

@@ -36,6 +36,8 @@ export const CreationDesk = ({store = {}}) => {
     store.navbar = store.navbar || INIT_STYLE.navbar;
     let bodyStyle = store.body || {};
     let navItems = store.navbar.items || [];
+    let contentStyle = store.body.content || {};
+    contentStyle = {...contentStyle, padding:`30px ${contentStyle.padding}px`};
     const spacing = getSpacingStyle(store.navbar.spacingOption);
     const navStyle = {...store.navbar, height: `${store.navbar.height || 5}rem`, ...spacing};
     let footerStyle = {...store.footer, height: `${store.footer.height || 0}rem`};
@@ -54,7 +56,10 @@ export const CreationDesk = ({store = {}}) => {
                         </a>;
                     })}
             </nav>
-            <div>
+            <div style={contentStyle}>
+                <p>
+                    Abasdnqwjkq qejkfnqjfkqnd qifubqjfjkqwf
+                </p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque eu erat lobortis, varius ante at, accumsan tellus. Curabitur varius, neque id dictum ullamcorper, nisi libero egestas est, vel venenatis ex ipsum at est. Ut in lacus ante. Curabitur faucibus risus mauris, a tincidunt metus mollis eu. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Pellentesque a est facilisis, egestas urna et, pharetra arcu. Nam imperdiet dictum nulla in volutpat. Cras tempus ut orci in condimentum. Fusce luctus, dui eget blandit mattis, lacus purus consectetur lorem, nec molestie neque est luctus felis. In hac habitasse platea dictumst. Vivamus magna nunc, accumsan in malesuada id, gravida feugiat tellus. Phasellus a est vitae risus interdum gravida. Ut semper tellus et felis maximus, sit amet tincidunt metus lacinia.
 
                 Pellentesque vel ligula ornare, dignissim risus accumsan, posuere augue. Integer orci libero, placerat eget auctor ac, aliquet eu turpis. Donec sit amet interdum justo. Integer volutpat et mauris et efficitur. Integer efficitur sapien eu malesuada consectetur. Phasellus tincidunt, urna id efficitur facilisis, diam felis facilisis enim, ac consequat dolor purus ut urna. Nam at maximus mauris. Praesent tortor odio, malesuada vel diam ut, sollicitudin placerat ligula. Etiam et sodales nisi. Donec eu risus aliquam, posuere justo nec, hendrerit nunc. Suspendisse hendrerit commodo leo non pretium. Sed dignissim imperdiet leo sed porta. Nulla blandit arcu id nunc eleifend imperdiet eu sed nisi. Sed ligula massa, convallis tincidunt nunc quis, semper consectetur lacus. Maecenas vel nulla velit.

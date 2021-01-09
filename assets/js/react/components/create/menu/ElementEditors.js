@@ -197,6 +197,26 @@ export const BodyEditor = ({
                     }}
                 />
             </div>
+            <div
+                className="element-editor-item"
+                style={{display:'flex',flexFlow:'column wrap'}}
+            >
+                padding:
+                <input
+                    type="range"
+                    min="20"
+                    max="40"
+                    value={body.content.padding}
+                    onChange={e => {
+                        dispatch({
+                            type: ACTIONS.BODY_PADDING,
+                            payload: {
+                                padding: Number.parseInt(e.target.value)
+                            }
+                        });
+                    }}
+                />
+            </div>
         </div>
     );
 }

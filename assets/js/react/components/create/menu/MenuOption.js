@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import elementOrParentHasClass from "../../../../functions/elementOrParentHasClass";
 
 const MenuOption = ({text, content, menuDispatch, initActive = false}) => {
-    const [active, setActive] = useState(false);
+    const [active, setActive] = useState(initActive);
 
     let chevronClass = initActive && active ? 'chevron chevron-reverse' : 'chevron';
 

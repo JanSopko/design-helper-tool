@@ -228,8 +228,8 @@ class PageController extends AbstractController
             $footer = $theme->getFooter() ?? new Footer();
             $footer = $footer->updateSelfFromPayload($payload['footer']);
             $theme->setFooter($footer);
-//            $em = $this->getEntityManager();
-//            $em->persist($footer);
+            $em = $this->getEntityManager();
+            $em->persist($footer);
         }
 
 
