@@ -9,7 +9,7 @@ parameters:
       - id: 2
         name: "Sign in/up"
         EN: "Sign in/up"
-        SK: "Prihlásenie/registrácia"
+        SK: "Prihlásenie"
         link: "/sign"
       - id: 3
         name: "Browse"

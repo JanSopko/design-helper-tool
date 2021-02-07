@@ -16,7 +16,7 @@ const SlovakContent = () => {
                 <ul>
                     <li key={1}>
                         K vytvoreniu vlastnej webovej témy musíte byť <b>prihlásený</b> do používateľského <b>účtu</b>.
-                        Môžete sa buď prihlásiť do existujúceho účtu, alebo si vytvoriť nový v sekcii <b>Prihlásenie / registrácia</b>
+                        Môžete sa buď prihlásiť do existujúceho účtu, alebo si vytvoriť nový v sekcii <b>Prihlásenie</b>
                     </li><br/>
                     <li key={2}>
                         Pokračujte do sekcie <b>Vytvoriť</b> a vyberte si či chcete vytvoriť novú tému alebo pokračovať v
