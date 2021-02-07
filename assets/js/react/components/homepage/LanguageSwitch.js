@@ -82,7 +82,7 @@ const getCurrentLangStyle = isSelected => {
     const currentStyle = isSelected ?
         {
             fontWeight: 'bold',
-            boxShadow: '0px 0px 3px 1px rgba(200,230,250,0.8)',
+            boxShadow: '0px 0px 3px 1px rgba(100,180,200,0.8)',
             backgroundColor: 'white'
         } :
         {
