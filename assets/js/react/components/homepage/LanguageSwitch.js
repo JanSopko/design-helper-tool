@@ -42,7 +42,8 @@ const LanguageSwitch = ({lang, setGlobalLang}) => {
             padding: '3px 0 3px 7px',
             position: 'absolute',
             right: 50,
-            top: 80
+            top: 80,
+            fontFamily: 'Ubuntu'
         }}
         >
             {
