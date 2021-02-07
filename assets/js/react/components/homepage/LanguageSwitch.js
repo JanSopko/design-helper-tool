@@ -31,12 +31,15 @@ const LanguageSwitch = ({lang, setGlobalLang}) => {
         <div
             style={{
             height: 30,
-            width: 'auto',
-            display: 'inline-block',
-            border: '1px solid gray',
+            width: 280,
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            border: '1px solid lightgray',
+            boxShadow: '0px 0px 3px 3px rgba(180, 230, 250, 0.2)',
             borderRadius: 5,
             backgroundColor: '#fdfefd',
-            padding: 3,
+            padding: '3px 0 3px 7px',
             position: 'absolute',
             right: 50,
             top: 80
@@ -64,7 +67,6 @@ const LanguageSwitch = ({lang, setGlobalLang}) => {
                                 style={{
                                     height: 25,
                                     width: 30,
-                                    marginBottom: -5,
                                     marginRight: 3
                                 }}
                             />
@@ -81,18 +83,19 @@ const LanguageSwitch = ({lang, setGlobalLang}) => {
 const getCurrentLangStyle = isSelected => {
     const currentStyle = isSelected ?
         {
-            fontWeight: 'bold',
+            fontWeight: 'bolder',
             boxShadow: '0px 0px 3px 1px rgba(100,180,200,0.8)',
             backgroundColor: 'white'
         } :
         {
             opacity: 0.75
         };
-    currentStyle.margin = '0 15px';
     currentStyle.cursor = 'pointer';
     currentStyle.height = '100%';
     currentStyle.padding = 3;
     currentStyle.borderRadius = 3;
+    currentStyle.display = 'flex';
+    currentStyle.alignItems = 'center';
 
     return currentStyle;
 }

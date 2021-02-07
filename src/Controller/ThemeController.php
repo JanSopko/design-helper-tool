@@ -73,6 +73,18 @@ class ThemeController extends AbstractController
     }
 
     /**
+     * @Route("/{username}/themes/")
+     * @param string $username
+     * @return Response
+     */
+    public function showThemesOfUser(string $username): Response
+    {
+        return $this->render('myThemes/my_themes.html.twig', [
+            'my_themes' => '[]'
+        ]);
+    }
+
+    /**
      * @Route("/data/my_all_themes", name="myAllTHemes", methods={"GET"})
      * @param Request $request
      * @param ThemeRepository $themeRepository
