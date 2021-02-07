@@ -3,26 +3,42 @@ parameters:
     non_logged:
       - id: 1
         name: "Home"
+        EN: "Home"
+        SK: "Domov"
         link: "/"
       - id: 2
         name: "Sign in/up"
+        EN: "Sign in/up"
+        SK: "Prihlásenie / registrácia"
         link: "/sign"
       - id: 3
         name: "Browse"
+        EN: "Browse"
+        SK: "Prehľadávať"
         link: "/browse"
     logged:
       - id: 1
         name: "Home"
+        EN: "Home"
+        SK: "Domov"
         link: "/"
       - id: 2
         name: "Create"
+        EN: "Create"
+        SK: "Vytvoriť"
         link: "/create"
       - id: 3
         name: "My Themes"
+        EN: "My Themes"
+        SK: "Moje témy"
         link: "/my_themes"
       - id: 4
         name: "Browse"
+        EN: "Browse"
+        SK: "Prehľadávať"
         link: "/browse"
       - logout: "Logout"
+        EN: "Logout"
+        SK: "Odhlásenie"
         path: "/logout"
 

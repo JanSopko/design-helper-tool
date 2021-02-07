@@ -27,7 +27,7 @@ class ThemeController extends AbstractController
 {
     private ?ObjectManager $entityManager = null;
 
-    const COUNT_OF_THEMES_ON_PAGE = 4;
+    const COUNT_OF_THEMES_ON_PAGE = 16;
 
     /**
      * @Route("/browse", name="browse", methods={"GET"})

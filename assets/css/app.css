@@ -253,6 +253,9 @@ canvas {
     align-items: center;
 }
 
+.lang-choice:hover {
+   cursor: pointer;
+}
 
 @keyframes button-recolor-on-hover {
     from {background-color:#cddc39}

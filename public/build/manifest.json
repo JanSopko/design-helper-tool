@@ -24,5 +24,6 @@
   "build/vendors~browse~create~createIndex~createTheme~homepage~myThemes~sign~theme.js": "/build/vendors~browse~create~createIndex~createTheme~homepage~myThemes~sign~theme.js",
   "build/vendors~browse~create~theme.js": "/build/vendors~browse~create~theme.js",
   "build/vendors~create.js": "/build/vendors~create.js",
-  "build/vendors~sign~theme.js": "/build/vendors~sign~theme.js"
+  "build/vendors~sign~theme.js": "/build/vendors~sign~theme.js",
+  "build/vendors~theme.js": "/build/vendors~theme.js"
 }

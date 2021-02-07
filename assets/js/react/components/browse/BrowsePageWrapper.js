@@ -27,7 +27,7 @@ export default function browsePageWrapper() {
     }
 
     useEffect(() => {
-        // myStorage.clear();
+        myStorage.clear();
             if (
                 myStorage.getItem(LOCALSTORAGE_THEMES_KEY) === null ||
                 myStorage.getItem(LOCALSTORAGE_PAGES_COUNT_KEY) === null

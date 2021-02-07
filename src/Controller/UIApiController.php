@@ -29,6 +29,7 @@ class UIApiController extends AbstractController
      */
     public function getNavbar(Request $request): JsonResponse
     {
+
         $navbarParams = (LogChecker::isLogged($request)) ?
             $this->parameterBag->get('nav_items')['logged'] : $this->parameterBag->get('nav_items')['non_logged'];
         return new JsonResponse($navbarParams);

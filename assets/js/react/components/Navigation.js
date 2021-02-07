@@ -1,16 +1,18 @@
 import React from 'react';
 import axios from 'axios';
 import LogoutLink from "./LogoutLink";
+import { LANGUAGE_KEY, ENGLISH } from "./homepage/HomepageWrapper";
 
 export default class Navigation extends React.Component{
 
     constructor() {
         super();
-
+        this.language = window.localStorage.getItem(LANGUAGE_KEY) || ENGLISH;
         this.navbarDataUrl = '/ui-data/navbar';
         this.state = {
             navItems: []
         }
+        console.log(this.language);
     }
 
     componentDidMount() {
@@ -53,10 +55,7 @@ export default class Navigation extends React.Component{
                   if (item.id !== undefined) {
                       return (
                           <li key={item.id} onClick={() => window.location.href = item.link}>
-                              {/*{item.link === '/' &&*/}
-                              {/*<img src="favicon.png" alt="logo" id="navbar-logo"/>*/}
-                              {/*}*/}
-                              <a href={item.link}>{item.name}</a>
+                              <a href={item.link}>{item[this.language]}</a>
                           </li>
                       );
                   } else if (item.logout !== undefined) {
