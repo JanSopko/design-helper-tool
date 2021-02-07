@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+    Themes by {{ username }}
+{% endblock %}
+{% block stylesheets %}
+    {{ encore_entry_link_tags('navbar') }}
+    {{ encore_entry_link_tags('themes_wrapper') }}
+{% endblock %}
+{% block body %}
+    <div id="root">
+    </div>
+{% endblock %}
+{% block javascripts %}
+    <script>
+        let layoutData = {
+            themes: JSON.parse('{{ themes|raw }}'),
+            username: '{{ username }}'
+        };
+    </script>
+    {{ encore_entry_script_tags('themesOf') }}
+{% endblock %}

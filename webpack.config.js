@@ -32,6 +32,7 @@ Encore
     .addEntry('browse', './assets/js/react/pages/browse.js')
     .addEntry('myThemes', './assets/js/react/pages/myThemes.js')
     .addEntry('theme', './assets/js/react/pages/theme.js')
+    .addEntry('themesOf', './assets/js/react/pages/themesOf.js')
     // -----style entries-----
     .addStyleEntry('appCss', './assets/css/app.css')
     .addStyleEntry('navbar', './assets/css/navbar.css')

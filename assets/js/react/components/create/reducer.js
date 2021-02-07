@@ -75,6 +75,10 @@ const reducer = (state, action) => {
             const newBodyContentPadding = {...state.body.content};
             newBodyContentPadding.padding = action.payload.padding;
             return {...state, body: {...state.body, content: newBodyContentPadding}};
+        case ACTIONS.BODY_FONT:
+            const newBodyFont = {...state.body};
+            newBodyFont.fontFamily = action.payload.fontFamily;
+            return {...state, body: newBodyFont};
 
         case ACTIONS.FOOTER_BACKGROUND_COLOR:
             const newFooterBg = {...state.footer};

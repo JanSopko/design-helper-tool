@@ -66,6 +66,11 @@ class Theme implements JsonSerializable
      */
     private User $user;
 
+    /**
+     * @ORM\Column(type="string", nullable=true)
+     */
+    private string $bodyFont;
+
     public function __construct()
     {
         $this->pages = new ArrayCollection();
@@ -136,6 +141,23 @@ class Theme implements JsonSerializable
     public function getPrivacyLevel()
     {
         return $this->privacyLevel;
+    }
+
+    /**
+     * @return string
+     */
+    public function getBodyFont(): string
+    {
+        return $this->bodyFont;
+    }
+
+    /**
+     * @param string $bodyFont
+     */
+    public function setBodyFont(string $bodyFont): self
+    {
+        $this->bodyFont = $bodyFont;
+        return $this;
     }
 
     /**
@@ -250,6 +272,7 @@ class Theme implements JsonSerializable
             'user_name' => $this->user->getUsername(),
             'user_id' => $this->user->getId(),
             'img_path' => $this->imgPath,
+            'imgPath' => $this->imgPath,
             'page_ids' => $pageIds,
             'pages_count' => count($this->pages),
             'privacy_level' => $this->privacyLevel

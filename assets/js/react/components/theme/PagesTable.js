@@ -65,7 +65,7 @@ const PagesTable = ({pages, isMyTheme = false}) => {
                               </button>
                           }
                           <button
-                              className="button-blue"
+                              className="button-green"
                               onClick={() => {window.location.href = `/preview-page/${page.urlHash}`}}
                           >
                               Preview

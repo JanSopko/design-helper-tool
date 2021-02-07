@@ -12,69 +12,77 @@
     "homepage": {
       "js": [
         "/build/runtime.js",
-        "/build/vendors~browse~create~createIndex~createTheme~homepage~myThemes~sign~theme.js",
-        "/build/browse~create~createIndex~createTheme~homepage~myThemes~sign~theme.js",
+        "/build/vendors~browse~create~createIndex~createTheme~homepage~myThemes~sign~theme~themesOf.js",
+        "/build/browse~create~createIndex~createTheme~homepage~myThemes~sign~theme~themesOf.js",
         "/build/homepage.js"
       ]
     },
     "sign": {
       "js": [
         "/build/runtime.js",
-        "/build/vendors~browse~create~createIndex~createTheme~homepage~myThemes~sign~theme.js",
+        "/build/vendors~browse~create~createIndex~createTheme~homepage~myThemes~sign~theme~themesOf.js",
         "/build/vendors~sign~theme.js",
-        "/build/browse~create~createIndex~createTheme~homepage~myThemes~sign~theme.js",
+        "/build/browse~create~createIndex~createTheme~homepage~myThemes~sign~theme~themesOf.js",
         "/build/sign.js"
       ]
     },
     "create": {
       "js": [
         "/build/runtime.js",
-        "/build/vendors~browse~create~createIndex~createTheme~homepage~myThemes~sign~theme.js",
+        "/build/vendors~browse~create~createIndex~createTheme~homepage~myThemes~sign~theme~themesOf.js",
         "/build/vendors~create.js",
-        "/build/browse~create~createIndex~createTheme~homepage~myThemes~sign~theme.js",
+        "/build/browse~create~createIndex~createTheme~homepage~myThemes~sign~theme~themesOf.js",
         "/build/create.js"
       ]
     },
     "createIndex": {
       "js": [
         "/build/runtime.js",
-        "/build/vendors~browse~create~createIndex~createTheme~homepage~myThemes~sign~theme.js",
-        "/build/browse~create~createIndex~createTheme~homepage~myThemes~sign~theme.js",
+        "/build/vendors~browse~create~createIndex~createTheme~homepage~myThemes~sign~theme~themesOf.js",
+        "/build/browse~create~createIndex~createTheme~homepage~myThemes~sign~theme~themesOf.js",
         "/build/createIndex.js"
       ]
     },
     "createTheme": {
       "js": [
         "/build/runtime.js",
-        "/build/vendors~browse~create~createIndex~createTheme~homepage~myThemes~sign~theme.js",
-        "/build/browse~create~createIndex~createTheme~homepage~myThemes~sign~theme.js",
+        "/build/vendors~browse~create~createIndex~createTheme~homepage~myThemes~sign~theme~themesOf.js",
+        "/build/browse~create~createIndex~createTheme~homepage~myThemes~sign~theme~themesOf.js",
         "/build/createTheme.js"
       ]
     },
     "browse": {
       "js": [
         "/build/runtime.js",
-        "/build/vendors~browse~create~createIndex~createTheme~homepage~myThemes~sign~theme.js",
-        "/build/browse~create~createIndex~createTheme~homepage~myThemes~sign~theme.js",
+        "/build/vendors~browse~create~createIndex~createTheme~homepage~myThemes~sign~theme~themesOf.js",
+        "/build/browse~create~createIndex~createTheme~homepage~myThemes~sign~theme~themesOf.js",
         "/build/browse.js"
       ]
     },
     "myThemes": {
       "js": [
         "/build/runtime.js",
-        "/build/vendors~browse~create~createIndex~createTheme~homepage~myThemes~sign~theme.js",
-        "/build/browse~create~createIndex~createTheme~homepage~myThemes~sign~theme.js",
+        "/build/vendors~browse~create~createIndex~createTheme~homepage~myThemes~sign~theme~themesOf.js",
+        "/build/browse~create~createIndex~createTheme~homepage~myThemes~sign~theme~themesOf.js",
         "/build/myThemes.js"
       ]
     },
     "theme": {
       "js": [
         "/build/runtime.js",
-        "/build/vendors~browse~create~createIndex~createTheme~homepage~myThemes~sign~theme.js",
+        "/build/vendors~browse~create~createIndex~createTheme~homepage~myThemes~sign~theme~themesOf.js",
         "/build/vendors~sign~theme.js",
         "/build/vendors~theme.js",
-        "/build/browse~create~createIndex~createTheme~homepage~myThemes~sign~theme.js",
+        "/build/browse~create~createIndex~createTheme~homepage~myThemes~sign~theme~themesOf.js",
         "/build/theme.js"
+      ]
+    },
+    "themesOf": {
+      "js": [
+        "/build/runtime.js",
+        "/build/vendors~browse~create~createIndex~createTheme~homepage~myThemes~sign~theme~themesOf.js",
+        "/build/browse~create~createIndex~createTheme~homepage~myThemes~sign~theme~themesOf.js",
+        "/build/themesOf.js"
       ]
     },
     "appCss": {

@@ -163,7 +163,11 @@ const ThemeWrapper = () => {
             }
             <section>
                 <h1>{layoutData.themeName}</h1>
-                <small>By <a href="#">{layoutData.themeAuthor}</a></small>
+                <small>By <a
+                    href={`themesOf/${layoutData.themeAuthor}`}
+                    onClick={() => window.location = `/themesOf/${layoutData.themeAuthor}`}
+                >
+                    {layoutData.themeAuthor}</a></small>
                 <div id="option-buttons-wrapper">
                     {
                         layoutData.isMyTheme &&
@@ -179,14 +183,14 @@ const ThemeWrapper = () => {
                     {
                         layoutData.isMyTheme &&
                         <button
-                            className="button-yellow"
+                            className="button-green"
                             onClick={() => addPage()}
                         >
                             Add page
                         </button>
                     }
                     <button
-                        className="button-blue"
+                        className="button-green"
                         onClick={() => {window.location.href = `/download-theme/${Number.parseInt(layoutData.themeId)}`}}
                     >
                         Download

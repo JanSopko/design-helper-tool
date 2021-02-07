@@ -76,14 +76,68 @@ class ThemeController extends AbstractController
      * @Route("/themesOf/{username}")
      * @param string $username
      * @param Request $request
+     * @param ThemeRepository $themeRepository
+     * @param UserRepository $userRepository
      * @return Response
      */
-    public function showThemesOfUser(string $username, Request $request): Response
+    public function showThemesOfUser(
+        string $username,
+        Request $request,
+        ThemeRepository $themeRepository,
+        UserRepository $userRepository): Response
     {
-        $page = RequestDataGetter::getRequestData($request)['page'] ?? 1;
-        return $this->render('myThemes/my_themes.html.twig', [
-            'my_themes' => '[]'
+        $themes = $this->getThemesOfUserByUsername($username, $userRepository, $themeRepository, $request);
+        return $this->render('browse/themesOf.html.twig', [
+            'username' => $username,
+            'themes' => json_encode($themes)
         ]);
+    }
+
+    private function getThemesOfUserByUsername(
+        string $username,
+        UserRepository $userRepository,
+        ThemeRepository $themeRepository,
+        Request $request) : array
+    {
+        $user = $userRepository->findBy([
+            'username' => $username
+        ]);
+        $allUsersThemes = $themeRepository->findBy([
+            'user' => $user
+        ]);
+        $loggedUser = LogChecker::getLoggedUser($request, $userRepository);
+        $visibleUsersThemes = [];
+        $visibilityConditions = [ThemePrivacyManager::GLOBALLY_VISIBLE];
+        if (LogChecker::isLogged($request)) {
+            $visibilityConditions[] = ThemePrivacyManager::COMMUNITY_VISIBLE;
+        }
+        if ($loggedUser instanceof User && $loggedUser->getUsername() === $username) {
+            return $allUsersThemes;
+        }
+        foreach ($allUsersThemes as $theme) {
+            if (in_array($theme->getPrivacyLevel(), $visibilityConditions, true)) {
+                $visibleUsersThemes[] = $theme;
+            }
+        }
+
+        return $visibleUsersThemes;
+    }
+
+    /**
+     * @Route("/data/themesOf/{username}")
+     * @param string $username
+     * @param ThemeRepository $themeRepository
+     * @param UserRepository $userRepository
+     * @param Request $request
+     * @return JsonResponse
+     */
+    public function getThemesOfUserByUsernameJson(
+        string $username,
+        ThemeRepository $themeRepository,
+        UserRepository $userRepository,
+        Request $request): JsonResponse
+    {
+        return new JsonResponse($this->getThemesOfUserByUsername($username, $userRepository, $themeRepository, $request));
     }
 
     /**

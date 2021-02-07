@@ -12,7 +12,6 @@ export default class Navigation extends React.Component{
         this.state = {
             navItems: []
         }
-        console.log(this.language);
     }
 
     componentDidMount() {

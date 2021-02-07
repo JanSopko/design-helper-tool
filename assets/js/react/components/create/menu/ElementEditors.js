@@ -4,6 +4,13 @@ import NavbarItemsManager from "./NavbarItemsManager";
 import { ACTIONS, INIT_STYLE } from "../CreatePageWrapper";
 import elementOrParentHasClass from "../../../../functions/elementOrParentHasClass";
 
+const availableFonts = [
+    'Arial, sans-serif',
+    'Verdana, sans-serif',
+    'Helvetica, sans-serif',
+    'Tahoma, sans-serif'
+];
+
 export const NavbarEditor = ({
         navbar,
         dispatch
