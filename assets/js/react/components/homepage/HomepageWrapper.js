@@ -22,10 +22,12 @@ export default function HomepageWrapper() {
             }
 
                 <div style={{
-                    backgroundColor:'black',
+                    backgroundColor:'rgba(255,255,255,1)',
                     display:'flex',
                     justifyContent:'center',
-                    marginTop: 100
+                    marginTop: 100,
+                    boxShadow: '0px 0px 3px 3px rgba(180, 230, 250, 0.2)',
+                    border: '1px solid lightgray',
                 }}>
                 <video
                     width="95%"
